@@ -50,7 +50,9 @@
     "visible": true,
     "valign": "bottom",
     "sortable": true,
-    "editable": true
+    "editable": true,
+    "dataType": "select2",
+    "dataValue": "[{ \"value\":true,\"text\":\"true\"},{ \"value\":false,\"text\":\"false\" } ]"
   },
   {
     "field": "valign",
@@ -68,7 +70,9 @@
     "visible": true,
     "valign": "bottom",
     "sortable": true,
-    "editable": true
+    "editable": true,
+     "dataType": "select2",
+    "dataValue": "[{ \"value\":true,\"text\":\"true\"},{ \"value\": false, \"text\":\"false\" } ]"
   },
   {
     "field": "editable",
@@ -77,7 +81,9 @@
     "visible": true,
     "valign": "bottom",
     "sortable": true,
-    "editable": true
+    "editable": true,
+     "dataType": "select2",
+    "dataValue": "[{ \"value\":true,\"text\":\"true\"},{ \"value\": false, \"text\":\"false\" } ]"
   },
   {
     "field": "formatter",
@@ -134,24 +140,34 @@
     "editable": true
   },
   {
-    "field": "data-type",
-    "title": "组编码",
     "align": "center",
-    "visible": true,
-    "valign": "bottom",
-    "sortable": false,
+    "dataType": "select2",
+    "dataValue": "[{ \"value\":\"text\",\"text\":\"text\"},{ \"value\": \"select2\", \"text\":\"select2\" } ]",
     "editable": true,
-    "data-type": "select"
+    "field": "dataType",
+    "sortable": false,
+    "title": "数据类型",
+    "valign":"bottom",
+    "visible": true
   },
   {
-    "field": "data-Value",
-    "title": "组编码",
+    "field": "dataValue",
+    "title": "数据值",
     "align": "center",
     "visible": true,
     "valign": "bottom",
     "sortable": false,
     "editable": true
   },
+  {
+    "field": "dataUrl",
+    "title": "远程地址",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+        "editable": true
+  },
+
   {
     "field": "number",
     "title": "显示顺序",

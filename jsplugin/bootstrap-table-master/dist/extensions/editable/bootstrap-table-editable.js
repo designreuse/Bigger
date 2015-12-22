@@ -13,20 +13,20 @@
             return false;
         },
         onEditableSave: function (field, row, oldValue, $el) {
-        	console.log(row);
-        	console.log(oldValue);
+            console.log(row);
+            console.log(oldValue);
             return false;
         },
         onEditableShown: function (field, row, $el, editable) {
-        	console.log("shown");
-        	console.log(row);
+            console.log("shown");
+            console.log(row);
             return false;
         },
         onEditableHidden: function (field, row, $el, reason) {
-        	console.log("hidden");
-        	console.log(row);
-        	console.log(reason);
-        $el.text(row[field]);
+            console.log("hidden");
+            console.log(row);
+            console.log(reason);
+            $el.text(row[field]);
             return false;
         }
     });
@@ -43,7 +43,7 @@
     _initBody = BootstrapTable.prototype.initBody;
 
     BootstrapTable.prototype.initTable = function () {
-   // $.fn.editable.defaults.mode='inline';
+        // $.fn.editable.defaults.mode='inline';
         var that = this;
         _initTable.apply(this, Array.prototype.slice.apply(arguments));
 
@@ -52,19 +52,21 @@
         }
 
         $.each(this.columns, function (i, column) {
-            if (!column.editable||column.editable=="false") {
-            	
+            if (!column.editable || column.editable == "false") {
+
                 return;
             }
 
-            var _formatter =$.extend({}, column.formatter);
+            var _formatter = $.extend({}, column.formatter);
             column.formatter = function (value, row, index) {
-
-                var result = typeof(_formatter)=="function" ? _formatter(value, row, index) : value;
+                //console.log(column.dataType);
+                var dataType = column.dataType || "text";
+                // console.log(dataType);
+                var result = typeof (_formatter) == "function" ? _formatter(value, row, index) : value;
                 return ['<a href="javascript:void(0)"',
                     ' data-name="' + column.field + '"',
                     ' data-pk="' + row[that.options.idField] + '"',
-                    'data-type='+column.data-type||"text",
+                    'data-type="' + dataType + '"',
                     'data-value="' + result + '">',
                     '</a>'
                 ].join(' ');
@@ -79,13 +81,60 @@
         if (!this.options.editable) {
             return;
         }
-        console.log(this.column);
+
         $.each(this.columns, function (i, column) {
-        	 if (!column.editable&&column.editable=="false") {
+            if (!column.editable && column.editable == "false") {
                 return;
             }
-        	
-            that.$body.find('a[data-name="' + column.field + '"]').editable(column.editable)
+            var options = column.editable;
+            if (column.dataType && column.dataType == "select2") {
+                var source = column.dataValue;
+                if (source) {
+                    options = {
+                        source: JSON.parse(source),
+                        select2: {
+                            placeholder: 'Select'
+                        }
+                    }
+                }
+
+                if (column.dataUrl)
+                {
+                    options = {
+                        select2: {
+                            placeholder: 'Select Country',
+                            allowClear: true,
+                            minimumInputLength: 1,
+                            id: function (item) {
+                                return item.unid;
+                            },
+                            ajax: {
+                                url: URLDICTIONARY.compangy,
+                                dataType: 'json',
+                                data: function (term, page) {
+                                    return { query: term };
+                                },
+                                results: function (data, page) {
+                                    return { results: data };
+                                }
+                            },
+                            formatResult: function (item) {
+                                return item.name;
+                            },
+                            formatSelection: function (item) {
+                                return item.name;
+                            },
+                            initSelection: function (element, callback) {
+                                return $.get(URLDICTIONARY.compangy + "/" + element.val(), { query: element.val() }, function (data) {
+                                    callback(data);
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+
+            that.$body.find('a[data-name="' + column.field + '"]').editable(options)
                 .off('save').on('save', function (e, params) {
                     var data = that.getData(),
                         index = $(this).parents('tr[data-index]').data('index'),
@@ -95,20 +144,20 @@
                     row[column.field] = params.submitValue;
                     that.trigger('editable-save', column.field, row, oldValue, $(this));
                 });
-            that.$body.find('a[data-name="' + column.field + '"]').editable(column.editable)
+            that.$body.find('a[data-name="' + column.field + '"]').editable(options)
                 .off('shown').on('shown', function (e, editable) {
                     var data = that.getData(),
                         index = $(this).parents('tr[data-index]').data('index'),
                         row = data[index];
-                    
+
                     that.trigger('editable-shown', column.field, row, $(this), editable);
                 });
-            that.$body.find('a[data-name="' + column.field + '"]').editable(column.editable)
+            that.$body.find('a[data-name="' + column.field + '"]').editable(options)
                 .off('hidden').on('hidden', function (e, reason) {
                     var data = that.getData(),
                         index = $(this).parents('tr[data-index]').data('index'),
                         row = data[index];
-                    
+
                     that.trigger('editable-hidden', column.field, row, $(this), reason);
                 });
         });
