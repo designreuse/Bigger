@@ -1,182 +1,187 @@
 [
-		{
-			"field" : "state",
-			"checkbox" : true
-		},
-		{
-			"field" :"field",
-			"title" : "字段代码",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-			"sortable" : true,
-		    "editable":true
-			
-		}, {
-			"field" :"title",
-			"title" : "字段名称",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-			"sortable" : true,
-		    "editable":true
-		
-		}, {
-			"field" :"code",
-			"title" : "自定义code",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-			"sortable" : true,
-		    "editable":true
-		
-		}, 
-		{
-			"field" :"align",
-			"title" : "左右对其方式",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-			"sortable" : true,
-			    "editable":true
-			
-		}, {
-			"field" :"visible",
-			"title" : "是否可见",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : true,
-		        "editable":true
-		} ,
-		{
-			"field" :"valign",
-			"title" : "上下对其方式",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : true,
-		       "editable":true
-		} ,
-		{
-			"field" :"sortable",
-			"title" : "是否允许排序",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : true,
-		       "editable":true
-		} ,
-		{
-			"field" :"editable",
-			"title" : "是否允许修改",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : true,
-		     "editable":true
-		} ,
-		{
-			"field" :"formatter",
-			"title" : "字段函数",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : true,
-		        "editable":true
-		} ,
-		{
-			"field" :"events",
-			"title" : "事件操作函数集合",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : true,
-		    	    "editable":true
-		} ,
-				{
-			"field" :"api",
-			"title" : "管理视图id",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : false,
-		    	    "editable":true
-		} ,
-				{
-			"field" :"apikey",
-			"title" : "关联视图key",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : false,
-		     "editable":true
-		} ,
-				{
-			"field" :"apiName",
-			"title" : "关联视图name",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : false,
-		     "editable":true
-		},
-				{
-			"field" :"checkbox",
-			"title" : "选择器",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : false,
-		    "editable":true
-		},	{
-			"field" :"groupKey",
-			"title" : "组编码",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : false,
-		      "editable":true
-		},{
-			"field" :"groupName",
-			"title" : "组名称",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : false,
-		      "editable":true
-		},	
-		
-		{
-			"field" :"number",
-			"title" : "显示顺序",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : false,
-		    "editable":true
-		},
-		{
-			"field" :"api_uri",
-			"title" : "原始Uri",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : false,
-		    "editable":true
-		},
-		{
-			"field" :"delete",
-			"title" : "操作",
-			"align" : "center",
-			"visible" : true,
-			"valign" : "bottom",
-		    "sortable" : false,
-		    "formatter":"vehicleListDemo.deleteFormatter",
-		    "events":"vehicleListDemo.deleteEvents"
-		    
-		}
-		
-		
-								
-	]
+  {
+    "field": "state",
+    "checkbox": true
+  },
+  {
+    "field": "field",
+    "title": "字段代码",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": true,
+    "editable": true
+
+  },
+  {
+    "field": "title",
+    "title": "字段名称",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": true,
+    "editable": true
+
+  },
+  {
+    "field": "code",
+    "title": "自定义code",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": true,
+    "editable": true
+
+  },
+  {
+    "field": "align",
+    "title": "左右对其方式",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": true,
+    "editable": true
+
+  },
+  {
+    "field": "visible",
+    "title": "是否可见",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": true,
+    "editable": true
+  },
+  {
+    "field": "valign",
+    "title": "上下对其方式",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": true,
+    "editable": true
+  },
+  {
+    "field": "sortable",
+    "title": "是否允许排序",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": true,
+    "editable": true
+  },
+  {
+    "field": "editable",
+    "title": "是否允许修改",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": true,
+    "editable": true
+  },
+  {
+    "field": "formatter",
+    "title": "字段函数",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": true,
+    "editable": true
+  },
+  {
+    "field": "events",
+    "title": "事件操作函数集合",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": true,
+    "editable": true
+  },
+  {
+    "field": "api",
+    "title": "管理视图id",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": false,
+    "editable": true
+  },
+  {
+    "field": "apikey",
+    "title": "关联视图key",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": false,
+    "editable": true
+  },
+  {
+    "field": "apiName",
+    "title": "关联视图name",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": false,
+    "editable": true
+  },
+  {
+    "field": "checkbox",
+    "title": "选择器",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": false,
+    "editable": true
+  },
+  {
+    "field": "data-type",
+    "title": "组编码",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": false,
+    "editable": true,
+    "data-type": "select"
+  },
+  {
+    "field": "data-Value",
+    "title": "组编码",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": false,
+    "editable": true
+  },
+  {
+    "field": "number",
+    "title": "显示顺序",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": false,
+    "editable": true
+  },
+  {
+    "field": "api_uri",
+    "title": "原始Uri",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": false,
+    "editable": true
+  },
+  {
+    "field": "delete",
+    "title": "操作",
+    "align": "center",
+    "visible": true,
+    "valign": "bottom",
+    "sortable": false,
+    "formatter": "vehicleListDemo.deleteFormatter",
+    "events": "vehicleListDemo.deleteEvents"
+
+  }
+
+
+
+]

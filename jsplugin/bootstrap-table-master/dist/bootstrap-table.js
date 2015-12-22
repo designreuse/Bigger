@@ -124,6 +124,10 @@
         var func = name;
 
         if (typeof name === 'string') {
+            if (name == "")
+            {
+                return undefined;
+            }
             // support obj.func1.func2
             var names = name.split('.');
 

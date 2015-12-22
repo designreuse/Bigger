@@ -1,307 +1,306 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html class="fixed sidebar-left-collapsed">
 <head>
-<base href="../">
-<meta charset="UTF-8">
-<title>GIMIS</title>
-<meta name="keywords" content="HTML5 Admin Template" />
-<meta name="description" content="GIMIS Responsive HTML5 Template">
-<meta name="fenghai" content="feng_hai@aliyun.com">
-<!-- Mobile Metas -->
-<meta name="viewport"	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<link rel="stylesheet" href='css/font-awesome/css/font-awesome.min.css' />
-<link rel="stylesheet" href='jsplugin/bootstrap/css/bootstrap.min.css' />
-<link rel="stylesheet" href="jsplugin/pnotify/pnotify.custom.css" />
-<!-- Theme CSS -->
-<link rel="stylesheet" href='css/custom/theme.css' />
-<!-- Skin CSS -->
-<link rel="stylesheet" href='css/skins/default.css' />
-<link rel="stylesheet" href='jsplugin/bootstrap-table-master/dist/bootstrap-table.min.css' />
-<!-- Theme Custom CSS -->
-<link rel="stylesheet" href='css/custom/theme-custom.css'>
-<link rel="stylesheet" href="jsplugin/pnotify/pnotify.custom.css" />
- <link rel="stylesheet" href="jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css" />
-<style>
-/*
-地图
-*/
-.markerActive
-{
-  background-image: url(css/images/active.png);
-  background-repeat: no-repeat;
-  height:30px;
-  width:24px;
-  background-size: contain;
-  padding: 4px 4px 4px 5px;
-}
-</style>
-<!-- Head Libs -->
-<script src="jsplugin/modernizr/modernizr.js"></script>
+    <base href="../">
+    <meta charset="UTF-8">
+    <title>GIMIS</title>
+    <meta name="keywords" content="HTML5 Admin Template" />
+    <meta name="description" content="GIMIS Responsive HTML5 Template">
+    <meta name="fenghai" content="feng_hai@aliyun.com">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href='css/font-awesome/css/font-awesome.min.css' />
+    <link rel="stylesheet" href='jsplugin/bootstrap/css/bootstrap.min.css' />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href='css/custom/theme.css' />
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href='css/skins/default.css' />
+    <link rel="stylesheet" href='jsplugin/bootstrap-table-master/dist/bootstrap-table.min.css' />
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href='css/custom/theme-custom.css'>
+    <link rel="stylesheet" href="jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css" />
+    <style>
+        /*
+        地图
+        */
+        .markerActive {
+            background-image: url(css/images/active.png);
+            background-repeat: no-repeat;
+            height: 30px;
+            width: 24px;
+            background-size: contain;
+            padding: 4px 4px 4px 5px;
+        }
+    </style>
+    <!-- Head Libs -->
+    <script src="jsplugin/modernizr/modernizr.js"></script>
 </head>
 <body>
-	<section class="body">
-		<!-- start: header -->
-				<header class="header">
-					<div class="logo-container">
-						<a href="../" class="logo">
-							<img src="css/images/logo.png" height="35" alt="Porto Admin" />
-						</a>
-						<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
-							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
-						</div>
-					</div>
-					<!-- start: search & user box -->
-					<div class="header-right">
+    <section class="body">
+        <!-- start: header -->
+        <header class="header">
+            <div class="logo-container">
+                <a href="../" class="logo">
+                    <img src="css/images/logo.png" height="35" alt="Porto Admin" />
+                </a>
+                <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+                    <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+                </div>
+            </div>
+            <!-- start: search & user box -->
+            <div class="header-right">
 
-						<form action="pages-search-results.html" class="search nav-form">
-							<div class="input-group input-search">
-								<input type="text" class="form-control form-controlHu" name="q" id="q" placeholder="Search...">
-								<span class="input-group-btn">
-									<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-								</span>
-							</div>
-						</form>
+                <form action="pages-search-results.html" class="search nav-form">
+                    <div class="input-group input-search">
+                        <input type="text" class="form-control form-controlHu" name="q" id="q" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>
 
-						<span class="separator"></span>
+                <span class="separator"></span>
 
-						<ul class="notifications">
-							<li>
-								<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
-									<i class="fa fa-tasks"></i>
-									<span class="badge">3</span>
-								</a>
+                <ul class="notifications">
+                    <li>
+                        <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                            <i class="fa fa-tasks"></i>
+                            <span class="badge">3</span>
+                        </a>
 
-								<div class="dropdown-menu notification-menu large">
-									<div class="notification-title">
-										<span class="pull-right label label-default">3</span>
-										Tasks
-									</div>
+                        <div class="dropdown-menu notification-menu large">
+                            <div class="notification-title">
+                                <span class="pull-right label label-default">3</span>
+                                Tasks
+                            </div>
 
-									<div class="content">
-										<ul>
-											<li>
-												<p class="clearfix mb-xs">
-													<span class="message pull-left">Generating Sales Report</span>
-													<span class="message pull-right text-dark">60%</span>
-												</p>
-												<div class="progress progress-xs light">
-													<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-												</div>
-											</li>
+                            <div class="content">
+                                <ul>
+                                    <li>
+                                        <p class="clearfix mb-xs">
+                                            <span class="message pull-left">Generating Sales Report</span>
+                                            <span class="message pull-right text-dark">60%</span>
+                                        </p>
+                                        <div class="progress progress-xs light">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                        </div>
+                                    </li>
 
-											<li>
-												<p class="clearfix mb-xs">
-													<span class="message pull-left">Importing Contacts</span>
-													<span class="message pull-right text-dark">98%</span>
-												</p>
-												<div class="progress progress-xs light">
-													<div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"></div>
-												</div>
-											</li>
+                                    <li>
+                                        <p class="clearfix mb-xs">
+                                            <span class="message pull-left">Importing Contacts</span>
+                                            <span class="message pull-right text-dark">98%</span>
+                                        </p>
+                                        <div class="progress progress-xs light">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"></div>
+                                        </div>
+                                    </li>
 
-											<li>
-												<p class="clearfix mb-xs">
-													<span class="message pull-left">Uploading something big</span>
-													<span class="message pull-right text-dark">33%</span>
-												</p>
-												<div class="progress progress-xs light mb-xs">
-													<div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li>
-								<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
-									<i class="fa fa-envelope"></i>
-									<span class="badge">4</span>
-								</a>
+                                    <li>
+                                        <p class="clearfix mb-xs">
+                                            <span class="message pull-left">Uploading something big</span>
+                                            <span class="message pull-right text-dark">33%</span>
+                                        </p>
+                                        <div class="progress progress-xs light mb-xs">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                            <i class="fa fa-envelope"></i>
+                            <span class="badge">4</span>
+                        </a>
 
-								<div class="dropdown-menu notification-menu">
-									<div class="notification-title">
-										<span class="pull-right label label-default">230</span>
-										Messages
-									</div>
+                        <div class="dropdown-menu notification-menu">
+                            <div class="notification-title">
+                                <span class="pull-right label label-default">230</span>
+                                Messages
+                            </div>
 
-									<div class="content">
-										<ul>
-											<li>
-												<a href="#" class="clearfix">
-													<figure class="image">
-														<img src="css/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle" />
-													</figure>
-													<span class="title">Joseph Doe</span>
-													<span class="message">Lorem ipsum dolor sit.</span>
-												</a>
-											</li>
-											<li>
-												<a href="#" class="clearfix">
-													<figure class="image">
-														<img src="css/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle" />
-													</figure>
-													<span class="title">Joseph Junior</span>
-													<span class="message truncate">Truncated message. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam, nec venenatis risus. Vestibulum blandit faucibus est et malesuada. Sed interdum cursus dui nec venenatis. Pellentesque non nisi lobortis, rutrum eros ut, convallis nisi. Sed tellus turpis, dignissim sit amet tristique quis, pretium id est. Sed aliquam diam diam, sit amet faucibus tellus ultricies eu. Aliquam lacinia nibh a metus bibendum, eu commodo eros commodo. Sed commodo molestie elit, a molestie lacus porttitor id. Donec facilisis varius sapien, ac fringilla velit porttitor et. Nam tincidunt gravida dui, sed pharetra odio pharetra nec. Duis consectetur venenatis pharetra. Vestibulum egestas nisi quis elementum elementum.</span>
-												</a>
-											</li>
-											<li>
-												<a href="#" class="clearfix">
-													<figure class="image">
-														<img src="css/images/!sample-user.jpg" alt="Joe Junior" class="img-circle" />
-													</figure>
-													<span class="title">Joe Junior</span>
-													<span class="message">Lorem ipsum dolor sit.</span>
-												</a>
-											</li>
-											<li>
-												<a href="#" class="clearfix">
-													<figure class="image">
-														<img src="css/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle" />
-													</figure>
-													<span class="title">Joseph Junior</span>
-													<span class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam.</span>
-												</a>
-											</li>
-										</ul>
+                            <div class="content">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <figure class="image">
+                                                <img src="css/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle" />
+                                            </figure>
+                                            <span class="title">Joseph Doe</span>
+                                            <span class="message">Lorem ipsum dolor sit.</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <figure class="image">
+                                                <img src="css/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle" />
+                                            </figure>
+                                            <span class="title">Joseph Junior</span>
+                                            <span class="message truncate">Truncated message. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam, nec venenatis risus. Vestibulum blandit faucibus est et malesuada. Sed interdum cursus dui nec venenatis. Pellentesque non nisi lobortis, rutrum eros ut, convallis nisi. Sed tellus turpis, dignissim sit amet tristique quis, pretium id est. Sed aliquam diam diam, sit amet faucibus tellus ultricies eu. Aliquam lacinia nibh a metus bibendum, eu commodo eros commodo. Sed commodo molestie elit, a molestie lacus porttitor id. Donec facilisis varius sapien, ac fringilla velit porttitor et. Nam tincidunt gravida dui, sed pharetra odio pharetra nec. Duis consectetur venenatis pharetra. Vestibulum egestas nisi quis elementum elementum.</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <figure class="image">
+                                                <img src="css/images/!sample-user.jpg" alt="Joe Junior" class="img-circle" />
+                                            </figure>
+                                            <span class="title">Joe Junior</span>
+                                            <span class="message">Lorem ipsum dolor sit.</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <figure class="image">
+                                                <img src="css/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle" />
+                                            </figure>
+                                            <span class="title">Joseph Junior</span>
+                                            <span class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam.</span>
+                                        </a>
+                                    </li>
+                                </ul>
 
-										<hr />
+                                <hr />
 
-										<div class="text-right">
-											<a href="#" class="view-more">View All</a>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
-									<i class="fa fa-bell"></i>
-									<span class="badge">3</span>
-								</a>
+                                <div class="text-right">
+                                    <a href="#" class="view-more">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                            <i class="fa fa-bell"></i>
+                            <span class="badge">3</span>
+                        </a>
 
-								<div class="dropdown-menu notification-menu">
-									<div class="notification-title">
-										<span class="pull-right label label-default">3</span>
-										Alerts
-									</div>
+                        <div class="dropdown-menu notification-menu">
+                            <div class="notification-title">
+                                <span class="pull-right label label-default">3</span>
+                                Alerts
+                            </div>
 
-									<div class="content">
-										<ul>
-											<li>
-												<a href="#" class="clearfix">
-													<div class="image">
-														<i class="fa fa-thumbs-down bg-danger"></i>
-													</div>
-													<span class="title">Server is Down!</span>
-													<span class="message">Just now</span>
-												</a>
-											</li>
-											<li>
-												<a href="#" class="clearfix">
-													<div class="image">
-														<i class="fa fa-lock bg-warning"></i>
-													</div>
-													<span class="title">User Locked</span>
-													<span class="message">15 minutes ago</span>
-												</a>
-											</li>
-											<li>
-												<a href="#" class="clearfix">
-													<div class="image">
-														<i class="fa fa-signal bg-success"></i>
-													</div>
-													<span class="title">Connection Restaured</span>
-													<span class="message">10/10/2014</span>
-												</a>
-											</li>
-										</ul>
+                            <div class="content">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <div class="image">
+                                                <i class="fa fa-thumbs-down bg-danger"></i>
+                                            </div>
+                                            <span class="title">Server is Down!</span>
+                                            <span class="message">Just now</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <div class="image">
+                                                <i class="fa fa-lock bg-warning"></i>
+                                            </div>
+                                            <span class="title">User Locked</span>
+                                            <span class="message">15 minutes ago</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <div class="image">
+                                                <i class="fa fa-signal bg-success"></i>
+                                            </div>
+                                            <span class="title">Connection Restaured</span>
+                                            <span class="message">10/10/2014</span>
+                                        </a>
+                                    </li>
+                                </ul>
 
-										<hr />
+                                <hr />
 
-										<div class="text-right">
-											<a href="#" class="view-more">View All</a>
-										</div>
-									</div>
-								</div>
-							</li>
-						</ul>
+                                <div class="text-right">
+                                    <a href="#" class="view-more">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
 
-						<span class="separator"></span>
+                <span class="separator"></span>
 
-						<div id="userbox" class="userbox">
-							<a href="#" data-toggle="dropdown">
-								<figure class="profile-picture">
-									<img src="css/images/!logged-user.jpg" alt="fenghai" class="img-circle" data-lock-picture="css/images/!logged-user.jpg" />
-								</figure>
-								<div class="profile-info" data-lock-name="fenghai" data-lock-email="fenghai@gimis.com">
-									<span class="name">fenghai</span>
-									<span class="role">administrator</span>
-								</div>
+                <div id="userbox" class="userbox">
+                    <a href="#" data-toggle="dropdown">
+                        <figure class="profile-picture">
+                            <img src="css/images/!logged-user.jpg" alt="fenghai" class="img-circle" data-lock-picture="css/images/!logged-user.jpg" />
+                        </figure>
+                        <div class="profile-info" data-lock-name="fenghai" data-lock-email="fenghai@gimis.com">
+                            <span class="name">fenghai</span>
+                            <span class="role">administrator</span>
+                        </div>
 
-								<i class="fa custom-caret"></i>
-							</a>
+                        <i class="fa custom-caret"></i>
+                    </a>
 
-							<div class="dropdown-menu">
-								<ul class="list-unstyled">
-									<li class="divider"></li>
-									<li>
-										<a role="menuitem" tabindex="-1" href="user/profile"><i class="fa fa-user"></i> My Profile</a>
-									</li>
-									<li>
-										<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
-									</li>
-									<li>
-										<a role="menuitem" tabindex="-1" href="index.html"><i class="fa fa-power-off"></i> Logout</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- end: search & user box -->
-				</header>
+                    <div class="dropdown-menu">
+                        <ul class="list-unstyled">
+                            <li class="divider"></li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="user/profile"><i class="fa fa-user"></i> My Profile</a>
+                            </li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
+                            </li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="index.html"><i class="fa fa-power-off"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end: search & user box -->
+        </header>
 
-	<div class="inner-wrapper">
-		<div include="main/menu/menu.html" type="menu"></div>
-		<section role="main" class="content-body"> <header
-			class="page-header">
-		<h2>首页</h2>
-		<div class="right-wrapper pull-right">
-			<ol class="breadcrumbs">
-				<li><a href="user/default"> <i class="fa fa-home"></i>
-				</a></li>
-			</ol>
-			<a class="sidebar-right-toggle" style="display: none"
-				data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
-		</div>
-		</header>
-		<div id="mainBody">
-			<!-- start: page -->
-					<div include="main/vehicle/cluster.html" type="body"></div>
-			<!-- end: page -->
-		</div>
-		</section>
-	</div>
-	<!-- Vendor -->
-	<script type='text/javascript'src="js/jquery-2.1.4.min.js"></script>
-	<script type='text/javascript' src="js/Common.js"></script>
-
-  <script type="text/javascript" src="js/custom_menu.js"></script>
-  <script type="text/javascript" src="jsplugin/jquery-cookie/jquery-cookie.js">
-	<script type="text/javascript" src="jsplugin/jquery-browser-mobile/jquery.browser.mobile.js"></script>
-	<script type="text/javascript" src="jsplugin/bootstrap/js/bootstrap.min.js"></script>
-	<!-- 滚动条效果，可实现滚动显示效果 -->
-	<script type="text/javascript" src="jsplugin/nanoscroller/nanoscroller.js"></script>
-	<!-- 响应式灯箱效果-弹出层效果 -->
-	<script type="text/javascript" src="jsplugin/magnific-popup/jquery.magnific-popup.js"></script>
-	<!-- 实现文本框显示描述文字 -->
-	<script type="text/javascript" src="jsplugin/jquery-placeholder/jquery-placeholder.js"></script>
-	<!-- Theme Base, Components and Settings -->
-	<script type="text/javascript" src="js/theme.js"></script> <!-- Theme Custom -->
-	<script type="text/javascript" src="js/theme.custom.js"></script>
-	<!-- Theme Initialization Files -->
-	<script type="text/javascript" src="js/theme.init.js"></script>
-  <script type="text/javascript" src="js/loadCSS.js"></script>
-	<script type="text/javascript" src="jsplugin/pnotify/pnotify.custom.js"></script>
-     <script type="text/javascript" src="jsplugin/bootstrap-table-master/src/bootstrap-table.js"></script>
+        <div class="inner-wrapper">
+            <div include="main/menu/menu.html" type="menu"></div>
+            <section role="main" class="content-body">
+                <header class="page-header">
+                    <h2>首页</h2>
+                    <div class="right-wrapper pull-right">
+                        <ol class="breadcrumbs">
+                            <li>
+                                <a href="user/default">
+                                    <i class="fa fa-home"></i>
+                                </a>
+                            </li>
+                        </ol>
+                        <a class="sidebar-right-toggle" style="display: none"
+                           data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+                    </div>
+                </header>
+                <div id="mainBody">
+                    <!-- start: page -->
+                    <div include="main/vehicle/cluster.html" type="body"></div>
+                    <!-- end: page -->
+                </div>
+            </section>
+        </div>
+        <!-- Vendor -->
+        <script type='text/javascript' src="js/jquery-2.1.4.min.js"></script>
+        <script type='text/javascript' src="js/Common.js"></script>
+        <script type="text/javascript" src="js/custom_menu.js"></script>
+        <script type="text/javascript" src="jsplugin/jquery-cookie/jquery-cookie.js"></script>
+        <script type="text/javascript" src="jsplugin/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+        <script type="text/javascript" src="jsplugin/bootstrap/js/bootstrap.min.js"></script>
+        <!-- 滚动条效果，可实现滚动显示效果 -->
+        <script type="text/javascript" src="jsplugin/nanoscroller/nanoscroller.js"></script>
+        <!-- 响应式灯箱效果-弹出层效果 -->
+        <script type="text/javascript" src="jsplugin/magnific-popup/jquery.magnific-popup.js"></script>
+        <!-- 实现文本框显示描述文字 -->
+        <script type="text/javascript" src="jsplugin/jquery-placeholder/jquery-placeholder.js"></script>
+        <!-- Theme Base, Components and Settings -->
+        <script type="text/javascript" src="js/theme.js"></script> <!-- Theme Custom -->
+        <script type="text/javascript" src="js/theme.custom.js"></script>
+        <!-- Theme Initialization Files -->
+        <script type="text/javascript" src="js/theme.init.js"></script>
+        <script type="text/javascript" src="js/loadCSS.js"></script>
+        <script type="text/javascript" src="jsplugin/pnotify/pnotify.custom.js"></script>
+        <script type="text/javascript" src="jsplugin/bootstrap-table-master/src/bootstrap-table.js"></script>
         <script type="text/javascript" src="jsplugin/bootstrap-table-master/dist/extensions/export/bootstrap-table-export.js"></script>
         <script type="text/javascript" src="jsplugin/bootstrap-table-master/dist/extensions/pageOption/bootstrap-table-pageOption.js"></script>
         <script type="text/javascript" src="jsplugin/bootstrap-table-master/dist/extensions/toolbar/bootstrap-table-toolbar2.js"></script>
@@ -309,73 +308,70 @@
         <script src="jsplugin/x-editable-master/dist/bootstrap3-editable/js/bootstrap-editable.js"></script>
         <script src="jsplugin/bootstrap-table-master/dist/extensions/editable/bootstrap-table-editable.js"></script>
         <script src="js/dataView.js"></script>
-	<script type="text/javascript">
-	$("#mainBody").load("main/vehicle/cluster.html",function(){
+        <script type="text/javascript">
+            $("#mainBody").load("main/vehicle/cluster.html",function(){
 
 
-	});
-		$(function() {
-			try {
-				var tempMenu = new menuJs({
-					menuType : "2"
-				});
-			} catch (e) {
+            });
+            $(function() {
+                try {
+                    var tempMenu = new menuJs({
+                        menuType : "2"
+                    });
+                } catch (e) {
+                    console.log(e);
 
-			} finally {
+                } finally {
 
-			}
+                }
+                var tempArray=[
+                    'jsplugin/magnific-popup/magnific-popup.css' ,
+                    'css/elusive-icons/css/elusive-icons.min.css' ,
+                    'css/simple-line-icons/css/simple-line-icons.css',
+                    'jsplugin/jstree/themes/default/style.min.css',
+                    'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
+                    'jsplugin/select2/css/select2.min.css',
+                    'jsplugin/pnotify/pnotify.custom.css'
+                ];
+                $.each(tempArray,function(i,field){
+                    loadCSS(field);
+                });
+            });
+            $(function() {
 
-			var tempArray=[
-			               'jsplugin/magnific-popup/magnific-popup.css' ,
-			               'css/elusive-icons/css/elusive-icons.min.css' ,
-			               'css/simple-line-icons/css/simple-line-icons.css',
-			               'jsplugin/jstree/themes/default/style.min.css',
-			               'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
-			               'jsplugin/select2/css/select2.min.css',
-			             
-			               'jsplugin/pnotify/pnotify.custom.css'
-			               ];
-			$.each(tempArray,function(i,field){
-				 loadCSS(field);
-			});
-		});
-		$(function() {
+                $.loadjs([ "jsplugin/echart/echarts-plain-map.js",
+                           "js/pages/echartChina.js",
+                           "js/pages/vehicleCluster.js",
+                           "//webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e"],function(){
+                               pageStart_Three();
+                               pageStart_Two();
+                               $.loadjs([
+                                         'jsplugin/bootstrapModal/eModal.js',
+                                         'jsplugin/tableExport/jquery.base64.js',
+                                         'jsplugin/tableExport/tableExport.js',
+                                         'jsplugin/tableExport/html2canvas.js',
+                                        // 'j_bak/tableExport/jspdf/jspdf.js',
+                                         'jsplugin/tableExport/jspdf/libs/base64.js',
+                                         'jsplugin/tableExport/jspdf/libs/sprintf.js',
+                                       //  'j_bak/bootstrap-table-master/src/extensions/resizable/bootstrap-table-resizable.js',
+                                      //   'j_bak/bootstrap-table-master/dist/extensions/editable/bootstrap-table-editable.js',
+                                          "js/pages/vehicleList.js"
+                               ],function(){
+                                   pageStart_One();
+                                   loadSinglejs();
+                               });
+                           });
+            });
+            function loadSinglejs()
+            {
+                $.loadjs(["jsplugin/echart/echarts-all.js",
+                          "js/pages/dynamicDataChart.js",
 
-			$.loadjs([ "jsplugin/echart/echarts-plain-map.js",
-				       "js/pages/echartChina.js",
-					 "js/pages/vehicleCluster.js",
-								 "//webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e"],function(){
-				pageStart_Three();
-        pageStart_Two();
-				      $.loadjs([
-								
+                          "js/pages/gaugePage.js",
+                          "js/pages/chargePie.js"]);
 
-						          'jsplugin/bootstrapModal/eModal.js',
-					            'jsplugin/tableExport/jquery.base64.js',
-					            'jsplugin/tableExport/tableExport.js',
-					            'jsplugin/tableExport/html2canvas.js',
-					           // 'j_bak/tableExport/jspdf/jspdf.js',
-					            'jsplugin/tableExport/jspdf/libs/base64.js',
-					            'jsplugin/tableExport/jspdf/libs/sprintf.js',
-
-					          //  'j_bak/bootstrap-table-master/src/extensions/resizable/bootstrap-table-resizable.js',
-					         //   'j_bak/bootstrap-table-master/dist/extensions/editable/bootstrap-table-editable.js',
-					             "js/pages/vehicleList.js"
-						       ],function(){
-							      pageStart_One();
-							      loadSinglejs();
-						});
-			 });
-		});
-		function loadSinglejs()
-		{
-			$.loadjs(["jsplugin/echart/echarts-all.js",
-	   		          "js/pages/dynamicDataChart.js",
-
-	   		          "js/pages/gaugePage.js",
-	   		          "js/pages/chargePie.js"]);
-
-		}
-	</script> </section>
+            }
+        </script>
+    </section>
 </body>
 </html>

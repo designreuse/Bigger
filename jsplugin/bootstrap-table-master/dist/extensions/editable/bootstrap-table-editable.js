@@ -59,12 +59,14 @@
 
             var _formatter =$.extend({}, column.formatter);
             column.formatter = function (value, row, index) {
+
                 var result = typeof(_formatter)=="function" ? _formatter(value, row, index) : value;
                 return ['<a href="javascript:void(0)"',
                     ' data-name="' + column.field + '"',
                     ' data-pk="' + row[that.options.idField] + '"',
-                    ' data-value="' + result + '">',
-                    ' </a>'
+                    'data-type='+column.data-type||"text",
+                    'data-value="' + result + '">',
+                    '</a>'
                 ].join(' ');
             };
         });
@@ -77,12 +79,12 @@
         if (!this.options.editable) {
             return;
         }
-
+        console.log(this.column);
         $.each(this.columns, function (i, column) {
         	 if (!column.editable&&column.editable=="false") {
                 return;
             }
-
+        	
             that.$body.find('a[data-name="' + column.field + '"]').editable(column.editable)
                 .off('save').on('save', function (e, params) {
                     var data = that.getData(),
