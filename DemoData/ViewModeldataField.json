@@ -1,0 +1,27 @@
+[
+	{
+		"field" : "state",
+		"checkbox" : true
+	},
+	{
+		"field" :"unid",
+		"title" : "视图唯一标识",
+		"align" : "center",
+		"visible" : true,
+		"valign" : "bottom",
+		"sortable" : true
+
+		
+		
+	}, {
+		"field" :"name",
+		"title" : "视图名称",
+		"align" : "center",
+		"visible" : true,
+		"valign" : "bottom"
+
+		
+	
+		
+	}
+	]

@@ -1,0 +1,294 @@
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<i class="fa fa-bar-chart-o fa-fw"></i> 视图管理
+		<div class="panel-actions">
+			<a href="#" class="panel-action panel-action-toggle"
+				data-panel-toggle=""></a> <a href="#"
+				class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+		</div>
+	</div>
+	<!-- /.panel-heading -->
+	<div class="panel-body">
+		<table id="tableserver2"></table>
+	</div>
+	<!-- /.panel-body -->
+</div>
+<!-- /.panel -->
+<div id="header-base" class="row">
+	<div class="col-md-8">
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fa-bar-chart-o fa-fw"></i> 数据模型管理
+
+
+				<div class="panel-actions">
+
+					<div id="metadata" class="btn-group">
+						<button type="button"
+							class="btn btn-default btn-xs dropdown-toggle"
+							data-toggle="dropdown">
+							<span id="metadataSpan" data="">请选择原始数据</span> <span
+								class="caret"></span>
+						</button>
+						<ul class="dropdown-menu pull-right" id="" role="menu">
+							<li><a href="https://api.ttron.cn/bigger/vehicle/metadata">车辆原始数据</a>
+							</li>
+
+							<li><a href="https://api.ttron.cn/bigger/model/metadata">车辆型号</a>
+							</li>
+							<li><a href="https://api.ttron.cn/openid/domain/metadata">机构</a>
+							</li>
+							<li><a href="https://api.ttron.cn/bigger/sim/metadata">SIM卡</a>
+							</li>
+							<li><a href="https://api.ttron.cn/bigger/device/metadata">终端</a>
+							</li>
+							<li><a href="https://api.ttron.cn/bigger/vendor/metadata">终端供应商</a>
+							</li>
+							<li class="divider"></li>
+							<li><a
+								href="https://api.ttron.cn/sensor/vehicle/metadata/111">车辆传感器自定义视图</a>
+							</li>
+							<li><a
+								href="https://api.ttron.cn/bigger/event/alert/metadata">报警事件</a>
+							</li>
+							<li><a
+								href="https://api.ttron.cn/bigger/event/charge/metadata">充电事件</a>
+							</li>
+
+							<li class="divider"></li>
+							<li><a href="https://api.ttron.cn/bigger/chart/metadata">报表</a></li>
+							<li class="divider"></li>
+							<li><a href="https://api.ttron.cn/parrot/protocol/metadata">协议</a>
+							</li>
+							<li><a
+								href="https://api.ttron.cn/parrot/proto_family/metadata">协议族</a>
+							</li>
+							<li><a
+								href="https://api.ttron.cn/parrot/protocol/field/metadata">数据项Field
+									of Protocol</a></li>
+							<li><a
+								href="https://api.ttron.cn/parrot/protocol/3ACFFE0BE08848F593AD7CD71FD5F793/field/woitlmx">数据域</a>
+							</li>
+							<li><a
+								href="https://api.ttron.cn/parrot/alias/metadata">标准别名</a>
+							</li>
+										<li class="divider"></li>
+							<li><a href="https://api.ttron.cn/bigger/security/button/metadata">按钮</a></li>
+							<li><a href="https://api.ttron.cn/bigger/security/menu/metadata">菜单</a></li>
+							<li><a href="https://api.ttron.cn/openid/metadata">用户</a></li>
+							<li><a href="https://api.ttron.cn/bigger/security/privilege/metadata">权限</a></li>
+
+
+
+
+
+
+						</ul>
+					</div>
+					<a href="#" class="panel-action panel-action-toggle"
+						data-panel-toggle=""></a> <a href="#"
+						class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+				</div>
+			</div>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+				<div id="toolbar">
+					<div class="form-inline" role="form">
+						<button class="btn btn-success btn-sm" onclick="createRow();"
+							type="button">
+							<i class="glyphicon glyphicon-asterisk"></i> Create
+						</button>
+
+						<button class="btn btn-danger btn-sm" onclick="deleteRow();"
+							type="button">
+							<i class="glyphicon glyphicon-remove"></i> Delete
+						</button>
+
+					</div>
+				</div>
+				<table id="tableserver" data-toolbar="#toolbar"></table>
+			</div>
+			<!-- /.panel-body -->
+		</div>
+		<!-- /.panel -->
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+
+
+				<i class="fa fa-bar-chart-o fa-fw"></i> 数据字段管理
+				<div class="panel-actions">
+					<a href="#" class="panel-action panel-action-toggle"
+						data-panel-toggle=""></a> <a href="#"
+						class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+				</div>
+			</div>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+
+				<div class="form-group">
+					<label>视图唯一编码</label>
+					<p id="viewid" class="help-block">视图唯一编码生成后会放在此处</p>
+					<label><input type="checkbox" name="vin" value="B10002">B10002</label>
+					<label>事件类型 <select id="selcectEvent" class="form-control">
+							<option value="alert">alert</option>
+							<option value="charge">charge</option>
+					</select>
+					</label>
+				</div>
+
+				<a id="saveView" href="javascript:void(0)"
+					class="btn btn-primary confirmation-callback">视图编辑保存</a> <a
+					id="updateView" href="javascript:void(0)"
+					class="btn btn-primary confirmation-callback">视图修改保存</a> <a
+					id="deleteView" href="javascript:void(0)"
+					class="btn btn-primary confirmation-callback">视图删除</a> <a
+					id="createView" href="javascript:void(0)"
+					class="btn btn-primary confirmation-callback">根据视图生成对应数据列表</a>
+			</div>
+			<!-- /.panel-body -->
+		</div>
+		<!-- /.panel -->
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fa-bar-chart-o fa-fw"></i> 数据列表展示
+				<div class="panel-actions">
+					<a href="#" class="panel-action panel-action-toggle"
+						data-panel-toggle=""></a> <a href="#"
+						class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+				</div>
+			</div>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+
+				<table id="showtableserver"></table>
+			</div>
+			<!-- /.panel-body -->
+		</div>
+		<!-- /.panel -->
+
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fa-bar-chart-o fa-fw"></i> 视图模型
+				<div class="panel-actions">
+					<a href="#" class="panel-action panel-action-toggle"
+						data-panel-toggle=""></a> <a href="#"
+						class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+				</div>
+			</div>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-lg-10  col-lg-offset-1">
+						<form role="form-horizontal" id="modelForm" method="post"
+							class="form-horizontal">
+							<div class="form-group">
+								<label>视图名称</label> <input name="viewName" class="form-control">
+								<p class="help-block">Example block-level help text here.</p>
+							</div>
+							<div class="form-group">
+								<label>视图描述</label> <input name="title" class="form-control"
+									placeholder="Enter text">
+							</div>
+							<div class="form-group">
+								<label>默认排序列名</label> <input name="OrderField"
+									class="form-control">
+								<p class="help-block">Example block-level help text here.</p>
+							</div>
+							<div class="form-group">
+								<label>默认排序方向</label> <select name="OrderDirection"
+									class="form-control">
+									<option value="asc">asc</option>
+									<option value="desc">desc</option>
+								</select>
+								<p class="help-block">Example block-level help text here.</p>
+							</div>
+							<div class="form-group">
+								<label>视图所需js文件路径</label> <input name="jsPath"
+									class="form-control" placeholder="Enter text">
+								<p class="form-control-static">email@example.com</p>
+							</div>
+							<div class="form-group">
+								<label>视图所需css文件路径</label> <input name="cssPath"
+									class="form-control" placeholder="Enter text">
+								<p class="form-control-static">email@example.com</p>
+							</div>
+							<div class="form-group">
+								<label>新增页面路径</label> <input name="addPath" class="form-control"
+									placeholder="Enter text">
+								<p class="form-control-static">email@example.com</p>
+							</div>
+							<div class="form-group">
+								<label>修改页面路径</label> <input name="updatePath"
+									class="form-control" placeholder="Enter text">
+								<p class="form-control-static">email@example.com</p>
+							</div>
+							<div class="form-group">
+								<label>是否可导出</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="export" value="1">允许导出</label>
+								</div>
+								<p class="form-control-static">email@example.com</p>
+							</div>
+							<div class="form-group">
+								<label>是否可查询</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="search" value="1">允许查询</label>
+								</div>
+								<p class="form-control-static">email@example.com</p>
+							</div>
+
+							<div class="form-group">
+								<label>是否可以编辑</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="edit" value="1">允许编辑</label>
+								</div>
+								<p class="form-control-static">email@example.com</p>
+							</div>
+							<div class="form-group">
+								<label>是否显示隐藏列功能呢</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="hide" value="1">允许显示隐藏列表按钮</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>是否显示刷新功能</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="refresh" value="1" />允许刷新按钮显示</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>是否显竖向展示数据功能</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="dataL" value="1">允许竖向展示数据功能</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>是否能够详细查询</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="detail" value="1">允许详细查询</label>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- /.row (nested) -->
+				</div>
+				<!-- /.panel-body -->
+
+
+			</div>
+			<!-- /.panel-body -->
+		</div>
+		<!-- /.panel -->
+	</div>
+</div>

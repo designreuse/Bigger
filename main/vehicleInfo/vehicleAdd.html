@@ -1,0 +1,263 @@
+<div class="row">
+	<div class="col-md-6">
+		<form id="vehicle" action="https://api.ttron.cn/bigger/vehicle"
+			class="form-horizontal" method="post">
+			<section class="panel">
+				<header class="panel-heading">
+					<div class="panel-actions">
+						<a href="#" class="panel-action panel-action-toggle"
+							data-panel-toggle></a> <a href="#"
+							class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+					</div>
+					<h2 class="panel-title">车辆信息</h2>
+					<p class="panel-subtitle">保存车辆属性，方便管理。</p>
+				</header>
+				<div class="panel-body">
+					<div class="validation-message">
+						<ul></ul>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">VIN <span
+							class="required">*</span></label>
+						<div class="col-sm-7">
+							<input type="text"   name="vin" class="form-control"
+								title="Plase enter a name." placeholder="eg.: John Doe" required  />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">所属分组</label>
+						<div class="col-sm-7">
+							<select name="domain_unid" class="form-control company"
+								>
+								<option></option>
+								</select>
+						</div>
+			        </div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">车牌号</label>
+						<div class="col-sm-7">
+							<input type="text" name="licence" title="Please enter a valid url."
+								class="form-control"
+								placeholder="eg.: https://github.com/johndoe" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">车辆编号 <span
+							class="required">*</span></label>
+						<div class="col-sm-7">
+							<input type="text" name="url" title="Please enter a valid url."
+								class="form-control"
+								placeholder="eg.: https://github.com/johndoe" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">生产编号 <span
+							class="required"></span></label>
+						<div class="col-sm-7">
+							<input type="text" name="fullname" class="form-control"
+								title="Plase enter a name." placeholder="eg.: John Doe"  />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">车辆类型<span
+							class="required"></span></label>
+						<div class="col-sm-7">
+							<select name="model_unid" class="form-control"
+								title="Plase enter a name." placeholder="eg.: John Doe"  >
+								<option></option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">车辆型号<span
+							class="required"></span></label>
+						<div class="col-sm-7">
+							<select name="model_unid" class="form-control"
+								title="Plase enter a name." placeholder="eg.: John Doe"  >
+								<option></option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">数据字典 <span
+							class="required">*</span></label>
+						<div class="col-sm-7">
+							<select name="fiber_unid" class="form-control"
+								title="Plase enter a name." placeholder="eg.: John Doe" required >
+								<option></option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<footer class="panel-footer">
+					<div class="row">
+						<div class="col-sm-7 col-sm-offset-4">
+							<button type="submit" class="btn btn-primary">保存车辆信息</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</form>
+	</div>
+	<div class="col-md-6">
+		<form id="device" action="https://api.ttron.cn/bigger/device" class="form-horizontal">
+			<section class="panel">
+				<header class="panel-heading">
+					<div class="panel-actions">
+						<a href="#" class="panel-action panel-action-toggle"
+							data-panel-toggle></a> <a href="#"
+							class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+					</div>
+					<h2 class="panel-title">终端信息</h2>
+					<p class="panel-subtitle">车辆和平台通信载体，系统必备信息。</p>
+				</header>
+				<div class="panel-body">
+					<div class="form-group">
+						<label class="col-sm-4 control-label">终端编号 <span
+							class="required">*</span></label>
+						<div class="col-sm-7">
+							<input type="text" name="divce_id" class="form-control"
+								placeholder="eg.: VIN0121" required />
+						</div>
+					</div>
+							<div class="form-group">
+				<label class="col-lg-4 control-label">SIM卡号</label>
+				<div class="col-lg-7">
+					<input type="text" class="form-control" name="cellphone" placeholder="eg.: 15888888888" />
+				</div>
+			</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">终端型号 <span
+							class="required">*</span></label>
+						<div class="col-sm-7">
+								<select name="model_unid" class="form-control"
+								title="Plase enter a name." placeholder="eg.: John Doe" required >
+								<option></option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">所属分组</label>
+						<div class="col-sm-7">
+							<select name="domain_unid" class="form-control company"
+								placeholder="eg.: https://github.com/johndoe"  >
+								<option></option>
+								</select>
+						</div>
+			</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">终端供应商 <span
+							class="required">*</span></label>
+						<div class="col-sm-7">
+							<select name="vendor_unid" class="form-control"
+								placeholder="eg.: https://github.com/johndoe"  >
+								<option></option>
+								</select>
+						</div>
+					</div>
+				</div>
+				<footer class="panel-footer">
+					<div class="row">
+						<div class="col-sm-7 col-sm-offset-4">
+							<button type="submit" class="btn btn-primary terminal">保存终端信息</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</form>
+	</div>
+	<div class="col-md-6" style="display:none;">
+		<form id="selects-form" action="forms-validation.html">
+			<section class="panel">
+				<header class="panel-heading">
+					<div class="panel-actions">
+						<a href="#" class="panel-action panel-action-toggle"
+							data-panel-toggle></a> <a href="#"
+							class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+					</div>
+
+					<h2 class="panel-title">批量导入</h2>
+					<p class="panel-subtitle">下载模板，按规定填写，上传可实现批量导入。</p>
+				</header>
+				<div class="panel-body">
+					<div class="form-group">
+						<label class="col-sm-4 control-label">Company</label>
+						<div class="col-sm-7">
+							<select id="company" class="form-control" required>
+								<option value="">Choose a Company</option>
+								<option value="apple">Apple</option>
+								<option value="google">Google</option>
+								<option value="microsoft">Microsoft</option>
+								<option value="yahoo">Yahoo</option>
+							</select> <label class="error" for="company"></label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">Browsers</label>
+						<div class="col-sm-7">
+							<select id="browsers" name="browsers"
+								title="Please select at least one browser" class="form-control"
+								size="5" multiple="multiple" required>
+								<option value="chrome">Chrome / Safari</option>
+								<option value="ff">Firefox</option>
+								<option value="ie">Internet Explorer</option>
+								<option value="opera">Opera</option>
+							</select> <label class="error" for="browsers"></label>
+						</div>
+					</div>
+				</div>
+				<footer class="panel-footer">
+					<div class="row">
+						<div class="col-sm-7 col-sm-offset-4">
+							<button class="btn btn-primary">Submit</button>
+					</div>
+				</footer>
+			</section>
+		</form>
+	</div>
+<!-- col-md-6 -->
+	<div class="col-md-6" style="display:none;">
+			<form id="defaultForm" method="post" class="form-horizontal"
+			action="https://api.ttron.cn/bigger/sim">
+			<section class="panel">
+				<header class="panel-heading">
+					<div class="panel-actions">
+						<a href="#" class="panel-action panel-action-toggle"
+							data-panel-toggle></a> <a href="#"
+							class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+					</div>
+
+					<h2 class="panel-title">SIM卡信息</h2>
+
+					<p class="panel-subtitle">系统保存和终端绑定的SIM信息，方便以后停复机或排查使用。</p>
+				</header>
+				<div class="panel-body">
+
+			<div class="form-group">
+				<label class="col-lg-4 control-label">SIM卡号</label>
+				<div class="col-lg-7">
+					<input type="text" class="form-control" name="cellphone" />
+				</div>
+			</div>
+			<div class="form-group">
+						<label class="col-sm-4 control-label">所属分组</label>
+						<div class="col-sm-7">
+							<select name="domain_unid" class="form-control company"
+								placeholder="eg.: https://github.com/johndoe"  >
+								<option></option>
+								</select>
+						</div>
+			</div>
+				</div>
+				<footer class="panel-footer">
+					<div class="row">
+						<div class="col-sm-7 col-sm-offset-4">
+							<button type="submit" class="btn btn-primary">保存SIM卡</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</form>
+	</div>
+</div>
+<!-- Vendor -->

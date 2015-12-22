@@ -1,0 +1,525 @@
+
+<!-- start: page -->
+<section class="content-with-menu mailbox">
+	<div class="content-with-menu-container" data-mailbox data-mailbox-view="folder">
+		<div class="inner-menu-toggle">
+			<a href="#" class="inner-menu-expand" data-open="inner-menu">
+				Show Menu <i class="fa fa-chevron-right"></i>
+			</a>
+		</div>
+
+		<menu id="content-menu" class="inner-menu" role="menu">
+			<div class="nano">
+				<div class="nano-content">
+
+					<div class="inner-menu-toggle-inside">
+						<a href="#" class="inner-menu-collapse"> <i
+							class="fa fa-chevron-up visible-xs-inline"></i><i
+							class="fa fa-chevron-left hidden-xs-inline"></i> Hide Menu
+						</a> <a href="#" class="inner-menu-expand" data-open="inner-menu">
+							Show Menu <i class="fa fa-chevron-down"></i>
+						</a>
+					</div>
+
+					<div class="inner-menu-content">
+
+						<div class="sidebar-widget m-none">
+							<div class="widget-header">
+								<h6 class="title">频次图</h6>
+								<span class="widget-toggle">+</span>
+							</div>
+							<div class="widget-content">
+								<ul class="list-unstyled mailbox-bullets">
+									<li><a href="#" class="menu-item">Dribbble <span
+											class="ball pink"></span></a></li>
+									<li><a href="#" class="menu-item">Envato <span
+											class="ball green"></span></a></li>
+									<li><a href="#" class="menu-item">Facebook <span
+											class="ball blue"></span></a></li>
+								</ul>
+							</div>
+						</div>
+
+						<hr class="separator" />
+
+						<div class="sidebar-widget m-none">
+							<div class="widget-header">
+								<h6 class="title">时序图</h6>
+								<span class="widget-toggle">+</span>
+							</div>
+							<div class="widget-content">
+								<ul class="list-unstyled mailbox-bullets">
+									<li><a href="#" class="menu-item">Amy Doe <span
+											class="ball green"></span></a></li>
+									<li><a href="#" class="menu-item">Joey Doe <span
+											class="ball green"></span></a></li>
+									<li><a href="#" class="menu-item">Robert Doe <span
+											class="ball orange"></span></a></li>
+									<li><a href="#" class="menu-item">John Doe <span
+											class="ball red"></span></a></li>
+									<li><a href="#" class="menu-item">Uncle Doe <span
+											class="ball red"></span></a></li>
+									<li class="text-center mt-sm"><em><a href="#">show
+												offline</a></em></li>
+								</ul>
+							</div>
+						</div>
+
+						<hr class="separator" />
+						<div class="sidebar-widget m-none">
+							<div class="widget-header">
+								<h6 class="title">散点图</h6>
+								<span class="widget-toggle">+</span>
+							</div>
+							<div class="widget-content">
+								<ul class="list-unstyled mailbox-bullets">
+									<li><a href="#" class="menu-item">Dribbble <span
+											class="ball pink"></span></a></li>
+									<li><a href="#" class="menu-item">Envato <span
+											class="ball green"></span></a></li>
+									<li><a href="#" class="menu-item">Facebook <span
+											class="ball blue"></span></a></li>
+								</ul>
+							</div>
+						</div>
+							<hr class="separator" />
+						<div class="sidebar-widget m-none">
+							<div class="widget-header">
+								<h6 class="title">累计图</h6>
+								<span class="widget-toggle">+</span>
+							</div>
+							<div class="widget-content">
+								<ul class="list-unstyled mailbox-bullets">
+									<li><a href="#" class="menu-item">Dribbble <span
+											class="ball pink"></span></a></li>
+									<li><a href="#" class="menu-item">Envato <span
+											class="ball green"></span></a></li>
+									<li><a href="#" class="menu-item">Facebook <span
+											class="ball blue"></span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</menu>
+		<div class="inner-body ">
+			<div class="row">
+				<div class="col-md-12">
+					<section class="panel panel-default">
+						<header class="panel-heading">
+							<div class="panel-actions"
+								<a href="#" class="panel-action panel-action-toggle"
+							data-panel-toggle=""></a>
+								<a href="#"
+							class="panel-action panel-action-dismiss" data-panel-dismiss=""></a></div>
+							<span id="panelTitle">车辆列表</span>
+						</header>
+						<div class="panel-body" id="panelBody" data-loading-overlay
+							data-loading-overlay-options='{ "startShowing": true }'
+							style="min-height: 400px;">
+							<table id="tableserver"></table>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8" id="">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-fw"></i> 图表数值定义
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body dynamic">
+							<div class="tabs" id="chartType">
+								<ul class="nav nav-tabs">
+									<li class="active"><a aria-expanded="true" href="#popular"
+										data-toggle="tab"><i class="fa fa-star"></i> 频次图</a></li>
+									<li><a aria-expanded="false" href="#recent"
+										data-toggle="tab">时序图</a></li>
+									<li><a aria-expanded="false" href="#recent1"
+										data-toggle="tab">散点图</a></li>
+									<li><a aria-expanded="false" href="#popular1"
+										data-toggle="tab">累计图</a></li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane active" id="popular">
+										<div id="popularY" class="form-group">
+											<label>数据分析源(Y)</label>
+
+										</div>
+										<div class="form-group">
+											<label>数据分析源(X)</label>
+											<div class="tabs  tabs-primary">
+												<ul class="nav nav-tabs nav-right">
+													<li class="active"><a href="#popular11"
+														data-toggle="tab"><i class="fa fa-star"></i>值区域</a></li>
+													<li><a href="#recent11" data-toggle="tab">日期区域</a></li>
+												</ul>
+												<div class="tab-content">
+													<div class="tab-pane active" id="popular11">
+														<section class="panel" id="pinciValue">
+															<div class="panel-body ">
+																<div class="form-group">
+																	<label>最小值</label> <input name="min"
+																		class="form-control">
+																	<p class="help-block">Example block-level help text
+																		here.</p>
+																</div>
+																<div class="form-group">
+																	<label>最大值</label> <input name="max"
+																		class="form-control">
+																	<p class="help-block">Example block-level help text
+																		here.</p>
+																</div>
+																<div class="form-group">
+																	<label>间隔值</label> <input name="split"
+																		class="form-control">
+																	<p class="help-block">Example block-level help text
+																		here.</p>
+																</div>
+
+															</div>
+														</section>
+													</div>
+													<div class="tab-pane" id="recent11">
+														<section class="panel" id="pinciValue">
+															<div class="form-group">
+																<div class="radio-custom radio-primary">
+																	<input name="pinci_time" type="radio" value="hour"
+																		required /> <label for="awesome">小时</label>
+																</div>
+																<div class="radio-custom radio-primary">
+																	<input name="pinci_time" type="radio" value="week" />
+																	<label for="very-awesome">星期</label>
+																</div>
+																<div class="radio-custom radio-primary">
+																	<input name="pinci_time" type="radio" value="week1" />
+																	<label for="ultra-awesome">周 </label>
+																</div>
+																<div class="radio-custom radio-primary">
+																	<input name="pinci_time" type="radio" value="month" />
+																	<label for="ultra-awesome">月份 </label>
+																</div>
+																<label class="error" for="porto_is"></label>
+															</div>
+														</section>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="recent">
+										<div id="recentY" class="form-group">
+											<label>数据分析源(Y)</label>
+
+										</div>
+										<div id="recentX" class="form-group">
+											<label>数据分析源(X)</label>
+
+										</div>
+
+									</div>
+									<div class="tab-pane" id="recent1">
+										<div id="recent1Y" class="form-group">
+											<label>数据分析源(Y)</label>
+
+										</div>
+										<div id="recent1X" class="form-group">
+											<label>数据分析源(X)</label>
+
+										</div>
+									</div>
+									<div class="tab-pane" id="popular1">
+										<div id="popularY" class="form-group">
+											<label>数据分析源(Y)</label>
+
+										</div>
+										<div class="form-group">
+											<label>数据分析源(X)</label>
+											<div class="tabs  tabs-primary">
+												<ul class="nav nav-tabs nav-right">
+													<li class="active"><a href="#popular21"
+														data-toggle="tab"><i class="fa fa-star"></i>值区域</a></li>
+													<li><a href="#recent21" data-toggle="tab">日期区域</a></li>
+												</ul>
+												<div class="tab-content">
+													<div class="tab-pane active" id="popular21">
+														<section class="panel" id="pinciValue">
+															<div class="panel-body ">
+																<div class="form-group">
+																	<label>最小值</label> <input name="min"
+																		class="form-control">
+																	<p class="help-block">Example block-level help text
+																		here.</p>
+																</div>
+																<div class="form-group">
+																	<label>最大值</label> <input name="max"
+																		class="form-control">
+																	<p class="help-block">Example block-level help text
+																		here.</p>
+																</div>
+																<div class="form-group">
+																	<label>间隔值</label> <input name="split"
+																		class="form-control">
+																	<p class="help-block">Example block-level help text
+																		here.</p>
+																</div>
+
+															</div>
+														</section>
+													</div>
+													<div class="tab-pane" id="recent21">
+														<section class="panel" id="pinciValue">
+															<div class="form-group">
+																<div class="radio-custom radio-primary">
+																	<input name="pinci_time" type="radio" value="hour"
+																		required /> <label for="awesome">小时</label>
+																</div>
+																<div class="radio-custom radio-primary">
+																	<input name="pinci_time" type="radio" value="week" />
+																	<label for="very-awesome">星期</label>
+																</div>
+																<div class="radio-custom radio-primary">
+																	<input name="pinci_time" type="radio" value="week1" />
+																	<label for="ultra-awesome">周 </label>
+																</div>
+																<div class="radio-custom radio-primary">
+																	<input name="pinci_time" type="radio" value="month" />
+																	<label for="ultra-awesome">月份 </label>
+																</div>
+																<label class="error" for="porto_is"></label>
+															</div>
+														</section>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+
+
+
+
+
+
+
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-fw"></i> 报表管理
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body dynamic">
+							<div class="form-group">
+								<label>报表唯一编码</label>
+								<p id="viewid" class="help-block">报表唯一编码生成后会放在此处</p>
+
+							</div>
+
+							<a id="saveView" href="javascript:void(0)"
+								class="btn btn-primary confirmation-callback">报表编辑保存</a> <a
+								id="updateView" href="javascript:void(0)"
+								class="btn btn-primary confirmation-callback">报表修改保存</a> <a
+								id="deleteView" href="javascript:void(0)"
+								class="btn btn-primary confirmation-callback">报表删除</a> <a
+								id="createView" href="javascript:void(0)"
+								class="btn btn-primary confirmation-callback">报表预览</a>
+
+
+
+						</div>
+						<!-- /.panel-body -->
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-fw"></i> 图表预览
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body dynamic">
+							<div id="dynamicmain" style="height: 400px;"></div>
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+
+
+				</div>
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-fw"></i>图表属性定义
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body dynamic">
+
+							<div class="form-group">
+								<label>报表名称</label> <input name="reportName"
+									class="form-control">
+								<p class="help-block">Example block-level help text here.</p>
+							</div>
+							<div class="form-group">
+								<label>报表描述</label> <input name="title" class="form-control"
+									placeholder="Enter text">
+							</div>
+							<div class="form-group">
+								<label>报表工具栏</label> <input name="OrderField"
+									class="form-control">
+								<p class="help-block">Example block-level help text here.</p>
+							</div>
+							<div class="form-group">
+								<label>报表Title</label> <select name="OrderDirection"
+									class="form-control">
+									<option value="asc">asc</option>
+									<option value="desc">desc</option>
+								</select>
+								<p class="help-block">Example block-level help text here.</p>
+							</div>
+							<div class="form-group">
+								<label>报表页边距</label> <input name="jsPath" class="form-control"
+									placeholder="Enter text">
+								<p class="form-control-static">email@example.com</p>
+							</div>
+
+
+						</div>
+						<!-- /.panel-body -->
+
+
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-fw"></i> 页边距Grid
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body dynamic">
+
+							<div class="form-group">
+								<label>X1</label> <input name="viewName" class="form-control">
+								<p class="help-block">Example block-level help text here.</p>
+							</div>
+							<div class="form-group">
+								<label>Y1</label> <input name="title" class="form-control"
+									placeholder="Enter text">
+							</div>
+							<div class="form-group">
+								<label>X2</label> <input name="viewName" class="form-control">
+								<p class="help-block">Example block-level help text here.</p>
+							</div>
+							<div class="form-group">
+								<label>Y2</label> <input name="title" class="form-control"
+									placeholder="Enter text">
+							</div>
+
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-fw"></i>Title
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body dynamic"></div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-fw"></i>toolbox
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body dynamic"></div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-fw"></i>tooltip
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body dynamic"></div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-fw"></i>legend
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body dynamic"></div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+<!-- end: page -->
+<aside id="sidebar-right" class="sidebar-right">
+	<div class="nano">
+		<div class="nano-content">
+			<a href="#" class="mobile-close visible-xs"> Collapse <i
+				class="fa fa-chevron-right"></i>
+			</a>
+
+			<div class="sidebar-right-wrapper">
+
+				<div class="sidebar-widget widget-calendar">
+					<h6>Upcoming Tasks</h6>
+					<div data-plugin-datepicker data-plugin-skin="dark"></div>
+
+					<ul>
+						<li><time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
+							<span>Company Meeting</span></li>
+					</ul>
+				</div>
+
+				<div class="sidebar-widget widget-friends">
+					<h6>Friends</h6>
+					<ul>
+						<li class="status-online"><figure class="profile-picture">
+							<img src="resources-clear/images/!sample-user.jpg"
+								alt="Joseph Doe" class="img-circle"> </figure>
+							<div class="profile-info">
+								<span class="name">Joseph Doe Junior</span> <span class="title">Hey,
+									how are you?</span>
+							</div></li>
+						<li class="status-online"><figure class="profile-picture">
+							<img src="resources-clear/images/!sample-user.jpg"
+								alt="Joseph Doe" class="img-circle"> </figure>
+							<div class="profile-info">
+								<span class="name">Joseph Doe Junior</span> <span class="title">Hey,
+									how are you?</span>
+							</div></li>
+						<li class="status-offline"><figure class="profile-picture">
+							<img src="resources-clear/images/!sample-user.jpg"
+								alt="Joseph Doe" class="img-circle"> </figure>
+							<div class="profile-info">
+								<span class="name">Joseph Doe Junior</span> <span class="title">Hey,
+									how are you?</span>
+							</div></li>
+						<li class="status-offline"><figure class="profile-picture">
+							<img src="resources-clear/images/!sample-user.jpg"
+								alt="Joseph Doe" class="img-circle"> </figure>
+							<div class="profile-info">
+								<span class="name">Joseph Doe Junior</span> <span class="title">Hey,
+									how are you?</span>
+							</div></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	</aside>

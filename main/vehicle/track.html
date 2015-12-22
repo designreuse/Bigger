@@ -1,0 +1,104 @@
+
+<div class="row">
+	<div class="col-md-7" id="trackMap">
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="el el-map-marker"></i> 位置轨迹
+			</div>
+			<!-- /.panel-heading -->
+			<div class="panel-body" id="mapPanel">
+
+				<div id="toolbar" style="padding-bottom:40px;">
+					<div class="form-inline" role="form">
+						<div class="form-group date col-md-5  ">
+							<label class="control-label">开始时间: </label> <input type="text" class="form-control"
+								id="datetimeStart" />
+						</div>
+						<div class="form-group date col-md-5">
+							<label class="control-label">结束时间: </label> <input type="text" class="form-control"
+								id="datetimeEnd" value="" />
+						</div>
+					    <div class="form-group col-md-2">
+							<button id="search" type="submit"
+								class=" btn btn-primary btn-block mb-lg" style="height:29px;padding:0;">查询</button>
+						</div>
+					</div>
+				</div>
+				<div class="mapContainer">
+					<div id="mapAddress"></div>
+				</div>
+				<div class="well" style="">
+					<div style="float: left;">
+						<button id="tet" type="button" class="back well-icon">
+							<i class="fa fa-backward"></i>
+						</button>
+						<button id="start" class="start well-icon">
+							<i id="startTitle" class="fa fa-play"></i>
+							<span class="badge">1</span>
+						</button>
+
+						<button type="button" class="well-icon" value="快进" style="margin-right: 20px;"
+							id="jin" title="快进" class="go">
+							<i class="fa fa-forward"></i>
+						</button>
+					</div>
+					<div style="margin-left: 200px; vertical-align: middle;">
+						<div id="sliderb" class="row-fluid">
+							<div class="span12 huProgressBar">
+								<input id="ex1" data-slider-id='ex1Slider' type="text"
+									data-slider-min="0" data-slider-max="20" data-slider-step="1"
+									data-slider-value="0" />
+								<!--<div class="huProgressBar2">
+					<span>00:00:00</span>
+					</div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- /.panel-body -->
+		</div>
+		<!-- /.panel -->
+	</div>
+	<div class="col-md-5" id="trackGauge">
+
+		<div class="row-fluid">
+			<div class="span12" id="">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 动态数据
+						<select name="dataSelect" class="form-control"
+								multiple="multiple"  >
+
+						</select>
+					</div>
+					<!-- /.panel-heading -->
+					<div class="panel-body dynamic" id="dynamicData">
+
+					</div>
+					<!-- /.panel-body -->
+				</div>
+				<!-- /.panel -->
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" id="">
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<i class="fa fa-calendar"></i> 关注数据
+					</div>
+					<!-- /.panel-heading -->
+					<div class="panel-body dynamic">
+					    <div id="dynamicmain" style="height:200px; "></div>
+					</div>
+					<!-- /.panel-body -->
+				</div>
+				<!-- /.panel -->
+			</div>
+		</div>
+	</div>
+</div>

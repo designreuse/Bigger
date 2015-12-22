@@ -1,0 +1,112 @@
+
+<div class="col-md-12">
+	<form id="menu" action="https://api.ttron.cn/bigger/device"
+		class="form-horizontal">
+		<section class="panel">
+			<header class="panel-heading">
+				<div class="panel-actions">
+					<a href="#" class="panel-action panel-action-toggle"
+						data-panel-toggle></a> <a href="#"
+						class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+				</div>
+				<h2 class="panel-title">菜单信息</h2>
+				<p class="panel-subtitle">菜单</p>
+			</header>
+			<div class="panel-body">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="col-sm-4 control-label">菜单名称<span
+							class="required">*</span></label>
+						<div class="col-sm-7">
+							<input type="text" name="name" class="form-control"
+								placeholder="eg.: John Doe" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">菜单顺序 <span
+							class="required">*</span></label>
+						<div class="col-sm-7">
+
+							<input type="text" name="inx" class="form-control"
+								placeholder="eg.: John Doe" required />
+
+						</div>
+
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">所属分组</label>
+						<div class="col-sm-7">
+							<select name="domain_unid" class="form-control company"
+								placeholder="eg.: https://github.com/johndoe">
+								<option></option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-4 control-label">菜单图标 <span
+							class="required">*</span></label>
+						<div class="col-sm-7">
+							<input type="text" name="icon_uri" class="form-control"
+								placeholder="eg.: John Doe" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">菜单路径 <span
+							class="required">*</span></label>
+						<div class="col-sm-7">
+							<input type="text" name="redirect_uri" class="form-control"
+								placeholder="eg.: John Doe" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">菜单类型</label>
+						<div class="col-sm-7">
+							<select name="menu_type" class="form-control populate">
+						    </select>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6" id="menutree">
+					<h5 class="text-weight-semibold text-dark text-uppercase" onClick="clearSelected();">父菜单</h5>
+					<div id="treeAjaxHTML"></div>
+					<input type="text" id="super_unid" name="super_unid" style="display: none"></input>
+				</div>
+			</div>
+			<footer class="panel-footer">
+				<div class="row">
+					<div class="col-sm-7 col-sm-offset-4">
+						<button type="submit" class="btn btn-primary">保存菜单信息</button>
+					</div>
+				</div>
+			</footer>
+		</section>
+
+	</form>
+</div>
+<div class="col-md-12">
+	<form id="buttons-menu" action="">
+		<section class="panel panel-default">
+			<header class="panel-heading">
+				<div class="panel-actions"
+					<a href="#" class="panel-action panel-action-toggle"
+				data-panel-toggle=""></a>
+					<a href="#"
+				class="panel-action panel-action-dismiss" data-panel-dismiss=""></a></div>
+				<h2 class="panel-title">菜单按钮信息</h2>
+				<p class="panel-subtitle">菜单</p>
+			</header>
+			<div class="panel-body" id="buttons" data-loading-overlay
+				data-loading-overlay-options='{ "startShowing": true }'
+				style="min-height: 200px;"></div>
+			<footer class="panel-footer">
+				<div class="row">
+					<div class="col-sm-7 col-sm-offset-4">
+						<button type="submit" class="btn btn-primary">保存菜单信息</button>
+					</div>
+				</div>
+			</footer>
+		</section>
+	</form>
+</div>

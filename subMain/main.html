@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html class="fixed sidebar-left-collapsed">
+<head>
+<base href="../">
+<meta charset="UTF-8">
+<title>GIMIS</title>
+<meta name="keywords" content="HTML5 Admin Template" />
+<meta name="description" content="GIMIS Responsive HTML5 Template">
+<meta name="fenghai" content="feng_hai@aliyun.com">
+<!-- Mobile Metas -->
+<meta name="viewport"	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href='css/font-awesome/css/font-awesome.min.css' />
+<link rel="stylesheet" href='jsplugin/bootstrap/css/bootstrap.min.css' />
+<link rel="stylesheet" href="jsplugin/pnotify/pnotify.custom.css" />
+<!-- Theme CSS -->
+<link rel="stylesheet" href='css/custom/theme.css' />
+<!-- Skin CSS -->
+<link rel="stylesheet" href='css/skins/default.css' />
+<link rel="stylesheet" href='jsplugin/bootstrap-table-master/dist/bootstrap-table.min.css' />
+<!-- Theme Custom CSS -->
+<link rel="stylesheet" href='css/custom/theme-custom-sub.css'>
+<link rel="stylesheet" href='jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css'>
+<link rel="stylesheet" href='jsplugin/slider/bootstrap-slider.css'>
+<link rel="stylesheet" href="jsplugin/bootstrap-multiselect/bootstrap-multiselect.css">
+<link rel="stylesheet" href="jsplugin/pnotify/pnotify.custom.css" />
+<style>
+html.fixed .page-header, html.fixed .sidebar-left {
+	top: 0px;
+}
+
+html.fixed .inner-wrapper {
+	padding-top: 0px;
+}
+
+html,body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+#mapAddress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+/*
+地图
+*/
+.markerActive
+{
+  background-image: url(css/images/active.png);
+  background-repeat: no-repeat;
+  height:30px;
+  width:24px;
+  background-size: contain;
+  padding: 4px 4px 4px 5px;
+}
+</style>
+<link rel="stylesheet" href='css/custom/track.css'>
+<!-- Head Libs -->
+<script src="jsplugin/modernizr/modernizr.js"></script>
+</head>
+<body>
+	<section class="body">
+
+	<div class="inner-wrapper">
+		<div include="main/menu/menu.html" type="menu"></div>
+		<section role="main" class="content-body">
+		<div id="mainBody">
+			<!-- start: page -->
+					<div include="main/vehicle/cluster.html" type="body"></div>
+			<!-- end: page -->
+		</div>
+		</section>
+	</div>
+	<!-- Vendor -->
+	<script type='text/javascript'src="js/jquery-2.1.4.min.js"></script>
+	<script type='text/javascript' src="js/Common.js"></script>
+  <script type="text/javascript" src="js/custom_menu.js"></script>
+  <script type="text/javascript" src="jsplugin/jquery-cookie/jquery-cookie.js">
+	<script type="text/javascript" src="jsplugin/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+	<script type="text/javascript" src="jsplugin/bootstrap/js/bootstrap.min.js"></script>
+	<!-- 滚动条效果，可实现滚动显示效果 -->
+	<script type="text/javascript" src="jsplugin/nanoscroller/nanoscroller.js"></script>
+	<!-- 响应式灯箱效果-弹出层效果 -->
+	<script type="text/javascript" src="jsplugin/magnific-popup/jquery.magnific-popup.js"></script>
+	<!-- 实现文本框显示描述文字 -->
+	<script type="text/javascript" src="jsplugin/jquery-placeholder/jquery-placeholder.js"></script>
+	<!-- Theme Base, Components and Settings -->
+	<script type="text/javascript" src="js/theme.js"></script> <!-- Theme Custom -->
+	<script type="text/javascript" src="js/theme.custom.js"></script>
+	<!-- Theme Initialization Files -->
+	<script type="text/javascript" src="js/theme.init.js"></script>
+  <script type="text/javascript" src="js/loadCSS.js"></script>
+	<script type="text/javascript" src="jsplugin/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+	<script type="text/javascript">
+	vin=GetQueryString("vin");
+	</script>
+	<script type="text/javascript">
+	$("#mainBody").load("main/vehicle/vehicleInfo.html",function(){
+
+		 $.loadjs(["jsplugin/echart/echarts-all.js"
+							],function(){
+				$.loadjs([ "js/pages/vehicleSingleInfo.js",
+									 "js/pages/dynamicDataChart.js",
+									 "js/pages/gaugePage.js",
+									 "js/pages/chargePie.js"],function(){
+				 pageStart();
+				});
+	 });
+});
+		$(function() {
+			try {
+				var tempMenu = new menuJs({
+					menuType : "1"
+				});
+			} catch (e) {
+
+			} finally {
+
+			}
+
+			var tempArray=[
+			               'jsplugin/magnific-popup/magnific-popup.css' ,
+			               'css/elusive-icons/css/elusive-icons.min.css' ,
+			               'css/simple-line-icons/css/simple-line-icons.css',
+			               'jsplugin/jstree/themes/default/style.min.css',
+			               'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
+			               'jsplugin/select2/css/select2.min.css',
+			               'jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css',
+			               'jsplugin/pnotify/pnotify.custom.css',
+										 'jsplugin/bootstrap-multiselect/bootstrap-multiselect.css'
+			               ];
+			$.each(tempArray,function(i,field){
+				 loadCSS(field);
+			});
+		});
+
+
+	</script> </section>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<div class="row">
+		<div class="col-xs-12">
+								<section class="panel">
+									<header class="panel-heading">
+										<div class="panel-actions">
+											<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+											<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+										</div>
+										<span id="">数据字典管理</span>
+									</header>
+									<div class="panel-body" style="min-height: 420px;">
+										<form class="form-horizontal form-bordered" action="#">
+										<div  class="form-group">
+												<label class="col-md-3 control-label">数据字典名称</label>
+												<div class="col-md-6">
+
+
+												     <select  class=" dictionary form-control populate">
+
+												    </select>
+
+												</div>
+												<div class="col-md-3 decitonaryTree" style="padding-left: 0px;">
+	<div class="btn-group ">
+
+		<button id="createTree" class="btn btn-success btn-sm"
+			onclick="javascript:void(0);" type="button">
+			<i class="glyphicon glyphicon-asterisk"></i> 新增
+		</button>
+
+	</div>
+
+	<div id="createTreeBody" class="dropdown-menu notification-menu large">
+		<div class="notification-title">
+			<!-- <span class="pull-right label label-default">3</span> -->
+			新增节点
+		</div>
+
+		<div class="content">
+			<div class="form-group" style="margin-right:10px;margin-left:10px;">
+				<label class="control-label">名称 <span class="required">*</span></label>
+
+				<input type="text"  class="form-control name"
+					placeholder="eg.: Can01" required />
+
+			</div>
+     <div class="col-md-6">
+			<button class="pull-right btn btn-primary btn-block mb-lg "
+				onClick="cancel();" type="button">取消</button>
+				</div>
+				<div class="col-md-6">
+			<button  class=" save pull-right btn btn-primary btn-block mb-lg "
+				onClick="javascript:void(0);" type="button">保存</button>
+				</div>
+		</div>
+	</div>
+	<div id="updateTreeBody" class="dropdown-menu notification-menu large">
+		<div class="notification-title">
+			<!-- <span class="pull-right label label-default">3</span> -->
+			修改节点
+		</div>
+
+		<div class="content">
+			<div class="form-group" style="margin-right:10px;margin-left:10px;">
+				<label class="control-label">名称 <span class="required">*</span></label>
+
+				<input type="text" class="form-control name"
+					placeholder="eg.: Can01" required />
+
+			</div>
+
+			<!--
+			<div class="form-group">
+				<label class="control-label">节点类型 <span class="required">*</span></label>
+
+				<div class="radio-custom radio-primary">
+					<input name="porto_is" id="folderR" aria-required="true"
+						required="" type="radio" value="folder"> <label
+						for="awesome">文件夹</label>
+				</div>
+				<div class="radio-custom radio-primary">
+					<input name="porto_is" id="fileR" type="radio" value="file">
+					<label for="very-awesome">文件</label>
+				</div>
+
+
+
+			</div>-->
+
+<div class="col-md-6">
+<button class="pull-right btn btn-primary btn-block mb-lg "
+				onClick="cancel();" type="button">取消</button></div>
+<div class="col-md-6">
+<button class="pull-right btn btn-primary btn-block mb-lg save"
+				onClick="javascript:void(0);" type="button">保存</button></div>
+
+
+		</div>
+	</div>
+
+	<div class="btn-group decitonaryTree">
+
+		<button id="updateTree" class="btn btn-warning btn-sm"
+			onclick="javascript:void(0);" type="button">
+			<i class="glyphicon glyphicon-pencil"></i> 修改
+		</button>
+
+	</div>
+	<div class="btn-group decitonaryTree">
+		<button id="deleteTree" class="btn btn-danger btn-sm update " onclick="javascript:void(0);"
+			type="button">
+			<i class="glyphicon glyphicon-remove"></i> 删除
+		</button>
+	</div>
+	<button class="btn btn-danger btn-sm" style="display: none"
+		onclick="demo_selectAll();" type="button">
+		<i class="glyphicon glyphicon-remove"></i> Delete
+	</button>
+</div>
+											</div>
+											<div id="main" class="form-group">
+												<label class="col-md-3 control-label">主协议</label>
+												<div class="col-md-6">
+
+												     <select  class=" mainProtocol form-control ">
+												     <option value="" selected="selected"></option>
+												    </select>
+
+												</div>
+											</div>
+										</form>
+									</div>
+								</section>
+							</div>
+						</div>

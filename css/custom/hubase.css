@@ -1,0 +1,23 @@
+
+
+/*-----------login-------------*/
+.rowHu {
+	background: url("../images/login.jpg");
+	height: 450px;
+	margin-top: 40px;
+}
+
+.bottonHu {
+	background: #0088cc;
+	border-color: #0088cc;
+}
+
+.bottonHu:hover {
+	background: #009deb;
+	border-color: #009deb;
+}
+
+.rowHu .col-md-4
+{
+	padding-top:90px;
+}

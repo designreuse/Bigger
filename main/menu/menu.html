@@ -1,0 +1,260 @@
+<aside id="sidebar-left" class="sidebar-left">
+
+  <div class="sidebar-header">
+    <div class="sidebar-title">Navigation</div>
+    <div id="leftbar" class="sidebar-toggle hidden-xs"
+      data-toggle-class="sidebar-left-collapsed" data-target="html"
+      data-fire-event="sidebar-left-toggle">
+      <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+    </div>
+  </div>
+  <div class="nano">
+    <div class="nano-content">
+      <nav id="menu" class="nav-main" role="navigation">
+        <ul class="nav nav-main" id="mainMenu">
+          <li class="nav-parent"><a> <i class="fa fa-asterisk"
+              aria-hidden="true"></i> <span>数据管理页面</span>
+          </a>
+            <ul class="nav nav-children">
+              <li><a href="sim/simList"> SIM管理 </a></li>
+              <li><a href="terminal/terminalList"> 终端管理 </a></li>
+              <li><a href="user/track"> 车辆轨迹 </a></li>
+              <li><a href="datamodel/dataModelList"> 数据视图 </a></li>
+              <li><a href="menu/menuList"> 菜单管理 </a></li>
+              <li><a href="button/buttonList"> 按钮管理 </a></li>
+              <li><a href="data/aliasList"> 标准别名 </a></li>
+              <li><a href="role/roleList"> 功能角色 </a></li>
+            </ul></li>
+          <!-- 	<li>
+                    <a href="user/default">
+                      <i class="fa fa-home" aria-hidden="true"></i>
+                      <span>首页</span>
+                    </a>
+                  </li>
+                  <li class="nav-parent">
+                    <a>
+                      <i class="fa fa-asterisk" aria-hidden="true"></i>
+                      <span>数据管理页面</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="sim/simList">
+                            SIM管理
+                        </a>
+                      </li>
+                        <li>
+                        <a href="terminal/terminalList">
+                                 终端管理
+                        </a>
+                      </li>
+                      <li>
+                        <a href="user/track">
+                          车辆轨迹
+                        </a>
+                      </li>
+                        <li>
+                        <a href="datamodel/dataModelList">
+                          数据视图
+                        </a>
+                      </li>
+                        <li>
+                        <a href="menu/menuList">
+                          菜单管理												</a>
+                      </li>
+                        <li>
+                        <a href="button/buttonList">
+                          按钮管理												</a>
+                      </li>
+                      <li>
+                        <a href="data/aliasList">
+                          标准别名												</a>
+                      </li>
+                    </ul>
+                  </li>
+                <li class="nav-parent">
+                    <a>
+                      <i class="fa fa-copy" aria-hidden="true"></i>
+                      <span>DemoPages</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="datetime">
+                           日期
+                        </a>
+                      </li>
+
+                    </ul>
+                  </li>
+                  <li class="nav-parent">
+                    <a>
+                      <i class="fa fa-map" aria-hidden="true"></i>
+                      <span>车辆监控</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="vehicle/cluster">
+                           车辆总览
+                        </a>
+                      </li>
+                      <li>
+                        <a href="vehicle/vehicleList">
+                           车辆状态
+                        </a>
+                      </li>
+
+                    </ul>
+                  </li>
+                  <li class="nav-parent">
+                    <a>
+                      <i class="el el-bell" aria-hidden="true"></i>
+                      <span>故障报警</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="vehicle/alarmInfo">
+                           故障信息
+                        </a>
+                      </li>
+                      <li>
+                        <a href="vehicle/alarmCode">
+                           故障代码管理
+                        </a>
+                      </li>
+                      <li>
+                        <a href="vehicle/alarmMessage">
+                           故障知识库
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                    <li class="nav-parent">
+                    <a>
+                      <i class="el el-car" aria-hidden="true"></i>
+                      <span>设备管理</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="device/deviceList">
+                           设备信息
+                        </a>
+                      </li>
+                      <li>
+                        <a href="vehicle/telecontrol">
+                           远程控制
+                        </a>
+                      </li>
+                      <li>
+                        <a href="data/dataProtocol">
+                          数据协议
+                        </a>
+                      </li>
+                        <li>
+                        <a href="data/dictionary">
+                          数据字典
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                    <li class="nav-parent">
+                    <a>
+                      <i class="el el-cogs" aria-hidden="true"></i>
+                      <span>类型管理</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="vehicle/vehicleTypeList">
+                           车辆类型
+                        </a>
+                      </li>
+                        <li>
+                        <a href="vehicle/modelList">
+                           车辆型号
+                        </a>
+                      </li>
+                      <li>
+                        <a href="supplierVendor/supplierVendorList">
+                           供应商管理
+                        </a>
+                      </li>
+
+                    </ul>
+                  </li>
+                    <li class="nav-parent">
+                    <a>
+                      <i class="el el-group" aria-hidden="true"></i>
+                      <span>账户管理</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="user/userList">
+                           用户管理
+                        </a>
+                      </li>
+                      <li>
+                        <a href="role/roleList">
+                          功能角色
+                        </a>
+                      </li>
+                      <li>
+                        <a href="company/companyList">
+                          机构分组
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-parent">
+                    <a>
+                      <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                      <span>报表管理</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a href="report/reportSet">
+                           数据图表
+                        </a>
+                      </li>
+                        <li>
+                        <a href="report/secondReportSet">
+                           报表设置
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+               <li class="nav-parent">
+                    <a>
+                      <i class="fa fa-align-left" aria-hidden="true"></i>
+                      <span>Menu Levels</span>
+                    </a>
+                    <ul class="nav nav-children">
+                      <li>
+                        <a>First Level</a>
+                      </li>
+                      <li class="nav-parent">
+                        <a>Second Level</a>
+                        <ul class="nav nav-children">
+                          <li class="nav-parent">
+                            <a>Third Level</a>
+                            <ul class="nav nav-children">
+                              <li>
+                                <a>Third Level Link #1</a>
+                              </li>
+                              <li>
+                                <a>Third Level Link #2</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a>Second Level Link #1</a>
+                          </li>
+                          <li>
+                            <a>Second Level Link #2</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>-->
+        </ul>
+      </nav>
+    </div>
+  </div>
+</aside>

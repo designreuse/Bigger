@@ -1,0 +1,144 @@
+
+<!-- start: page -->
+<section class="content-with-menu mailbox">
+	<div class="content-with-menu-container" data-mailbox
+		data-mailbox-view="folder">
+		<div class="inner-menu-toggle">
+			<a href="#" class="inner-menu-expand" data-open="inner-menu">
+				Show Menu <i class="fa fa-chevron-right"></i>
+			</a>
+		</div>
+		<menu id="content-menu" class="inner-menu" role="menu">
+			<div class="nano">
+				<div class="nano-content">
+					<div class="inner-menu-toggle-inside">
+						<a href="#" class="inner-menu-collapse"> <i
+							class="fa fa-chevron-up visible-xs-inline"></i><i
+							class="fa fa-chevron-left hidden-xs-inline"></i> Hide Menu
+						</a> <a href="#" class="inner-menu-expand" data-open="inner-menu">
+							Show Menu <i class="fa fa-chevron-down"></i>
+						</a>
+					</div>
+					<div class="inner-menu-content" id="reportMenu">
+						<div class="sidebar-widget m-none">
+							<div class="widget-header">
+								<h6 class="title">频次图</h6>
+								<span class="widget-toggle">+</span>
+							</div>
+							<div class="widget-content">
+								<ul class="list-unstyled mailbox-bullets" id="pinci">
+								</ul>
+							</div>
+						</div>
+						<hr class="separator" />
+						<div class="sidebar-widget m-none">
+							<div class="widget-header">
+								<h6 class="title">时序图</h6>
+								<span class="widget-toggle">+</span>
+							</div>
+							<div class="widget-content">
+								<ul class="list-unstyled mailbox-bullets" id="shixu">
+								</ul>
+							</div>
+						</div>
+						<hr class="separator" />
+						<div class="sidebar-widget m-none">
+							<div class="widget-header">
+								<h6 class="title">散点图</h6>
+								<span class="widget-toggle">+</span>
+							</div>
+							<div class="widget-content">
+								<ul class="list-unstyled mailbox-bullets" id="sandian">
+								</ul>
+							</div>
+						</div>
+						<hr class="separator" />
+						<div class="sidebar-widget m-none">
+							<div class="widget-header">
+								<h6 class="title">累计图</h6>
+								<span class="widget-toggle">+</span>
+							</div>
+							<div class="widget-content">
+								<ul class="list-unstyled mailbox-bullets" id="leiji">
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</menu>
+		<div class="inner-body ">
+			<div class="row">
+				<div class="col-md-12" id="">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-fw"></i> 图表预览
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body dynamic">
+							<div id="dynamicmain" style="height: 400px;"></div>
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end: page -->
+<aside id="sidebar-right" class="sidebar-right">
+	<div class="nano">
+		<div class="nano-content">
+			<a href="#" class="mobile-close visible-xs"> Collapse <i
+				class="fa fa-chevron-right"></i>
+			</a>
+			<div class="sidebar-right-wrapper">
+				<div class="sidebar-widget select">
+					<div class="form-group date">
+						<div class="row">
+							<label class="col-xs-12 control-label" for="longitude">开始时间</label>
+							<div class="col-xs-12">
+								<input id="datetimeStart" name="longitude" class="form-control"
+									data-builder-field="latlng" type="text">
+							</div>
+						</div>
+					</div>
+					<div class="form-group date">
+						<div class="row">
+							<label class="col-xs-12 control-label" for="longitude">结束时间</label>
+							<div class="col-xs-12">
+								<input id="datetimeEnd" name="longitude" class="form-control"
+									data-builder-field="latlng" type="text">
+							</div>
+						</div>
+					</div>
+						<div class="form-group">
+						<div class="row">
+							<label class="col-xs-12 control-label" for="longitude">输入车辆信息</label>
+							<div class="col-xs-12">
+								<select id="vehicles" name="longitude" multiple="multiple" class="form-control populate""
+									type="text">  </select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<ul id="MarkersList"
+							class="list-markers list-unstyled mb-lg hidden">
+						</ul>
+						<div class="row">
+							<div class="col-sm-6">
+								<button class="btn btn-primary btn-block mb-lg" type="button"
+									data-toggle="modal" id="Search">搜索</button>
+							</div>
+							<div class="col-sm-6">
+								<button id="MarkerRemoveAll"
+									class="btn btn-danger btn-block mb-lg" type="button">重置</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</aside>

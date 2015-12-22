@@ -1,0 +1,45 @@
+{
+
+  "grid_column": [
+    {
+	    "field" :"id",
+		"title" : "code",
+		"align" : "center",
+		"visible" : true,
+		"valign" : "bottom",
+	    "sortable" : true,
+	    "formatter" : "operateFormatter",
+	    "events" : "operateEvents"
+    },
+     {
+       "field" :"name",
+		"title" : "名称",
+		"align" : "center",
+		"visible" : true,
+		"valign" : "bottom",
+	    "sortable" : true,
+	    "formatter" : "operateFormatter",
+	    "events" : "operateEvents"
+    },
+     {
+      "field" :"age",
+		"title" : "年龄",
+		"align" : "center",
+		"visible" : true,
+		"valign" : "bottom",
+	    "sortable" : true,
+	    "formatter" : "operateFormatter",
+	    "events" : "operateEvents"  
+    },
+     {
+      "field" :"sort",
+		"title" : "排序",
+		"align" : "center",
+		"visible" : true,
+		"valign" : "bottom",
+	    "sortable" : true,
+	    "formatter" : "operateFormatter",
+	    "events" : "operateEvents"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+<div class="row">
+            <div class="col-md-3 ">
+              <section class="panel">
+                <div class="panel-body bg-primary">
+                  <div class="widget-summary">
+                    <div class="widget-summary-col widget-summary-col-icon">
+                      <div class="summary-icon">
+                        <i class="el el-car" ></i>
+                      </div>
+                    </div>
+                    <div class="widget-summary-col">
+                      <div class="summary">
+                        <h4 class="title">入网车辆总数</h4>
+                        <div class="info">
+                          <strong class="amount">—</strong>
+                        </div>
+                      </div>
+                      <div class="summary-footer">
+                        <a class="text-uppercase">(车辆管理)</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="col-md-3 ">
+              <section class="panel">
+                <div class="panel-body bg-secondary">
+                  <div class="widget-summary">
+                    <div class="widget-summary-col widget-summary-col-icon">
+                      <div class="summary-icon">
+                        <i class="el el-road"></i>
+                      </div>
+                    </div>
+                    <div class="widget-summary-col">
+                      <div class="summary">
+                        <h4 class="title">总里程数</h4>
+                        <div class="info">
+                          <strong class="amount">—</strong>
+                        </div>
+                      </div>
+                      <div class="summary-footer">
+                        <a class="text-uppercase">(详情)</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="col-md-3 ">
+              <section class="panel">
+                <div class="panel-body bg-tertiary">
+                  <div class="widget-summary">
+                    <div class="widget-summary-col widget-summary-col-icon">
+                      <div class="summary-icon">
+                        <i class="el el-time"></i>
+                      </div>
+                    </div>
+                    <div class="widget-summary-col">
+                      <div class="summary">
+                        <h4 class="title">工作小时数</h4>
+                        <div class="info">
+                          <strong class="amount">—</strong>
+                        </div>
+                      </div>
+                      <div class="summary-footer">
+                        <a class="text-uppercase">(明细)</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="col-md-3 ">
+              <section class="panel">
+                <div class="panel-body bg-quartenary">
+                  <div class="widget-summary">
+                    <div class="widget-summary-col widget-summary-col-icon">
+                      <div class="summary-icon">
+                        <i class="el el-warning-sign"></i>
+                      </div>
+                    </div>
+                    <div class="widget-summary-col">
+                      <div class="summary">
+                        <h4 class="title">故障车辆数</h4>
+                        <div class="info">
+                          <strong class="amount">—</strong>
+                        </div>
+                      </div>
+                      <div class="summary-footer">
+                        <a class="text-uppercase">(明细)</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+<div class="row">
+
+<div class="col-md-8">
+<div id="header-base" class="row-fluid">
+
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<i class="el el-map-marker"></i> 地图分布
+<div class="panel-actions">
+<a href="#" class="panel-action panel-action-toggle"
+data-panel-toggle=""></a> <a href="#"
+class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+</div>
+</div>
+<!-- /.panel-heading -->
+<div id="mapC" class="panel-body col-md-12" style=" min-height:400px;">
+<div id="mapContainer"  style="min-height:370px; width:100%"></div>
+</div>
+<!-- /.panel-body -->
+</div>
+<!-- /.panel -->
+
+</div>
+
+</div>
+<div class="col-md-4">
+
+<div class="panel panel-default">
+<div class="panel-heading">
+  <i class="el el-map-marker"></i> 全国分布
+  <div class="panel-actions">
+    <a href="#" class="panel-action panel-action-toggle"
+      data-panel-toggle=""></a> <a href="#"
+      class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+  </div>
+</div>
+<!-- /.panel-heading -->
+<div class="panel-body" style="min-height:400px;">
+ <div id="mainMap"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<section class="panel panel-default">
+<header class="panel-heading">
+<div class="panel-actions"
+  <a href="#" class="panel-action panel-action-toggle"
+    data-panel-toggle=""></a> <a href="#"
+    class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+</div>
+<span id="panelTitle">车辆列表</span>
+</header>
+<div  class="panel-body"  id="panelBody" data-loading-overlay data-loading-overlay-options='{ "startShowing": true }' style="min-height: 400px;" >
+<table id="tableserver"   ></table>
+</div>
+</section>
+</div>
+</div>

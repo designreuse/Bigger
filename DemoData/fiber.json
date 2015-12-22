@@ -1,0 +1,495 @@
+{
+  "type": "fiber",
+  "domain_unid": "852B63AA0EC74839B7229309AC01CC82",
+  "flag_del": false,
+  "name": "BIG-174",
+  "root_proto_unid": "50D75B75FCEE4A2FBA9350C7765CA18E",
+  "unid": "098E11E36A024692A257DB72306137FF",
+  "column_group": {
+    "columns": [
+      {
+        "alias": "",
+        "code": "ucxqf0z",
+        "title": "起始标识"
+      },
+      {
+        "alias": "",
+        "code": "xdqupq7",
+        "title": "消息ID"
+      },
+      {
+        "alias": "",
+        "code": "yasui6v",
+        "title": "分包标志"
+      },
+      {
+        "alias": "",
+        "code": "hgrge4n",
+        "title": "消息体长度"
+      },
+      {
+        "alias": "",
+        "code": "vfix8to",
+        "title": "终端手机号"
+      },
+      {
+        "alias": "",
+        "code": "jiq03v1",
+        "title": "消息流水号"
+      },
+      {
+        "alias": "",
+        "code": "fzd6tv2",
+        "title": "CAN个数"
+      },
+      {
+        "alias": "",
+        "code": "ix19h8f",
+        "title": "时间"
+      },
+      {
+        "code": "vm3baea",
+        "title": "CAN ID"
+      },
+      {
+        "code": "brigpvh",
+        "title": "CAN通道"
+      },
+      {
+        "code": "uwmc0ae",
+        "title": "CAN帧类型"
+      },
+      {
+        "code": "jsxvawl",
+        "title": "CAN数据采集方式"
+      },
+      {
+        "alias": "LAT",
+        "code": "vsz8ud4",
+        "title": "纬度"
+      },
+      {
+        "alias": "LON",
+        "code": "xnx9v5o",
+        "title": "经度"
+      },
+      {
+        "alias": "ALTI",
+        "code": "mxz8zx7",
+        "title": "海拔"
+      },
+      {
+        "alias": "SPEED",
+        "code": "rbl02dv",
+        "title": "速度"
+      },
+      {
+        "alias": "BEARING",
+        "code": "hm1flww",
+        "title": "方向"
+      },
+      {
+        "alias": "DATIME_GPS",
+        "code": "awpr2hr",
+        "title": "时间"
+      },
+      {
+        "alias": "",
+        "code": "qcxctis",
+        "title": "报警标志位-6"
+      },
+      {
+        "alias": "",
+        "code": "dvduyt1",
+        "title": "报警标志位-7"
+      },
+      {
+        "alias": "",
+        "code": "qpup8sz",
+        "title": "报警标志位-8"
+      },
+      {
+        "alias": "",
+        "code": "gdrsg1b",
+        "title": "报警标志位-9"
+      },
+      {
+        "alias": "",
+        "code": "uiujdw8",
+        "title": "报警标志位-10"
+      },
+      {
+        "alias": "",
+        "code": "hcnarlb",
+        "title": "报警标志位-11"
+      },
+      {
+        "alias": "",
+        "code": "fx0hpga",
+        "title": "报警标志位-12"
+      },
+      {
+        "alias": "",
+        "code": "ubsg9kb",
+        "title": "报警标志位-13"
+      },
+      {
+        "alias": "",
+        "code": "ztbl6vp",
+        "title": "报警标志位-14"
+      },
+      {
+        "alias": "",
+        "code": "anu74ip",
+        "title": "报警标志位-15"
+      },
+      {
+        "alias": "",
+        "code": "ecw4xye",
+        "title": "报警标志位-16"
+      },
+      {
+        "alias": "",
+        "code": "lamvtez",
+        "title": "报警标志位-17"
+      },
+      {
+        "alias": "",
+        "code": "qudqz7e",
+        "title": "报警标志位-18"
+      },
+      {
+        "alias": "",
+        "code": "tcyh997",
+        "title": "报警标志位-19"
+      },
+      {
+        "alias": "",
+        "code": "sblbzd7",
+        "title": "报警标志位-20"
+      },
+      {
+        "alias": "",
+        "code": "fpewc3d",
+        "title": "报警标志位-21"
+      },
+      {
+        "alias": "",
+        "code": "bukfm7d",
+        "title": "报警标志位-22"
+      },
+      {
+        "alias": "",
+        "code": "wsn799o",
+        "title": "报警标志位-23"
+      },
+      {
+        "alias": "",
+        "code": "mxstuqp",
+        "title": "报警标志位-24"
+      },
+      {
+        "alias": "",
+        "code": "mdemz8t",
+        "title": "报警标志位-25"
+      },
+      {
+        "alias": "",
+        "code": "iyrlyvp",
+        "title": "报警标志位-26"
+      },
+      {
+        "alias": "",
+        "code": "mzy8c0w",
+        "title": "报警标志位-27"
+      },
+      {
+        "alias": "",
+        "code": "ft36yun",
+        "title": "报警标志位-28"
+      },
+      {
+        "alias": "",
+        "code": "po3xtgs",
+        "title": "报警标志位-29"
+      },
+      {
+        "alias": "",
+        "code": "jzvx47r",
+        "title": "报警标志位-30"
+      },
+      {
+        "alias": "",
+        "code": "ibrvt4s",
+        "title": "报警标志位-31"
+      },
+      {
+        "alias": "",
+        "code": "jwhjo9o",
+        "title": "状态标志位-31"
+      },
+      {
+        "alias": "",
+        "code": "nsarf04",
+        "title": "状态标志位-30"
+      },
+      {
+        "alias": "",
+        "code": "xevmo42",
+        "title": "状态标志位-29"
+      },
+      {
+        "alias": "",
+        "code": "il5mzxg",
+        "title": "状态标志位-28"
+      },
+      {
+        "alias": "",
+        "code": "xujbhlb",
+        "title": "状态标志位-4"
+      },
+      {
+        "alias": "",
+        "code": "ol4sg5n",
+        "title": "状态标志位-27"
+      },
+      {
+        "alias": "",
+        "code": "lv69ah4",
+        "title": "状态标志位-26"
+      },
+      {
+        "alias": "",
+        "code": "dkqy183",
+        "title": "状态标志位-25"
+      },
+      {
+        "alias": "",
+        "code": "mp6oojt",
+        "title": "状态标志位-8"
+      },
+      {
+        "alias": "",
+        "code": "frqq0b9",
+        "title": "状态标志位-9"
+      },
+      {
+        "alias": "",
+        "code": "af90l2x",
+        "title": "状态标志位-10"
+      },
+      {
+        "alias": "",
+        "code": "wafrhyk",
+        "title": "状态标志位-11"
+      },
+      {
+        "alias": "",
+        "code": "dj91uwm",
+        "title": "状态标志位-12"
+      },
+      {
+        "alias": "",
+        "code": "fih6ry9",
+        "title": "状态标志位-13"
+      },
+      {
+        "alias": "",
+        "code": "qrkaldv",
+        "title": "状态标志位-14"
+      },
+      {
+        "alias": "",
+        "code": "ixyn4uf",
+        "title": "状态标志位-15"
+      },
+      {
+        "alias": "",
+        "code": "mkrfp0j",
+        "title": "状态标志位-16"
+      },
+      {
+        "alias": "",
+        "code": "mszdrw9",
+        "title": "状态标志位-17"
+      },
+      {
+        "alias": "",
+        "code": "kdv6835",
+        "title": "状态标志位-18"
+      },
+      {
+        "alias": "",
+        "code": "im626x3",
+        "title": "状态标志位-19"
+      },
+      {
+        "alias": "",
+        "code": "fv9658s",
+        "title": "状态标志位-20"
+      },
+      {
+        "alias": "",
+        "code": "ofsatfk",
+        "title": "状态标志位-21"
+      },
+      {
+        "alias": "",
+        "code": "shjcpm5",
+        "title": "状态标志位-22"
+      },
+      {
+        "alias": "",
+        "code": "ywzfd8a",
+        "title": "状态标志位-23"
+      },
+      {
+        "alias": "",
+        "code": "hisc6sp",
+        "title": "东西经"
+      },
+      {
+        "alias": "",
+        "code": "pnci0dt",
+        "title": "南北纬"
+      },
+      {
+        "alias": "",
+        "code": "xsooavz",
+        "title": "定位"
+      },
+      {
+        "alias": "",
+        "code": "dkj03rx",
+        "title": "ACC"
+      },
+      {
+        "alias": "",
+        "code": "ntsxn0n",
+        "title": "报警标志位-2"
+      },
+      {
+        "alias": "",
+        "code": "pymun41",
+        "title": "报警标志位-4"
+      },
+      {
+        "alias": "",
+        "code": "gzqmabz",
+        "title": "报警标志位-0"
+      },
+      {
+        "alias": "",
+        "code": "et8og3z",
+        "title": "报警标志位-5"
+      },
+      {
+        "alias": "",
+        "code": "ohto8ub",
+        "title": "报警标志位-3"
+      },
+      {
+        "alias": "",
+        "code": "mk9v0dr",
+        "title": "报警标志位-1"
+      },
+      {
+        "alias": "",
+        "code": "dsu5cr7",
+        "title": "校验码"
+      },
+      {
+        "alias": "",
+        "code": "cgxn7j4",
+        "title": "结束标识"
+      }
+    ],
+    "groups": [
+      {
+        "name": "4FC63809DFEE4F46BA798CB65EB5DAB5",
+        "columns": [
+          {
+            "code": "vm3baea",
+            "title": "CAN ID"
+          },
+          {
+            "alias": "null",
+            "code": "ihj5v9i",
+            "title": "test"
+          },
+          {
+            "alias": "",
+            "code": "tgzerbu",
+            "title": "BMS"
+          },
+          {
+            "alias": "",
+            "code": "zht7lw7",
+            "title": "电池组总电压"
+          },
+          {
+            "alias": "",
+            "code": "okkxd4u",
+            "title": "电池组总电流"
+          },
+          {
+            "alias": "",
+            "code": "ntmyw0u",
+            "title": "Soc"
+          },
+          {
+            "code": "brigpvh",
+            "title": "CAN通道"
+          },
+          {
+            "code": "uwmc0ae",
+            "title": "CAN帧类型"
+          },
+          {
+            "code": "jsxvawl",
+            "title": "CAN数据采集方式"
+          }
+        ],
+        "groups": []
+      },
+      {
+        "name": "05452496857642CCBD15D6E4540DFE3B",
+        "columns": [],
+        "groups": [
+          {
+            "name": "59AE23DE12B64D8B964BD5610C6B803A",
+            "columns": [
+              {
+                "alias": "null",
+                "code": "ihj5v9i",
+                "title": "test"
+              },
+              {
+                "alias": "",
+                "code": "tgzerbu",
+                "title": "BMS"
+              },
+              {
+                "alias": "",
+                "code": "zht7lw7",
+                "title": "电池组总电压"
+              },
+              {
+                "alias": "",
+                "code": "okkxd4u",
+                "title": "电池组总电流"
+              },
+              {
+                "alias": "",
+                "code": "ntmyw0u",
+                "title": "Soc"
+              }
+            ],
+            "groups": []
+          }
+        ]
+      }
+    ]
+  },
+  "col_family": []
+}

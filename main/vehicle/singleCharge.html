@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="col-md-8">
+
+
+    <section class="panel panel-default">
+     <header class="panel-heading">
+    		<div class="panel-actions"
+    			<a href="#" class="panel-action panel-action-toggle"
+    				data-panel-toggle=""></a> <a href="#"
+    				class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+    		</div>
+    		<span id="panelTitle">车辆列表</span>
+    	</header>
+    	<div  class="panel-body"  id="panelBody" data-loading-overlay data-loading-overlay-options='{ "startShowing": true }' style="min-height: 400px;" >
+
+    <div id="toolbar">
+    	<div class="form-inline" role="form">
+    		<div class="form-group date">
+    			<label class="control-label">开始时间: </label> <input type="text"
+    				class="form-control" id="datetimeStart" />
+    		</div>
+    		<div class="form-group date">
+    			<label class="control-label">结束时间: </label> <input type="text"
+    				class="form-control" id="datetimeEnd" value="" />
+    		</div>
+    		<div class="form-group"
+    			style="margin-bottom: -20px; margin-left: 10px;">
+    			<button id="ok" type="submit"
+    				class=" btn btn-primary btn-block mb-lg"
+    				style="height: 29px; width: 60px; padding: 0px;">查询</button>
+    		</div>
+    	</div>
+    </div>
+    <table id="tableserver" data-toolbar="#toolbar"></table>
+
+  </div>
+</section>
+  </div>
+
+    <div class="col-md-4">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="el el-map-marker"></i> 充电位置
+        <div class="panel-actions">
+      <a href="#" class="panel-action panel-action-toggle"
+        data-panel-toggle=""></a> <a href="#"
+        class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+    </div>
+      </div>
+      <!-- /.panel-heading -->
+      <div class="panel-body" style="position:relative;min-height: 400px;">
+        <div id="mapAddress" sytle="width:100%; height:400px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <i class="fa fa-bar-chart-o fa-fw"></i> 充电管理
+    <div class="panel-actions">
+      <a href="#" class="panel-action panel-action-toggle"
+        data-panel-toggle=""></a> <a href="#"
+        class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+    </div>
+  </div>
+  <!-- /.panel-heading -->
+  <div class="panel-body">
+   <div id="dynamicmain2" style="height:200px; ">
+
+         </div>
+
+
+  </div>
+</div>
+</div>
+<div class="col-md-6">
+
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <i class="fa fa-bar-chart-o fa-fw"></i> 电压电流曲线
+  <div class="panel-actions">
+      <a href="#" class="panel-action panel-action-toggle"
+        data-panel-toggle=""></a> <a href="#"
+        class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+    </div>
+  </div>
+  <!-- /.panel-heading -->
+  <div class="panel-body">
+    <div id="dynamicmain" style="height:200px; ">
+
+          </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
