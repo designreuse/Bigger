@@ -435,7 +435,8 @@ URLDICTIONARY = {
     user_privilege: 'https://api.ttron.cn/bigger/security/openid_privilege_map',//用户和权限关联接口
     privilege_privilege: 'https://api.ttron.cn/bigger/privilege/privilege',// 根据角色获取菜单，按钮等E15D221AEC2D4FEC883A95291C4709FB/menu
     privilegeByuserId: 'https://api.ttron.cn/bigger/security/openid',//${openid}/privilege 通过用户id获取权限数据
-    login: 'https://api.ttron.cn/oauth/token'//登录获取令牌
+    login: 'https://api.ttron.cn/oauth/token',//登录获取令牌
+    alias:'https://api.ttron.cn/parrot/alias'
 }
 
 function ajaxObject(options) {

@@ -100,11 +100,43 @@
 
                 if (column.dataUrl)
                 {
-                    options = {
+
+                    new ajaxObject({
+                        Url: URLDICTIONARY.alias,
+                        data: {},
+                        async:false,
+                        
+                        fun: function (data) {
+                            console.log(data);
+                            var tempArray = [];
+                            $.each(data, function (i, field) {
+                                tempArray.push({
+                                    id: field.code,
+                                    text: field.title
+                                })
+
+                            });
+
+                            options = {
+                                source: tempArray,
+                                select2: {
+                                    placeholder: '请选择一个别名'
+                                }
+                            }
+                           
+                         
+                        },
+                        errorFun: function (data) {
+                           
+       
+                        }
+
+                    });
+                  /*  options = {
                         select2: {
                             placeholder: 'Select Country',
                             allowClear: true,
-                            minimumInputLength: 1,
+                         
                             id: function (item) {
                                 return item.unid;
                             },
@@ -130,7 +162,7 @@
                                 });
                             }
                         }
-                    }
+                    }*/
                 }
             }
 
@@ -142,10 +174,13 @@
                         oldValue = row[column.field];
 
                     row[column.field] = params.submitValue;
+
                     that.trigger('editable-save', column.field, row, oldValue, $(this));
                 });
             that.$body.find('a[data-name="' + column.field + '"]').editable(options)
                 .off('shown').on('shown', function (e, editable) {
+
+                    console.log(1);
                     var data = that.getData(),
                         index = $(this).parents('tr[data-index]').data('index'),
                         row = data[index];
@@ -154,6 +189,7 @@
                 });
             that.$body.find('a[data-name="' + column.field + '"]').editable(options)
                 .off('hidden').on('hidden', function (e, reason) {
+                    console.log(2);
                     var data = that.getData(),
                         index = $(this).parents('tr[data-index]').data('index'),
                         row = data[index];
