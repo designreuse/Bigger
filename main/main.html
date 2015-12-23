@@ -18,20 +18,8 @@
     <link rel="stylesheet" href='jsplugin/bootstrap-table-master/dist/bootstrap-table.min.css' />
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href='css/custom/theme-custom.css'>
-    <link rel="stylesheet" href="jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css" />
-    <style>
-        /*
-        地图
-        */
-        .markerActive {
-            background-image: url(css/images/active.png);
-            background-repeat: no-repeat;
-            height: 30px;
-            width: 24px;
-            background-size: contain;
-            padding: 4px 4px 4px 5px;
-        }
-    </style>
+
+  
     <!-- Head Libs -->
     <script src="jsplugin/modernizr/modernizr.js"></script>
 </head>
@@ -332,8 +320,9 @@
                     'css/simple-line-icons/css/simple-line-icons.css',
                     'jsplugin/jstree/themes/default/style.min.css',
                     'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
-                    'jsplugin/select2/css/select2.min.css',
-                    'jsplugin/pnotify/pnotify.custom.css'
+                    'jsplugin/select2/css/select2.css',
+                    'jsplugin/pnotify/pnotify.custom.css',
+                    "jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css"
                 ];
                 $.each(tempArray,function(i,field){
                     loadCSS(field);
