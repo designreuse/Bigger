@@ -1,7 +1,4 @@
-$(document).ready(function() {
 
-		
-});
 function pageStart()
 {	
 	$("#panelTitle").text("SIM卡列表");
@@ -10,6 +7,77 @@ $(window).resize(function () {
     $("#tableserver").bootstrapTable('resetView');
 });
 vehicleDictionaryDemo.createTable();
+
+
+    $('#codeTest').formValidation({
+    message: '数据',
+    icon: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+        deviceID: {
+            message: '终端不可用',
+            validators: {
+                notEmpty: {
+                    message: '终端不能为空'
+                },
+                stringLength: {
+                    min: 11,
+                    max: 11,
+                    message: '终端为11位数字'
+                },
+                /*
+                 * remote: { url: 'remote.php', message: 'The username is
+                 * not available' },
+                 */
+                regexp: {
+                    regexp: /^[0-9]+$/,
+                    message: '终端必须为数字'
+                }
+            }
+        }
+    }
+}).on('success.form.fv', function (e) {
+    // Prevent form submission
+    e.preventDefault();
+    // Get the form instance
+    var $form = $(e.target);
+
+    // Get the FormValidation instance
+    var bv = $form.data('formValidation');
+    var ref = $('#treeAjaxHTML').jstree(true), sel = ref.get_selected(true);
+    var proctocolId = sel[0].id;
+
+    console.log($form.serialize());
+        new ajaxObject({
+            Url: URLDICTIONARY.instant + "/" + proctocolId + "/instant",
+            data: $form.serialize(),
+            type: "put",
+            dataType: 'json',
+            fun: function (data) {
+
+                // terminalId = id;
+                new PNotify({
+                    title: "修改按钮",
+                    text: "修改按钮成功"+JSON.stringify(data),
+                    type: 'success'
+                });
+                $form.formValidation('disableSubmitButtons', false);
+
+                $('.result-data').html(JSON.stringify(data));
+              
+            }
+
+        });
+
+    
+    // Use Ajax to submit form data
+
+    // Enable the submit buttons
+    // .formValidation('resetForm', true);
+});
 	
 }
 

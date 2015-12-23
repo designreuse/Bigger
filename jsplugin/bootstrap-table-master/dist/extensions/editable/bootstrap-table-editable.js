@@ -1,9 +1,9 @@
-/**
+Ôªø/**
  * @author zhixin wen <wenzhixin2010@gmail.com>
  * extensions: https://github.com/vitalets/x-editable
  */
 
-!function ($) {
+!function ($) { 
 
     'use strict';
 
@@ -26,7 +26,17 @@
             console.log("hidden");
             console.log(row);
             console.log(reason);
-            $el.text(row[field]);
+            if ($el.attr("data-type") == "select2")
+            {
+                if (typeof (row[field]) == "boolean")
+                {
+                    $el.text(row[field]);
+                }
+
+            } else {
+                $el.text(row[field]);
+            }
+           
             return false;
         }
     });
@@ -120,7 +130,7 @@
                             options = {
                                 source: tempArray,
                                 select2: {
-                                    placeholder: '«Î—°‘Ò“ª∏ˆ±√˚'
+                                    placeholder: 'ËØ∑ÈÄâÊã©‰∏Ä‰∏™Âà´Âêç'
                                 }
                             }
                            
@@ -173,6 +183,13 @@
                         row = data[index],
                         oldValue = row[column.field];
 
+                    console.log(typeof (params.submitValue));
+                    if (params.submitValue === "true") {
+                        params.submitValue = true;
+                    } else if (params.submitValue === "false") {
+                        params.submitValue = false;
+                    }
+                    console.log(typeof (params.submitValue));
                     row[column.field] = params.submitValue;
 
                     that.trigger('editable-save', column.field, row, oldValue, $(this));

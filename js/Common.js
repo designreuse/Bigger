@@ -358,9 +358,12 @@ dictionaryJs = {
 	                        "jsplugin/select2/js/select2.full.js",
 	                        "js/pages/reportPageList.js",
 	                        "js/pages/reportMenu.js",
+                            "jsplugin/pnotify/pnotify.custom.js",
+			                "jsplugin/bootstrap-confirmation/bootstrap-confirmation.js",
 	                        'jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css',
 	    		            'jsplugin/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js',
-	  		                'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js', "resources-clear/vendor/summernote/summernote.js"]
+	  		                'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js'
+                         ]
 }
 
 VIEWKEY = {
@@ -404,7 +407,9 @@ LoginAPIList = [
     'https://api.ttron.cn/bigger/security/menu',
     'https://api.ttron.cn/parrot/proto_family',
     'https://api.ttron.cn/bigger/model',
-    'https://api.ttron.cn/bigger/device'
+    'https://api.ttron.cn/bigger/device',
+    'https://api.ttron.cn/sensor/vehicle',
+    'https://api.ttron.cn/parrot/protocol'
 ];
 URLDICTIONARY = {
     viewkey: 'https://api.ttron.cn/bigger/grid/',// 视图列表地址
@@ -436,7 +441,8 @@ URLDICTIONARY = {
     privilege_privilege: 'https://api.ttron.cn/bigger/privilege/privilege',// 根据角色获取菜单，按钮等E15D221AEC2D4FEC883A95291C4709FB/menu
     privilegeByuserId: 'https://api.ttron.cn/bigger/security/openid',//${openid}/privilege 通过用户id获取权限数据
     login: 'https://api.ttron.cn/oauth/token',//登录获取令牌
-    alias:'https://api.ttron.cn/parrot/alias'
+    alias: 'https://api.ttron.cn/parrot/alias',//标准别名
+   instant: 'https://api.ttron.cn/parrot/protocol'//${unid}/instant'协议
 }
 
 function ajaxObject(options) {
