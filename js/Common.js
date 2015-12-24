@@ -344,6 +344,7 @@ dictionaryJs = {
     data_dictionary: ["js/pages/dictionaryManager.js",
                      "jsplugin/select2/js/select2.full.js"],
     report_reportSet: ["jsplugin/echart/echarts-all.js",
+                   
                       "js/pages/dynamicDataChart.js",
                       "js/pages/reportpageset.js",
                       "js/pages/reportSet.js",
@@ -359,7 +360,6 @@ dictionaryJs = {
 	                        "js/pages/reportSet.js",
 	                        "jsplugin/select2/js/select2.full.js",
 	                        "js/pages/reportPageList.js",
-	                        "js/pages/reportMenu.js",
                             "jsplugin/pnotify/pnotify.custom.js",
 			                "jsplugin/bootstrap-confirmation/bootstrap-confirmation.js",
 	                        'jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css',
@@ -389,7 +389,7 @@ VIEWKEY = {
     user: '11CE8555BFAB49A48720F6BA89745561',//用户列表
     alias: 'F2D17719E223430D8F2AE29415AE08CE'//标准别名
 }
-//TODO loginAPI  登录要访问的接口
+//TODO loginAPI  登录要访问的接口,接口访问权限
 LoginAPIList = [
     'https://api.ttron.cn/bigger/grid',
     'https://api.ttron.cn/bigger/security',
@@ -411,7 +411,8 @@ LoginAPIList = [
     'https://api.ttron.cn/bigger/model',
     'https://api.ttron.cn/bigger/device',
     'https://api.ttron.cn/sensor/vehicle',
-    'https://api.ttron.cn/parrot/protocol'
+    'https://api.ttron.cn/parrot/protocol',
+    'https://api.ttron.cn/bigger/fiber'
 ];
 
 //TODO  urldictionary 接口定义
@@ -571,7 +572,7 @@ function GetQueryString(name) {
  * (new Date()).pattern("yyyy-MM-dd EEE hh:mm:ss") ==> 2009-03-10 星期二 08:09:04      
  * (new Date()).pattern("yyyy-M-d h:m:s.S") ==> 2006-7-2 8:9:4.18      
  */
-Date.prototype.pattern = function (fmt) {
+Date.prototype.format = function (fmt) {
     var o = {
         "M+": this.getMonth() + 1, //月份         
         "d+": this.getDate(), //日         
@@ -603,4 +604,64 @@ Date.prototype.pattern = function (fmt) {
         }
     }
     return fmt;
+}
+
+
+/**
+ * 判断年份是否为润年
+ * 
+ * @param {Number}
+ *            year
+ */
+function isLeapYear(year) {
+    return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
+}
+/**
+ * 获取某一年份的某一月份的天数
+ * 
+ * @param {Number}
+ *            year
+ * @param {Number}
+ *            month
+ */
+function getMonthDays(year, month) {
+    return [31, null, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month]
+			|| (isLeapYear(year) ? 29 : 28);
+}/**
+	 * 获取某年的某天是第几周
+	 * 
+	 * @param {Number}
+	 *            y
+	 * @param {Number}
+	 *            m
+	 * @param {Number}
+	 *            d
+	 * @returns {Number}
+	 */
+function getWeekNumber(y, m, d) {
+    var now = new Date(y, m - 1, d), year = now.getFullYear(), month = now
+			.getMonth(), days = now.getDate();
+    // 那一天是那一年中的第多少天
+    for (var i = 0; i < month; i++) {
+        days += getMonthDays(year, i);
+    }
+
+    // 那一年第一天是星期几
+    var yearFirstDay = new Date(year, 0, 1).getDay() || 7;
+
+    var week = null;
+    if (yearFirstDay == 1) {
+        week = Math.ceil(days / yearFirstDay);
+    } else {
+        days -= (7 - yearFirstDay + 1);
+        week = Math.ceil(days / 7) + 1;
+    }
+
+    return week;
+}
+
+function strToDate(str) {
+    var val = Date.parse(str);
+    var newDate = new Date(val);
+    return newDate;
 }

@@ -80,14 +80,12 @@ function pageStart_Two()
 }
 function reportSet(options) {
 	var defaultOptions = {
-
 		xData : [],
 		yData : [],
 		pinci : {
 			min : 0,
 			max : 120,
 			split : 10,
-
 		},
 		pinciTime : {
 			value : '',//
@@ -101,7 +99,6 @@ function reportSet(options) {
 		vehicles : [ 'B10002' ],
 		date_from : '2015-11-16 03:00:00',
 		date_to : '2015-11-17 11:41:00',
-		
 		chartOptions : {
 			
 		}
@@ -114,8 +111,7 @@ function reportSet(options) {
 reportSet.extend({
 	initPage : function() {
 		var that = this;
-		that.options.myChart = echarts.init(document
-				.getElementById(that.options.elementId));
+		that.options.myChart = echarts.init(document.getElementById(that.options.elementId));
 		that.setOptions();
 
 	},

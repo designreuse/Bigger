@@ -1,8 +1,12 @@
 ﻿//TODO fieberData 获取数据协议的定义
 /**
+@vin 车辆唯一标识
+@fiberId 数据字典id
+@fields 存储数据字典定义字典信息
 *@vin字段和fiberID 字段必须填写一个
+@注意：此函数依赖ajaxObject对象
 */
-function fiberData(options) {
+function fiberDataField(options) {
     var defaultOption = {
         vin: '',
         fiberId: '',
@@ -85,8 +89,7 @@ fiberData.extend({
     getfixField: function (object) {
         var that = this;
         var columns = object.columns;
-        if (columns.length > 0)
-        {
+        if (columns.length > 0) {
             that.options.groupFields.push(object);
         }
         $.each(columns, function (i, field) {
@@ -124,5 +127,4 @@ fiberData.extend({
             }
         });
     }
-
-})
+});

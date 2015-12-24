@@ -19,7 +19,7 @@ function vehicleTrack(options) {
 	 dataUrl:URLDICTIONARY.sensor,
 	 vin : vin,
 	 data:[],
-		 fields:[]
+	 fields:[]
  };
  var that=this;
  new ajaxObject({
