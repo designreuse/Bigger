@@ -1,4 +1,4 @@
-$(function(){
+/*$(function(){
 
 	$.loadjs(["js/dataView.js",
 	          'jsplugin/bootstrap-table-master/src/bootstrap-table.js',
@@ -18,10 +18,10 @@ $(function(){
              "js/pages/vehicleList.js",
              "jsplugin/echart/echarts-plain-map.js",
 	          "js/pages/echartChina.js",
-	          "js/pages/vehicleCluster.js",
-	          '//webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e'
+	          "js/pages/vehicleCluster.js"
+	         
 	       ]);
-});
+});*/
 
 $('#index').formValidation({
 		message : '终端不可用',

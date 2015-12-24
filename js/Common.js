@@ -14,6 +14,19 @@ $.ajaxSetup({
         }
     }
 });
+
+function checkCookie()
+{
+    var access_token = ($.cookie('access-token'));
+    console.log(access_token);
+    if (access_token) {
+      
+    } else {
+        if (pageName() != "index") {
+            window.location.replace("index.html");
+        }
+    }
+}
 function pageName() {
     var a = location.href;
     var b = a.split("/");
@@ -344,7 +357,7 @@ dictionaryJs = {
     data_dictionary: ["js/pages/dictionaryManager.js",
                      "jsplugin/select2/js/select2.full.js"],
     report_reportSet: ["jsplugin/echart/echarts-all.js",
-                   
+
                       "js/pages/dynamicDataChart.js",
                       "js/pages/reportpageset.js",
                       "js/pages/reportSet.js",
@@ -365,7 +378,7 @@ dictionaryJs = {
 	                        'jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css',
 	    		            'jsplugin/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js',
 	  		                'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js'
-                         ]
+    ]
 }
 //TODO viewkey  列表id定义
 VIEWKEY = {
@@ -447,7 +460,7 @@ URLDICTIONARY = {
     privilegeByuserId: 'https://api.ttron.cn/bigger/security/openid',//${openid}/privilege 通过用户id获取权限数据
     login: 'https://api.ttron.cn/oauth/token',//登录获取令牌
     alias: 'https://api.ttron.cn/parrot/alias',//标准别名
-   instant: 'https://api.ttron.cn/parrot/protocol'//${unid}/instant'协议
+    instant: 'https://api.ttron.cn/parrot/protocol'//${unid}/instant'协议
 }
 //TODO 访问数据接口定义
 function ajaxObject(options) {
@@ -534,10 +547,8 @@ ajaxObject.extend({
 });
 
 function setCookie(name, value, Days) {
-    // var Days = 30;
-    var date = new Date();
-    date.setTime(date.getTime() + (3 * 24 * 60 * 60 * 1000)); //三天后的这个时候过期
-    $.cookie(name, value, { path: '/', expires: date });
+    
+    $.cookie(name, value, { path: '/' });
 }
 
 function getCookie(name) {
@@ -665,3 +676,42 @@ function strToDate(str) {
     var newDate = new Date(val);
     return newDate;
 }
+//TODO 动态加载js
+/**
+@i 加载计数器
+@jsArray 要加载的js列表
+@fun  加载完成时回调函数
+*/
+function ajaxLoadJs(options) {
+    var defaultOptions = {
+        i: 0,
+        jsArray: [],
+        fun: function () {
+
+        }
+    };
+    this.options = $.extend(defaultOptions, options || {});
+    this.init();
+}
+ajaxLoadJs.extend({
+    init: function () {
+        var that = this;
+        that.loadjs();
+    },
+    loadjs: function () {
+        var that = this;
+        $.each(that.options.jsArray, function (i, field) {
+            new ajaxObject({
+                Url: field,
+                dataType: 'script',
+                cache: true,
+                complete: function (data) {
+                    that.options.i++;
+                    if (that.options.i === that.options.jsArray.length) {
+                        that.options.fun();
+                    }
+                }
+            });
+        });
+    }
+})
