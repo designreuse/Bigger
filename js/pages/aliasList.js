@@ -10,7 +10,7 @@ function pageStart()
 		console.log("resize");
 		$("#tableserver").bootstrapTable('resetView');
 	});
-	vehicleDictionaryDemo.createTable();
+	aliasDictionaryDemo.createTable();
 }
 
 function AddObject_tableserver() {
@@ -115,102 +115,36 @@ function deleteRow() {
 	});
 
 }
-var vehicleDictionaryDemo = {
-	protocolId : '',
-	createTable : function() {
-		var that = this;
-		object = new dataModelObject({
-			viewId : VIEWKEY.alias,
-			tableId : "#tableserver",
-			tableOptions : {
-				cache : true,
-				height : 400,
-				striped : true,
-				pagination : false,
-				pageSize : 10,
-				search : true,
-				showExport : false,
-				showPageOption : false,
-				showToggle : false,
-				showColumns : false,
-				showRefresh : false
+var aliasDictionaryDemo = {
+    createTable: function () {
+        object = new dataModelObject({
+            viewId: VIEWKEY.alias,
+            tableId: "#tableserver",
+            onLoadBefore: function (data) {
+                console.log(data);
+                return data;
 
-			},
-
-			vin : that.protocolId + "/field",
-			onLoadBefore : function(data) {
-				console.log(data);
-				if (data && data.length > 0) {
-					var tempData = [];
-
-					$.each(data, function(i, field) {
-						console.log(field);
-
-						var tempObject = $.extend({}, field, {
-							code : field.key.code,
-							title : field.key.title,
-							alias : field.key.alias,
-							proto_unid : that.protocolId
-						});
-
-						tempData.push(tempObject);
-
-					});
-
-					return tempData;
-				}
-				// return data;
-			},
-			onEditableSave : function(field, row, oldValue, $el) {
-
-				var tree = new dictionaryTree({
-					protocolId : row["proto_unid"],
-					fieldKey : field,
-					fieldValue : row[field],
-					fieldCode : row["code"],
-					async : false,
-					fun : function(data) {
-						new PNotify({
-							title : "数据项修改",
-							text : "数据项修改成功",
-							type : 'success'
-						});
-
-					}
-				});
-				// dictionaryTree.options.protocolId=row["proto_unid"];
-				// dictionaryTree.options.fieldKey=field;
-				// dictionaryTree.options.fieldValue=row[field];
-				// dictionaryTree.options.fieldCode=row["code"];
-				// dictionaryTree.options.async=false;
-				tree.updateField();
-				// row[field]=oldValue;
-				// console.log($el);
-
-				return false;
-
-			}
-		});
-		dataModelObject.staticObject = object;
-		if ($(object.viewOptions.tableId).bootstrapTable()) {
-			$(object.viewOptions.tableId).bootstrapTable("destroy");
-		}
-		object.setViewTable();
-	},
-	updateField : function() {
-
-	},
-	idFormatter : function(value, row, index) {
-		return [ '<a class="like" href="javascript:void(0)" title="Like">',
-				'<i class="glyphicon glyphicon-heart"></i>' + value, '</a>' ]
-				.join('');
-	},
-	idEvents : {
-		'click .like' : function(e, value, row, index) {
-			eModal.iframe({
-				url : "vehicle/track",
-			}, "单车-轨迹");
-		}
-	}
+            }
+        });
+        dataModelObject.staticObject = object;
+        if ($(object.viewOptions.tableId).bootstrapTable()) {
+            $(object.viewOptions.tableId).bootstrapTable("destroy");
+        }
+        object.setViewTable();
+    },
+    idFormatter: function (value, row, index) {
+        return [
+                '<a class="like" href="javascript:void(0)" title="Like">',
+                '<i class="glyphicon glyphicon-heart"></i>' + value,
+                '</a>'
+        ].join('');
+    },
+    idEvents: {
+        'click .like': function (e, value, row, index) {
+            eModal.iframe({
+                url: "vehicle/track",
+            }, "单车-轨迹");
+        }
+    }
 
 };
