@@ -18,6 +18,22 @@
         <![endif]-->
 
     <link rel="stylesheet" href="css/custom/hubase.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/loadCSS.js"></script>
+    <script>
+  var tempArray = [
+   'css/custom/theme.css',
+   'css/skins/default.css',
+   'jsplugin/bootstrap/css/bootstrap.min.css',
+   'css/custom/theme-custom.css',
+   'jsplugin/bootstrap-table-master/dist/bootstrap-table.min.css',
+    'css/font-awesome/css/font-awesome.min.css',
+    "jsplugin/pnotify/pnotify.custom.css"
+  ];
+   for(var i in tempArray)
+   {
+     loadCSS(tempArray[i]);
+   }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -68,19 +84,8 @@
 <script type="text/javascript" src="jsplugin/FormValidation/js/framework/bootstrap.js"></script>
 <script type="text/javascript" src="js/Common.js"></script>
 <script type="text/javascript" src='js/pages/index.js'></script>
-<script type="text/javascript" src="js/loadCSS.js"></script>
-<script>
-  var tempArray = [
-   'css/custom/theme.css',
-   'css/skins/default.css',
-   'jsplugin/bootstrap/css/bootstrap.min.css',
-   'css/custom/theme-custom.css',
-   'jsplugin/bootstrap-table-master/dist/bootstrap-table.min.css',
-    'css/font-awesome/css/font-awesome.min.css',
-    "jsplugin/pnotify/pnotify.custom.css"
-  ];
-   for(var i in tempArray)
-   {
-     loadCSS(tempArray[i]);
-   }
+<script type="text/javascript">
+    $(function () {
+        $.getScript("http://webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e");
+    });
 </script>
