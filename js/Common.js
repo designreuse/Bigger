@@ -1,9 +1,7 @@
 $.ajaxSetup({
     beforeSend: function (XMLHttpRequest) {
-
-
         var access_token = ($.cookie('access-token'));
-        console.log(access_token);
+        //console.log(access_token);
         if (access_token) {
             XMLHttpRequest.setRequestHeader("Authorization",
 					"Bearer " + access_token);
@@ -44,7 +42,6 @@ Function.prototype.extend = function (oContext, bIsStatic) {
 };
 
 $.extend({
-
     /**
      * @author feng_hai <feng_hai@aliyun.com> 获取页面的高度和宽度 pageW :页面宽度
      *         pageH :页面高度
@@ -236,8 +233,7 @@ $.fn.serializeJson = function () {
     var array = this.serializeArray();
     var str = this.serialize();
 
-    $(array).each(
-			function () {
+    $(array).each(function () {
 			    if (serializeObj[this.name]) {
 			        if ($.isArray(serializeObj[this.name])) {
 			            serializeObj[this.name].push(this.value);
@@ -497,7 +493,6 @@ ajaxObject.extend({
             url: that.options.Url,
             type: that.options.type,
             data: that.options.data,
-
             dataType: that.options.dataType,
             async: that.options.async,
             cache: that.options.cache | false,
