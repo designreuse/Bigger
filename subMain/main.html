@@ -10,45 +10,124 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-
-    <script type="text/javascript" src="js/loadCSS.js"></script>
-    <script>
-       
-        var tempArray = [
-         'css/custom/theme.css',
-         'css/skins/default.css',
-         'jsplugin/bootstrap/css/bootstrap.min.css',
-         'css/custom/theme-custom-sub.css',
-         'jsplugin/bootstrap-table-master/dist/bootstrap-table.min.css',
-          'css/font-awesome/css/font-awesome.min.css',
-          'jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css',
-          'jsplugin/slider/bootstrap-slider.css',
-          "jsplugin/bootstrap-multiselect/bootstrap-multiselect.css",
-          "jsplugin/pnotify/pnotify.custom.css",
-          'css/custom/track.css'
-        ];
-        for (var i in tempArray) {
-            loadCSS(tempArray[i]);
-        }
-
-
-    </script>
     <script src="jsplugin/modernizr/modernizr.js"></script>
+    <link rel="stylesheet" href="jsplugin/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/custom/theme.css" />
+    <link rel="stylesheet" href="css/custom/theme-custom-sub.css" />
+    <link rel="stylesheet" href="css/skins/default.css" />
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/elusive-icons/css/elusive-icons.min.css" />
+    <link rel="stylesheet" href="css/simple-line-icons/css/simple-line-icons.css" />
+    <link rel="stylesheet" href="jsplugin/bootstrap-table-master/dist/bootstrap-table.min.css" />
+    <link rel="stylesheet" href="jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="jsplugin/slider/bootstrap-slider.css" />
+    <link rel="stylesheet" href="jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css" />
+    <link rel="stylesheet" href="jsplugin/select2/css/select2.min.css" />
+    <link rel="stylesheet" href="jsplugin/bootstrap-multiselect/bootstrap-multiselect.css" />
+    <link rel="stylesheet" href="jsplugin/pnotify/pnotify.custom.css" />
+
 </head>
 <body>
     <section class="body">
-
         <div class="inner-wrapper">
-            <div include="main/menu/menu.html" type="menu"></div>
+            <aside id="sidebar-left" class="sidebar-left">
+                <div class="sidebar-header">
+                    <div class="sidebar-title">Navigation</div>
+                    <div id="leftbar" class="sidebar-toggle hidden-xs"
+                         data-toggle-class="sidebar-left-collapsed" data-target="html"
+                         data-fire-event="sidebar-left-toggle">
+                        <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+                    </div>
+                </div>
+                <div class="nano">
+                    <div class="nano-content">
+                        <nav id="menu" class="nav-main" role="navigation">
+                            <ul class="nav nav-main" id="mainMenu"></ul>
+                        </nav>
+                    </div>
+                </div>
+            </aside>
             <section role="main" class="content-body">
                 <div id="mainBody">
                     <!-- start: page -->
-                    <div include="main/vehicle/cluster.html" type="body"></div>
+                    <div class="row">
+                        <div class="col-md-5 col-xl-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-bar-chart-o fa-fw"></i>透视图
+                                    <div class="pull-right"></div>
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body"
+                                     style="position: relative; height: 250px; padding: 0px; background-color: #ECEDF0">
+                                    <div class="carImages col-md-12 "></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-xl-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-bar-chart-o fa-fw"></i>BMS信息区域
+                                    <div class="pull-right"></div>
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body" style="position: relative; height: 250px;">
+                                    <div class="col-md-6">
+                                        <div id="chargPie" style="height:200px; "></div>
+
+                                    </div>
+                                    <div class="col-md-6"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 col-xl-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-tachometer"></i> 车灯提示信息
+                                    <div class="pull-right"></div>
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body" style="heigth: 200px;">
+                                    <div id="main" style="height: 200px; "></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xl-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-bar-chart-o fa-fw"></i> 电流电压数据
+                                    <div class="pull-right"></div>
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div id="dynamicmain" style="height:200px; "></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-xl-12">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-bar-chart-o fa-fw"></i> 整车信息区域
+                                    <div class="pull-right"></div>
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- end: page -->
                 </div>
             </section>
         </div>
-        
     </section>
 </body>
 </html>
@@ -61,58 +140,65 @@
 <script type="text/javascript" src="jsplugin/bootstrap/js/bootstrap.min.js"></script>
 <!-- 滚动条效果，可实现滚动显示效果 -->
 <script type="text/javascript" src="jsplugin/nanoscroller/nanoscroller.js"></script>
-
 <!-- Theme Base, Components and Settings -->
 <script type="text/javascript" src="js/theme.js"></script> <!-- Theme Custom -->
 <script type="text/javascript" src="js/theme.custom.js"></script>
 <!-- Theme Initialization Files -->
 <script type="text/javascript" src="js/theme.init.js"></script>
 <script type="text/javascript" src="jsplugin/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+<script type="text/javascript" src="js/loadCSS.js"></script>
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
 <script type="text/javascript">
-    $(function(){
-         parent.checkCookie();
-         vin = GetQueryString("vin");
-    });      
+    $(function () {
+        parent.checkCookie();
+        vin = GetQueryString("vin");
+    });
+    // 路径配置
+    require.config({
+        paths: {
+            echarts: 'http://echarts.baidu.com/build/dist'
+        }
+    });
 </script>
 <script type="text/javascript">
-            $("#mainBody").load("main/vehicle/vehicleInfo.html", function () {
 
-                $.loadjs(["jsplugin/echart/echarts-all.js"
-                ], function () {
-                    $.loadjs(["js/pages/vehicleSingleInfo.js",
-                                         "js/pages/dynamicDataChart.js",
-                                         "js/pages/gaugePage.js",
-                                         "js/pages/chargePie.js"], function () {
-                                             pageStart();
-                                         });
-                });
+    $(function () {
+        try {
+            var tempMenu = new menuJs({
+                menuType: "1"
             });
-            $(function () {
-                try {
-                    var tempMenu = new menuJs({
-                        menuType: "1"
-                    });
-                } catch (e) {
 
-                } finally {
 
+            new ajaxLoadJs({
+                jsArray: ["js/pages/vehicleSingleInfo.js",
+                    "js/pages/dynamicDataChart.js",
+                    "js/pages/gaugePage.js",
+                    "js/pages/chargePie.js"],
+                fun: function () {
+                    pageStart();
                 }
-
-                var tempArray = [
-                               'jsplugin/magnific-popup/magnific-popup.css',
-                               'css/elusive-icons/css/elusive-icons.min.css',
-                               'css/simple-line-icons/css/simple-line-icons.css',
-                               'jsplugin/jstree/themes/default/style.min.css',
-                               'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
-                               'jsplugin/select2/css/select2.min.css',
-                               'jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css',
-                               'jsplugin/pnotify/pnotify.custom.css',
-                               'jsplugin/bootstrap-multiselect/bootstrap-multiselect.css'
-                ];
-                $.each(tempArray, function (i, field) {
-                    loadCSS(field);
-                });
             });
 
 
+
+        } catch (e) {
+
+        } finally {
+
+        }
+        /* var tempArray = [
+                        'jsplugin/magnific-popup/magnific-popup.css',
+                        'css/elusive-icons/css/elusive-icons.min.css',
+                        'css/simple-line-icons/css/simple-line-icons.css',
+                        'jsplugin/jstree/themes/default/style.min.css',
+                        'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
+                        'jsplugin/select2/css/select2.min.css',
+                        'jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css',
+                        'jsplugin/pnotify/pnotify.custom.css',
+                        'jsplugin/bootstrap-multiselect/bootstrap-multiselect.css'
+         ];
+         $.each(tempArray, function (i, field) {
+             loadCSS(field);
+         });*/
+    });
 </script>
