@@ -1,173 +1,181 @@
 /* hubase */
 
 @media only screen and (min-width: 768px) {
-html.fixed .inner-wrapper
-	{
+    html.fixed .inner-wrapper {
+        padding-top: 100px;
+    }
+}
 
-		padding-top: 100px;
-	}
+.panel-heading {
+    padding: 8px;
 }
-.panel-heading
-{
-	padding:8px;
+
+.panel-actions {
+    top: 6px;
 }
-.panel-actions
-{
-	top:6px;
-}
-.panel-action-dismiss
-{
-	display:none;
+
+.panel-action-dismiss {
+    display: none;
 }
 
 
-#panelBody{
+#panelBody {
+    padding-top: 0px;
+}
 
-	padding-top:0px;
+.expend {
+    opacity: 0.5;
+    text-shadow: 0px 1px 0px #FFF;
+    color: #000;
+    line-height: 1;
+    font-weight: bolder;
+    font-size: 10px;
+    margin-top: 4px;
+    margin-right: 10px;
 }
-.expend
-{
-	opacity: 0.5;
-	text-shadow: 0px 1px 0px #FFF;
-	color: #000;
-	line-height: 1;
-	font-weight: bolder;
-	font-size: 10px;
-	 margin-top: 4px;
-	 margin-right:10px;
-}
+
 button.expend {
     padding: 0px;
     cursor: pointer;
     background: transparent none repeat scroll 0% 0%;
     border: 0px none;
 }
+
 .expend:hover, .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-    opacity:1;
+    opacity: 1;
 }
+
 }
-.modal-header
-{
-   padding:8px;
+
+.modal-header {
+    padding: 8px;
 }
 
 
 /*-----------newDemo-------------*/
 body {
-	font-family: "΢���ź�";
+    font-family: "΢���ź�";
 }
 /*-----------header-------------*/
 @media ( min-width : 1000px) {
-	header.header {
-		height: 55px;
-	}
-	header.header a.logo {
-		margin-top: 8px;
-	}
-	div.header-right {
-		height: 50px;
-	}
-	.form-controlHu {
-		background-color: #ade6ef;
-		background-image: none;
-		border-radius: 600px;
-		border: 0px;
-		box-shadow: 0 0px 0px rgba(0, 0, 0, 0) inset;
-		color: #0484c2;
-		display: block;
-		font-size: 14px;
-		height: 34px;
-		padding: 6px 12px;
-		width: 100%;
-	}
-	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-		color: #f00;
-	}
-	::-moz-placeholder { /* Mozilla Firefox 19+ */
-		color: #f00;
-	}
-	.header .separator {
-		background-color: #f6f6f6;
-		background-image: linear-gradient(#f6f6f6 60%, #ededed);
-		display: inline-block;
-		height: 100%;
-		margin: 0 25px;
-		vertical-align: middle;
-		width: 0px;
-	}
-	.input-search .input-group-btn .btn-default {
-		color: #0484c2;
-	}
+    header.header {
+        height: 55px;
+    }
 
-	.progress-bar {
-		background-color: #f90;
-	}
-	.userbox .name {
-		color: #999;
-		font-size: 1.3rem;
-		line-height: 1.2em;
-	}
+        header.header a.logo {
+            margin-top: 8px;
+        }
 
+    div.header-right {
+        height: 50px;
+    }
 
+    .form-controlHu {
+        background-color: #ade6ef;
+        background-image: none;
+        border-radius: 600px;
+        border: 0px;
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0) inset;
+        color: #0484c2;
+        display: block;
+        font-size: 14px;
+        height: 34px;
+        padding: 6px 12px;
+        width: 100%;
+    }
+
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: #f00;
+    }
+
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: #f00;
+    }
+
+    .header .separator {
+        background-color: #f6f6f6;
+        background-image: linear-gradient(#f6f6f6 60%, #ededed);
+        display: inline-block;
+        height: 100%;
+        margin: 0 25px;
+        vertical-align: middle;
+        width: 0px;
+    }
+
+    .input-search .input-group-btn .btn-default {
+        color: #0484c2;
+    }
+
+    .progress-bar {
+        background-color: #f90;
+    }
+
+    .userbox .name {
+        color: #999;
+        font-size: 1.3rem;
+        line-height: 1.2em;
+    }
 }
 
 @media ( min-width : 1000px) {
-	.sidebar-left .sidebar-header {
-		height: 45px;
-	}
-	.sidebar-left {
-		top: 50px !important;
-	}
-	.page-header {
-		top: 50px !important;
-	}
+    .sidebar-left .sidebar-header {
+        height: 45px;
+    }
+
+    .sidebar-left {
+        top: 50px !important;
+    }
+
+    .page-header {
+        top: 50px !important;
+    }
 }
 
 .search {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 /*-----------wrapper-------------*/
 @media ( min-width : 1000px) {
-	.inner-wrapper {
-		overflow: hidden;
-		padding-top: 50px;
-		width: 100%;
-	}
+    .inner-wrapper {
+        overflow: hidden;
+        padding-top: 50px;
+        width: 100%;
+    }
 }
 
 html .panel-primary .panel-heading {
-	background: #0484c2 none repeat scroll 0 0;
-	border-color: #0484c2;
+    background: #0484c2 none repeat scroll 0 0;
+    border-color: #0484c2;
 }
 
 .content-body {
-	padding: 20px;
+    padding: 20px;
 }
 
 a, .btn-link {
-	color: #999;
+    color: #999;
 }
 
 .form-control {
-	background-color: #fff;
-	background-image: none;
-	border-radius: 8px;
-	border: 1px solid #ccc;
-	box-shadow: 0 0px 0px rgba(0, 0, 0, 0.75) inset;
-	color: #0484c2;
-	display: block;
-	font-size: 14px;
-	height: 29px;
-	padding: 6px 12px;
-	width: 100%;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.75) inset;
+    color: #0484c2;
+    display: block;
+    font-size: 14px;
+    height: 29px;
+    padding: 6px 12px;
+    width: 100%;
 }
 
-.form-control:focus {
-	border-color: #5ccddf;
-}
+    .form-control:focus {
+        border-color: #5ccddf;
+    }
 
 /*-----------left-------------*/
 /*.sidebar-left .sidebar-header .sidebar-toggle {
@@ -184,87 +192,85 @@ html.sidebar-left-collapsed .sidebar-left .nano {
 }
 */
 @media ( min-width : 1000px) {
-	.sidebar-left {
-		/*background: #454e59;*/
-		box-shadow: 0px 0 0 #2f3139 inset;
-		top: 4px;
-	}
-	html.sidebar-left-collapsed .sidebar-left .nano:hover {
-		width: 200px;
-	}
-	html.sidebar-left-collapsed.sidebar-left-opened .sidebar-left .nano {
-		width: 200px;
-	}
+    .sidebar-left {
+        /*background: #454e59;*/
+        box-shadow: 0px 0 0 #2f3139 inset;
+        top: 4px;
+    }
+
+    html.sidebar-left-collapsed .sidebar-left .nano:hover {
+        width: 200px;
+    }
+
+    html.sidebar-left-collapsed.sidebar-left-opened .sidebar-left .nano {
+        width: 200px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
-	html.sidebar-left-collapsed .sidebar-left {
-		width:53px;
-	}
-	html.fixed.sidebar-left-collapsed .page-header
-	{
-	left:53px;
-	}
-	html.fixed.sidebar-left-collapsed .content-body
-	{
-	margin-left:53px;
-	}
-	.sidebar-left .sidebar-header .sidebar-toggle
-	{
-		width:53px;
-		height:45px;
+    html.sidebar-left-collapsed .sidebar-left {
+        width: 53px;
+    }
 
-	}
+    html.fixed.sidebar-left-collapsed .page-header {
+        left: 53px;
+    }
 
+    html.fixed.sidebar-left-collapsed .content-body {
+        margin-left: 53px;
+    }
 
+    .sidebar-left .sidebar-header .sidebar-toggle {
+        width: 53px;
+        height: 45px;
+    }
 }
-ul.nav-main > li > a
-{
-	padding: 12px 15px;
+
+ul.nav-main > li > a {
+    padding: 12px 15px;
 }
 
 
 /*-----------main-------------*/
 .page-header {
-	/*background: #f6f6f6 none repeat scroll 0 0;*/
-	border-bottom: medium none;
-	border-left: 0px solid #3a3a3a;
-	box-shadow: 1px 3px 0 1px #cccccc;
-	height: 45px;
-	margin: -16px -20px 20px;
-	padding: 0;
+    /*background: #f6f6f6 none repeat scroll 0 0;*/
+    border-bottom: medium none;
+    border-left: 0px solid #3a3a3a;
+    box-shadow: 1px 3px 0 1px #cccccc;
+    height: 45px;
+    margin: -16px -20px 20px;
+    padding: 0;
 }
 
-.page-header h2 {
-	border-bottom-color: #0484c2;
-	/*color: #333;*/
-	font-size: 14px;
-		height: 45px;
-}
+    .page-header h2 {
+        border-bottom-color: #0484c2;
+        /*color: #333;*/
+        font-size: 14px;
+        height: 45px;
+    }
 
 
 /*-----------table-------------*/
 
-.widget-summary .summary-icon .el
-{
-		line-height: 85px;
+.widget-summary .summary-icon .el {
+    line-height: 85px;
 }
 
 
 
 .fixed-table-container thead th .th-inner {
-	font-size: 14px;
+    font-size: 14px;
 }
 
-.table>tbody>tr>td, .table>tfoot>tr>td {
-	font-size: 12px;
+.table > tbody > tr > td, .table > tfoot > tr > td {
+    font-size: 12px;
 }
 
 
 /*-----------vehicleList-------------*/
 .carImages {
-	background: url("Images_hu/car.jpg");
-	height: 250px;
+    background: url("Images_hu/car.jpg");
+    height: 250px;
 }
 
 
@@ -272,345 +278,336 @@ ul.nav-main > li > a
 /*--
 �޸� �б� ���� ���߶�
 */
-.keep-open .btn,.export .btn
-{
-	--line-height:0.7px;
-	padding: 3px 12px;
+.keep-open .btn, .export .btn {
+    --line-height:0.7px;
+    padding: 3px 12px;
 }
-.keep-open .caret,.export .caret
-{
-	height: 10px;
 
+.keep-open .caret, .export .caret {
+    height: 10px;
 }
 
 @media only screen and (min-width: 1366px) {
-	html.fixed .inner-menu {
-	bottom: 0px;
-	display: block;
-	left: 300px;
-	position: fixed;
-	margin: 0px;
-	top: 98px;
-	width: 250px;
-	padding: 0px;
-	z-index: 1002;
-   }
-    html.fixed .inner-body
-   {
-   margin-left: 250px;
-   }
+    html.fixed .inner-menu {
+        bottom: 0px;
+        display: block;
+        left: 300px;
+        position: fixed;
+        margin: 0px;
+        top: 98px;
+        width: 250px;
+        padding: 0px;
+        z-index: 1002;
+    }
 
-
+    html.fixed .inner-body {
+        margin-left: 250px;
+    }
 }
 
 
 /*�޸��ڲ��˵���ʽ*/
 @media only screen and (min-width: 768px) and (max-width: 1365px) {
-	html.fixed.sidebar-left-collapsed .inner-menu, html.fixed.sidebar-left-collapsed .inner-menu-toggle, html.fixed.sidebar-left-collapsed .inner-toolbar
-{
+    html.fixed.sidebar-left-collapsed .inner-menu, html.fixed.sidebar-left-collapsed .inner-menu-toggle, html.fixed.sidebar-left-collapsed .inner-toolbar {
+        left: 53px;
+    }
 
-	left: 53px;
-}
-html.fixed .inner-menu-toggle
-{
-	top:98px;
+    html.fixed .inner-menu-toggle {
+        top: 98px;
+    }
 
-}
-html.fixed .inner-menu
-{
-		top:98px;
-		width: 250px;
-}
-html.fixed.inner-menu-opened .inner-body
-   {
-   margin-left: 250px;
-   }
-}
-@media only screen and (min-width: 768px)
-{
-  html.fixed .inner-menu-opened .inner-body,   html.fixed .content-with-menu-container.inner-body
-   {
-    margin-left: 250px;
-   }
-   html.fixed .inner-menu .nano-content
-   {
-   padding:35px 15px 0px 15px;
-   }
+    html.fixed .inner-menu {
+        top: 98px;
+        width: 250px;
+    }
 
+    html.fixed.inner-menu-opened .inner-body {
+        margin-left: 250px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    html.fixed .inner-menu-opened .inner-body, html.fixed .content-with-menu-container.inner-body {
+        margin-left: 250px;
+    }
+
+    html.fixed .inner-menu .nano-content {
+        padding: 35px 15px 0px 15px;
+    }
 }
 /*����Э������ҳ��*/
 
 /* decitonaryTree */
 .decitonaryTree {
-	display: inline-block;
-	list-style: none;
-	padding: 0;
-	vertical-align: middle;
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    vertical-align: middle;
 }
 
 
-.decitonaryTree > li {
-	float: left;
-	margin: 0 10px 0 0;
-	position: relative;
-}
+    .decitonaryTree > li {
+        float: left;
+        margin: 0 10px 0 0;
+        position: relative;
+    }
 
-.decitonaryTree > li .notification-icon {
-	background: #FFF;
-	border-radius: 50%;
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
-	display: inline-block;
-	height: 30px;
-	position: relative;
-	width: 30px;
-	text-align: center;
-}
+        .decitonaryTree > li .notification-icon {
+            background: #FFF;
+            border-radius: 50%;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            height: 30px;
+            position: relative;
+            width: 30px;
+            text-align: center;
+        }
 
-.decitonaryTree > li .notification-icon i {
-	color: #777;
-	line-height: 30px;
-	vertical-align: middle;
-}
+            .decitonaryTree > li .notification-icon i {
+                color: #777;
+                line-height: 30px;
+                vertical-align: middle;
+            }
 
-.decitonaryTree > li .notification-icon i.fa-tasks {
-	line-height: 32px;
-}
+                .decitonaryTree > li .notification-icon i.fa-tasks {
+                    line-height: 32px;
+                }
 
-.decitonaryTree > li .notification-icon .badge {
-	background: #D2312D;
-	color: #FFF;
-	font-size: 10px;
-	font-weight: normal;
-	height: 16px;
-	padding: 3px 5px 3px 5px;
-	position: absolute;
-	right: -8px;
-	top: -3px;
-}
+            .decitonaryTree > li .notification-icon .badge {
+                background: #D2312D;
+                color: #FFF;
+                font-size: 10px;
+                font-weight: normal;
+                height: 16px;
+                padding: 3px 5px 3px 5px;
+                position: absolute;
+                right: -8px;
+                top: -3px;
+            }
 
-.decitonaryTree > li > a {
-	border: none;
-	display: inline-block;
-}
+        .decitonaryTree > li > a {
+            border: none;
+            display: inline-block;
+        }
 
-.decitonaryTree .notification-menu {
-	border: none;
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-	right: auto;
-	margin: 5px 0 0 0;
-	padding: 0;
-	right: -5px;
-	width: 245px;
-}
+    .decitonaryTree .notification-menu {
+        border: none;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+        right: auto;
+        margin: 5px 0 0 0;
+        padding: 0;
+        right: -5px;
+        width: 245px;
+    }
 
-.decitonaryTree .notification-menu.large {
-	width: 220px;
-}
+        .decitonaryTree .notification-menu.large {
+            width: 220px;
+        }
 
-.decitonaryTree .notification-menu .notification-title {
-	background: #08c;
-	border-radius: 3px 3px 0 0;
-	color: #FFF;
-	font-size: 11px;
-	font-size: 1.1rem;
-	line-height: 15px;
-	line-height: 1.5rem;
-	padding: 10px 6px 8px 12px;
-	text-transform: uppercase;
-}
+        .decitonaryTree .notification-menu .notification-title {
+            background: #08c;
+            border-radius: 3px 3px 0 0;
+            color: #FFF;
+            font-size: 11px;
+            font-size: 1.1rem;
+            line-height: 15px;
+            line-height: 1.5rem;
+            padding: 10px 6px 8px 12px;
+            text-transform: uppercase;
+        }
 
-.decitonaryTree .notification-menu .notification-title .label {
+            .decitonaryTree .notification-menu .notification-title .label {
+                font-size: 10px;
+                font-size: 1rem;
+                font-weight: 200;
+                line-height: 14px;
+                margin-left: 10px;
+                margin-top: -2px;
+                min-width: 35px;
+            }
 
-	font-size: 10px;
-	font-size: 1rem;
-	font-weight: 200;
-	line-height: 14px;
-	margin-left: 10px;
-	margin-top: -2px;
-	min-width: 35px;
-}
+            .decitonaryTree .notification-menu .notification-title .label-default {
+                background: #ccc;
+                color: #FFF;
+            }
 
-.decitonaryTree .notification-menu .notification-title .label-default {
-	background: #ccc;
-	color: #FFF;
-}
+        .decitonaryTree .notification-menu .content {
+            padding: 12px;
+        }
 
-.decitonaryTree .notification-menu .content {
-	padding: 12px;
-}
+        .decitonaryTree .notification-menu hr {
+            background: #E6E6E6;
+            height: 1px;
+            margin: 12px 0;
+        }
 
-.decitonaryTree .notification-menu hr {
-	background: #E6E6E6;
-	height: 1px;
-	margin: 12px 0;
-}
+        .decitonaryTree .notification-menu .view-more {
+            color: #ACACAC;
+            font-size: 11px;
+            font-size: 1.1rem;
+            line-height: 11px;
+            line-height: 1.1rem;
+            text-transform: uppercase;
+        }
 
-.decitonaryTree .notification-menu .view-more {
-	color: #ACACAC;
-	font-size: 11px;
-	font-size: 1.1rem;
-	line-height: 11px;
-	line-height: 1.1rem;
-	text-transform: uppercase;
-}
-.jstree-default .jstree-icon
-{
-	color:#08C !important
+.jstree-default .jstree-icon {
+    color: #08C !important;
 }
 
 /* notification menu - pin */
 .decitonaryTree #createTreeBody.notification-menu:before,
 .decitonaryTree #createTreeBody.notification-icon:before {
-	border-bottom: 6px solid #08c;
-	border-left: 6px solid transparent;
-	border-right: 6px solid transparent;
-	content: '';
-	height: 0;
-	margin-right: 3px;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
+    border-bottom: 6px solid #08c;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    content: '';
+    height: 0;
+    margin-right: 3px;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
 }
+
 .decitonaryTree .btn-sm, .btn-group-sm > .btn {
     padding: 5px 15px;
     font-size: 11px;
     line-height: 1.5;
     border-radius: 3px;
 }
+
 .decitonaryTree #createTreeBody.notification-menu:before {
-	bottom: 100%;
-	left: 25px;
+    bottom: 100%;
+    left: 25px;
 }
+
 .decitonaryTree #updateTreeBody.notification-menu:before,
 .decitonaryTree #updateTreeBody.notification-icon:before {
-	border-bottom: 6px solid #08c;
-	border-left: 6px solid transparent;
-	border-right: 6px solid transparent;
-	content: '';
-	height: 0;
-	margin-right: -3px;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
+    border-bottom: 6px solid #08c;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    content: '';
+    height: 0;
+    margin-right: -3px;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
 }
+
 .decitonaryTree #updateTreeBody.notification-menu:before {
-	bottom: 100%;
-	left: 75px;
+    bottom: 100%;
+    left: 75px;
 }
+
 .decitonaryTree .notification-icon:before {
-	display: none;
-	right: 11px;
-	top: 35px;
-	z-index: 9999;
+    display: none;
+    right: 11px;
+    top: 35px;
+    z-index: 9999;
 }
 
-.decitonaryTree .text-dark
-{
-	color: inherit !important;
-
+.decitonaryTree .text-dark {
+    color: inherit !important;
 }
 /* notification menu - emails */
 .notification-menu {
-	color: #ACACAC;
+    color: #ACACAC;
 }
 
-.notification-menu ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
+    .notification-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-.notification-menu li {
-	margin: 0 0 12px;
-}
+    .notification-menu li {
+        margin: 0 0 12px;
+    }
 
-.notification-menu li:last-child {
-	margin-bottom: 0;
-}
+        .notification-menu li:last-child {
+            margin-bottom: 0;
+        }
 
-.notification-menu a {
-	display: block;
-	text-decoration: none;
-}
+    .notification-menu a {
+        display: block;
+        text-decoration: none;
+    }
 
-.notification-menu .image {
-	float: left;
-	margin: 0 10px 0 0;
-}
+    .notification-menu .image {
+        float: left;
+        margin: 0 10px 0 0;
+    }
 
-.notification-menu .image i {
-	border-radius: 35px;
-	height: 35px;
-	line-height: 35px;
-	text-align: center;
-	width: 35px;
-}
+        .notification-menu .image i {
+            border-radius: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            width: 35px;
+        }
 
-.notification-menu .truncate {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
+    .notification-menu .truncate {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 
-.notification-menu .title {
-	color: #000011;
-	display: block;
-	font-size: 13px;
-	font-size: 1.3rem;
-	line-height: 17px;
-	line-height: 1.7rem;
-	padding: 2px 0 0;
-}
+    .notification-menu .title {
+        color: #000011;
+        display: block;
+        font-size: 13px;
+        font-size: 1.3rem;
+        line-height: 17px;
+        line-height: 1.7rem;
+        padding: 2px 0 0;
+    }
 
-.notification-menu .message {
-	color: #ACACAC;
-	display: block;
-	font-size: 11px;
-	font-size: 1.1rem;
-	line-height: 15px;
-	line-height: 1.5rem;
-	padding: 0;
-}
+    .notification-menu .message {
+        color: #ACACAC;
+        display: block;
+        font-size: 11px;
+        font-size: 1.1rem;
+        line-height: 15px;
+        line-height: 1.5rem;
+        padding: 0;
+    }
 
 html.dark .decitonaryTree > li .notification-icon,
 html.header-dark .decitonaryTree > li .notification-icon {
-	background: #282d36;
+    background: #282d36;
 }
 
-html.dark .decitonaryTree > li .notification-icon i,
-html.header-dark .decitonaryTree > li .notification-icon i {
-	color: #C3C3C3;
-}
+    html.dark .decitonaryTree > li .notification-icon i,
+    html.header-dark .decitonaryTree > li .notification-icon i {
+        color: #C3C3C3;
+    }
 
 /* decitonaryTree Mobile */
 @media only screen and (max-width: 767px) {
-	.decitonaryTree {
+    .decitonaryTree {
+    }
 
-	}
+        .decitonaryTree > li {
+            position: static;
+        }
 
-	.decitonaryTree > li {
-		position: static;
-	}
+            .decitonaryTree > li.open .notification-icon:before {
+                display: block;
+            }
 
-	.decitonaryTree > li.open .notification-icon:before {
-		display: block;
-	}
+            .decitonaryTree > li .notification-menu {
+                left: 15px;
+                right: 15px;
+                top: auto;
+                width: auto !important;
+            }
 
-	.decitonaryTree > li .notification-menu {
-		left: 15px;
-		right: 15px;
-		top: auto;
-		width: auto !important;
-	}
-
-	.decitonaryTree > li .notification-menu:before {
-		display: none;
-	}
+                .decitonaryTree > li .notification-menu:before {
+                    display: none;
+                }
 }
 
-.select .control-label
-{
-	color: #ABB4BE;
+.select .control-label {
+    color: #ABB4BE;
 }
 
 
@@ -624,48 +621,47 @@ html.header-dark .decitonaryTree > li .notification-icon i {
     border-radius: 4px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
 }
-.well .well-icon {
-    background: #FFF none repeat scroll 0% 0%;
-    border-radius: 50%;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
-    display: inline-block;
-    height: 30px;
-    position: relative;
-    width: 30px;
-    text-align: center;
-   margin-left:5px;
-}
 
-.well  .badge {
-    background: #D2312D none repeat scroll 0% 0%;
-    color: #FFF;
-    font-size: 10px;
-    font-weight: normal;
-    height: 16px;
-    padding: 3px 5px;
-    position: absolute;
-    right: -8px;
-    top: -6px;
-}
-.well  .badge {
-    display: inline-block;
-    min-width: 10px;
+    .well .well-icon {
+        background: #FFF none repeat scroll 0% 0%;
+        border-radius: 50%;
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+        display: inline-block;
+        height: 30px;
+        position: relative;
+        width: 30px;
+        text-align: center;
+        margin-left: 5px;
+    }
 
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 1;
-    color: #FFF;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
+    .well .badge {
+        background: #D2312D none repeat scroll 0% 0%;
+        color: #FFF;
+        font-size: 10px;
+        font-weight: normal;
+        height: 16px;
+        padding: 3px 5px;
+        position: absolute;
+        right: -8px;
+        top: -6px;
+    }
 
-    border-radius: 10px;
-}
+    .well .badge {
+        display: inline-block;
+        min-width: 10px;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1;
+        color: #FFF;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        border-radius: 10px;
+    }
 
-a.like
-{
-	color: #08C;
-	text-decoration: underline
+a.like {
+    color: #08C;
+    text-decoration: underline;
 }
 
 .modal-header {
@@ -673,30 +669,26 @@ a.like
     padding: 10px 15px 10px 10px;
     border-bottom: 1px solid #E5E5E5;
 }
-.modal-title
-{
-	font-size: 1.5rem;
-}
 
+.modal-title {
+    font-size: 1.5rem;
+}
 
 #mapAddress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
 }
-/*
-��ͼ
-*/
-.markerActive
-{
-  background-image: url(css/images/active.png);
-  background-repeat: no-repeat;
-  height:30px;
-  width:24px;
-  background-size: contain;
-  padding: 4px 4px 4px 5px;
+
+.markerActive {
+    background-image: url(css/images/active.png);
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 24px;
+    background-size: contain;
+    padding: 4px 4px 4px 5px;
 }

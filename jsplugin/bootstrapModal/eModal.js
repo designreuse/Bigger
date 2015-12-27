@@ -6,8 +6,8 @@
  * Licensed under MIT.
  * ======================================================================== */
 
-; (function (define) {
-    define(['jquery'], function ($) {
+; (function (defineModel) {
+    defineModel(['jquery'], function ($) {
         /// <summary>
         /// @params allowed elements:
         ///     buttons  {array}:           An array of objects to configure buttons to modal footer; only able if message == string
@@ -536,7 +536,7 @@
         }
         //#endregion
     });
-}(typeof define == 'function' && define.amd ? define : function (n, t) {
+}(typeof defineModel == 'function' && defineModel.amd ? defineModel : function (n, t) {
     typeof window.module != 'undefined' && window.module.exports ?
         window.module.exports = t(window.require(n[0])) :
         window.eModal = t(window.$);

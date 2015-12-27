@@ -6,9 +6,9 @@
  * https://github.com/select2/select2/blob/master/LICENSE.md
  */
 (function (factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof defineSelect === 'function' && defineSelect.amd) {
     // AMD. Register as an anonymous module.
-    define(['jquery'], factory);
+        defineSelect(['jquery'], factory);
   } else if (typeof exports === 'object') {
     // Node/CommonJS
     factory(require('jquery'));
@@ -39,7 +39,7 @@ if (!S2) { S2 = {}; } else { require = S2; }
 /*jslint sloppy: true */
 /*global setTimeout: false */
 
-var requirejs, require, define;
+var requirejs, require, defineSelect;
 (function (undef) {
     var main, req, makeMap, handlers,
         defined = {},
@@ -304,7 +304,7 @@ var requirejs, require, define;
         //Use name if no relName
         relName = relName || name;
 
-        //Call the callback to define the module, if necessary.
+        //Call the callback to defineSelect the module, if necessary.
         if (callbackType === 'undefined' || callbackType === 'function') {
             //Pull out the defined dependencies and pass the ordered
             //values to the callback.
@@ -430,7 +430,7 @@ var requirejs, require, define;
      */
     requirejs._defined = defined;
 
-    define = function (name, deps, callback) {
+    defineSelect = function (name, deps, callback) {
 
         //This module may not have dependencies
         if (!deps.splice) {
@@ -446,18 +446,18 @@ var requirejs, require, define;
         }
     };
 
-    define.amd = {
+    defineSelect.amd = {
         jQuery: true
     };
 }());
 
-S2.requirejs = requirejs;S2.require = require;S2.define = define;
+S2.requirejs = requirejs; S2.require = require; S2.defineSelect = defineSelect;
 }
 }());
-S2.define("almond", function(){});
+S2.defineSelect("almond", function(){});
 
 /* global jQuery:false, $:false */
-S2.define('jquery',[],function () {
+S2.defineSelect('jquery',[],function () {
   var _$ = jQuery || $;
 
   if (_$ == null && console && console.error) {
@@ -471,7 +471,7 @@ S2.define('jquery',[],function () {
   return _$;
 });
 
-S2.define('select2/utils',[
+S2.defineSelect('select2/utils',[
   'jquery'
 ], function ($) {
   var Utils = {};
@@ -734,7 +734,7 @@ S2.define('select2/utils',[
   return Utils;
 });
 
-S2.define('select2/results',[
+S2.defineSelect('select2/results',[
   'jquery',
   './utils'
 ], function ($, Utils) {
@@ -1243,7 +1243,7 @@ S2.define('select2/results',[
   return Results;
 });
 
-S2.define('select2/keys',[
+S2.defineSelect('select2/keys',[
 
 ], function () {
   var KEYS = {
@@ -1269,7 +1269,7 @@ S2.define('select2/keys',[
   return KEYS;
 });
 
-S2.define('select2/selection/base',[
+S2.defineSelect('select2/selection/base',[
   'jquery',
   '../utils',
   '../keys'
@@ -1410,7 +1410,7 @@ S2.define('select2/selection/base',[
   return BaseSelection;
 });
 
-S2.define('select2/selection/single',[
+S2.defineSelect('select2/selection/single',[
   'jquery',
   './base',
   '../utils',
@@ -1504,7 +1504,7 @@ S2.define('select2/selection/single',[
   return SingleSelection;
 });
 
-S2.define('select2/selection/multiple',[
+S2.defineSelect('select2/selection/multiple',[
   'jquery',
   './base',
   '../utils'
@@ -1606,7 +1606,7 @@ S2.define('select2/selection/multiple',[
   return MultipleSelection;
 });
 
-S2.define('select2/selection/placeholder',[
+S2.defineSelect('select2/selection/placeholder',[
   '../utils'
 ], function (Utils) {
   function Placeholder (decorated, $element, options) {
@@ -1656,7 +1656,7 @@ S2.define('select2/selection/placeholder',[
   return Placeholder;
 });
 
-S2.define('select2/selection/allowClear',[
+S2.defineSelect('select2/selection/allowClear',[
   'jquery',
   '../keys'
 ], function ($, KEYS) {
@@ -1754,7 +1754,7 @@ S2.define('select2/selection/allowClear',[
   return AllowClear;
 });
 
-S2.define('select2/selection/search',[
+S2.defineSelect('select2/selection/search',[
   'jquery',
   '../utils',
   '../keys'
@@ -1909,7 +1909,7 @@ S2.define('select2/selection/search',[
   return Search;
 });
 
-S2.define('select2/selection/eventRelay',[
+S2.defineSelect('select2/selection/eventRelay',[
   'jquery'
 ], function ($) {
   function EventRelay () { }
@@ -1955,7 +1955,7 @@ S2.define('select2/selection/eventRelay',[
   return EventRelay;
 });
 
-S2.define('select2/translation',[
+S2.defineSelect('select2/translation',[
   'jquery',
   'require'
 ], function ($, require) {
@@ -1992,7 +1992,7 @@ S2.define('select2/translation',[
   return Translation;
 });
 
-S2.define('select2/diacritics',[
+S2.defineSelect('select2/diacritics',[
 
 ], function () {
   var diacritics = {
@@ -2840,7 +2840,7 @@ S2.define('select2/diacritics',[
   return diacritics;
 });
 
-S2.define('select2/data/base',[
+S2.defineSelect('select2/data/base',[
   '../utils'
 ], function (Utils) {
   function BaseAdapter ($element, options) {
@@ -2881,7 +2881,7 @@ S2.define('select2/data/base',[
   return BaseAdapter;
 });
 
-S2.define('select2/data/select',[
+S2.defineSelect('select2/data/select',[
   './base',
   '../utils',
   'jquery'
@@ -3167,7 +3167,7 @@ S2.define('select2/data/select',[
   return SelectAdapter;
 });
 
-S2.define('select2/data/array',[
+S2.defineSelect('select2/data/array',[
   './select',
   '../utils',
   'jquery'
@@ -3247,7 +3247,7 @@ S2.define('select2/data/array',[
   return ArrayAdapter;
 });
 
-S2.define('select2/data/ajax',[
+S2.defineSelect('select2/data/ajax',[
   './array',
   '../utils',
   'jquery'
@@ -3349,7 +3349,7 @@ S2.define('select2/data/ajax',[
   return AjaxAdapter;
 });
 
-S2.define('select2/data/tags',[
+S2.defineSelect('select2/data/tags',[
   'jquery'
 ], function ($) {
   function Tags (decorated, $element, options) {
@@ -3469,7 +3469,7 @@ S2.define('select2/data/tags',[
   return Tags;
 });
 
-S2.define('select2/data/tokenizer',[
+S2.defineSelect('select2/data/tokenizer',[
   'jquery'
 ], function ($) {
   function Tokenizer (decorated, $element, options) {
@@ -3556,7 +3556,7 @@ S2.define('select2/data/tokenizer',[
   return Tokenizer;
 });
 
-S2.define('select2/data/minimumInputLength',[
+S2.defineSelect('select2/data/minimumInputLength',[
 
 ], function () {
   function MinimumInputLength (decorated, $e, options) {
@@ -3587,7 +3587,7 @@ S2.define('select2/data/minimumInputLength',[
   return MinimumInputLength;
 });
 
-S2.define('select2/data/maximumInputLength',[
+S2.defineSelect('select2/data/maximumInputLength',[
 
 ], function () {
   function MaximumInputLength (decorated, $e, options) {
@@ -3619,7 +3619,7 @@ S2.define('select2/data/maximumInputLength',[
   return MaximumInputLength;
 });
 
-S2.define('select2/data/maximumSelectionLength',[
+S2.defineSelect('select2/data/maximumSelectionLength',[
 
 ], function (){
   function MaximumSelectionLength (decorated, $e, options) {
@@ -3651,7 +3651,7 @@ S2.define('select2/data/maximumSelectionLength',[
   return MaximumSelectionLength;
 });
 
-S2.define('select2/dropdown',[
+S2.defineSelect('select2/dropdown',[
   'jquery',
   './utils'
 ], function ($, Utils) {
@@ -3690,7 +3690,7 @@ S2.define('select2/dropdown',[
   return Dropdown;
 });
 
-S2.define('select2/dropdown/search',[
+S2.defineSelect('select2/dropdown/search',[
   'jquery',
   '../utils'
 ], function ($, Utils) {
@@ -3786,7 +3786,7 @@ S2.define('select2/dropdown/search',[
   return Search;
 });
 
-S2.define('select2/dropdown/hidePlaceholder',[
+S2.defineSelect('select2/dropdown/hidePlaceholder',[
 
 ], function () {
   function HidePlaceholder (decorated, $element, options, dataAdapter) {
@@ -3829,7 +3829,7 @@ S2.define('select2/dropdown/hidePlaceholder',[
   return HidePlaceholder;
 });
 
-S2.define('select2/dropdown/infiniteScroll',[
+S2.defineSelect('select2/dropdown/infiniteScroll',[
   'jquery'
 ], function ($) {
   function InfiniteScroll (decorated, $element, options, dataAdapter) {
@@ -3917,7 +3917,7 @@ S2.define('select2/dropdown/infiniteScroll',[
   return InfiniteScroll;
 });
 
-S2.define('select2/dropdown/attachBody',[
+S2.defineSelect('select2/dropdown/attachBody',[
   'jquery',
   '../utils'
 ], function ($, Utils) {
@@ -4120,7 +4120,7 @@ S2.define('select2/dropdown/attachBody',[
   return AttachBody;
 });
 
-S2.define('select2/dropdown/minimumResultsForSearch',[
+S2.defineSelect('select2/dropdown/minimumResultsForSearch',[
 
 ], function () {
   function countResults (data) {
@@ -4160,7 +4160,7 @@ S2.define('select2/dropdown/minimumResultsForSearch',[
   return MinimumResultsForSearch;
 });
 
-S2.define('select2/dropdown/selectOnClose',[
+S2.defineSelect('select2/dropdown/selectOnClose',[
 
 ], function () {
   function SelectOnClose () { }
@@ -4190,7 +4190,7 @@ S2.define('select2/dropdown/selectOnClose',[
   return SelectOnClose;
 });
 
-S2.define('select2/dropdown/closeOnSelect',[
+S2.defineSelect('select2/dropdown/closeOnSelect',[
 
 ], function () {
   function CloseOnSelect () { }
@@ -4223,7 +4223,7 @@ S2.define('select2/dropdown/closeOnSelect',[
   return CloseOnSelect;
 });
 
-S2.define('select2/i18n/en',[],function () {
+S2.defineSelect('select2/i18n/en',[],function () {
   // English
   return {
     errorLoading: function () {
@@ -4268,7 +4268,7 @@ S2.define('select2/i18n/en',[],function () {
   };
 });
 
-S2.define('select2/defaults',[
+S2.defineSelect('select2/defaults',[
   'jquery',
   'require',
 
@@ -4665,7 +4665,7 @@ S2.define('select2/defaults',[
   return defaults;
 });
 
-S2.define('select2/options',[
+S2.defineSelect('select2/options',[
   'require',
   'jquery',
   './defaults',
@@ -4788,7 +4788,7 @@ S2.define('select2/options',[
   return Options;
 });
 
-S2.define('select2/core',[
+S2.defineSelect('select2/core',[
   'jquery',
   './options',
   './utils',
@@ -5317,7 +5317,7 @@ S2.define('select2/core',[
   return Select2;
 });
 
-S2.define('jquery.select2',[
+S2.defineSelect('jquery.select2',[
   'jquery',
   'require',
 
@@ -5375,7 +5375,7 @@ S2.define('jquery.select2',[
   return Select2;
 });
 
-S2.define('jquery.mousewheel',[
+S2.defineSelect('jquery.mousewheel',[
   'jquery'
 ], function ($) {
   // Used to shim jQuery.mousewheel for non-full builds.
@@ -5384,7 +5384,7 @@ S2.define('jquery.mousewheel',[
 
   // Return the AMD loader configuration so it can be used outside of this file
   return {
-    define: S2.define,
+    defineSelect: S2.defineSelect,
     require: S2.require
   };
 }());

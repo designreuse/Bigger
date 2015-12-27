@@ -2,9 +2,11 @@
 
 /*-----------login-------------*/
 .rowHu {
-	background: url("../images/login.jpg");
-	height: 450px;
+	background: url("../images/login.jpg") no-repeat;
+	height: 100%;
 	margin-top: 40px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .bottonHu {

@@ -57,7 +57,7 @@ button.expend {
 
 /*-----------newDemo-------------*/
 body {
-	font-family: "Î¢ÈíÑÅºÚ";
+	font-family: "å¾®è½¯é›…é»‘";
 }
 /*-----------header-------------*/
 @media ( min-width : 1000px) {
@@ -264,7 +264,7 @@ ul.nav-main > li > a
 
 
 /*--
-ÐÞ¸Ä ÁÐ±í ¹¤¾ß À¸¸ß¶È 
+ä¿®æ”¹ åˆ—è¡¨ å·¥å…· æ é«˜åº¦ 
 */
 .keep-open .btn,.export .btn
 {
@@ -298,7 +298,7 @@ ul.nav-main > li > a
 }
 
 
-/*ÐÞ¸ÄÄÚ²¿²Ëµ¥ÑùÊ½*/
+/*ä¿®æ”¹å†…éƒ¨èœå•æ ·å¼*/
 @media only screen and (min-width: 768px) and (max-width: 1365px) {
 	html.fixed.sidebar-left-collapsed .inner-menu, html.fixed.sidebar-left-collapsed .inner-menu-toggle, html.fixed.sidebar-left-collapsed .inner-toolbar
 {
@@ -332,7 +332,7 @@ html.fixed.inner-menu-opened .inner-body
    }
 
 }
-/*ÉèÖÃÐ­ÒéÉèÖÃÒ³Ãæ*/
+/*è®¾ç½®åè®®è®¾ç½®é¡µé¢*/
 
 /* decitonaryTree */
 .decitonaryTree {
@@ -608,7 +608,7 @@ html.header-dark .decitonaryTree > li .notification-icon i {
 }
 
 
-/*¹ì¼£»Ø·Å*/
+/*è½¨è¿¹å›žæ”¾*/
 .well {
     min-height: 20px;
     padding: 10px 10px 20px 10px;
@@ -686,15 +686,42 @@ html,body {
   height: 100%;
 }
 /*
-µØÍ¼
+åœ°å›¾
 */
 .markerActive
 {
-  background-image: url(css/images/active.png);
+  background-image: url(../images/active.png);
   background-repeat: no-repeat;
   height:30px;
   width:24px;
   background-size: contain;
   padding: 4px 4px 4px 5px;
 }
+/* Example 1 custom styles */
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
+/* 
+.well {
+	background-color: #E0E0E0;
+	width:100%;
+}
+    */
+.mapContainer {
+	
+position: relative; 
+height: 400px;
+	
+}
+#mapPanel
+{
+	height:520px;
+	
+}
+.dynamic
+{
+	height:230px;
+}
+
+
 
