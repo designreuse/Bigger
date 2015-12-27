@@ -102,9 +102,25 @@ function  dynamicChartData(options){
     	
     	
     	initChart:function(){
-    		var that=this;
-    		that.options.myChart= echarts.init(document.getElementById(that.options.elementId));
-    		that.setOptions();
+    	    var that = this;
+
+    	    // 使用
+    	    require(
+                [
+                    'echarts',
+                     'echarts/chart/line',
+                    'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
+                ],
+                function (ec) {
+                    // 基于准备好的dom，初始化echarts图表
+                    that.options.myChart = ec.init(document.getElementById(that.options.elementId));
+                    that.setOptions();
+                }
+            );
+
+
+    		
+    		
     	},
     	setOptions:function()
     	{

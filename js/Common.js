@@ -13,12 +13,11 @@ $.ajaxSetup({
     }
 });
 
-function checkCookie()
-{
+function checkCookie() {
     var access_token = ($.cookie('access-token'));
-    console.log(access_token);
+    // console.log(access_token);
     if (access_token) {
-      
+
     } else {
         if (pageName() != "index") {
             window.location.replace("index.html");
@@ -234,17 +233,17 @@ $.fn.serializeJson = function () {
     var str = this.serialize();
 
     $(array).each(function () {
-			    if (serializeObj[this.name]) {
-			        if ($.isArray(serializeObj[this.name])) {
-			            serializeObj[this.name].push(this.value);
-			        } else {
-			            serializeObj[this.name] = [serializeObj[this.name],
-								this.value];
-			        }
-			    } else {
-			        serializeObj[this.name] = this.value;
-			    }
-			});
+        if (serializeObj[this.name]) {
+            if ($.isArray(serializeObj[this.name])) {
+                serializeObj[this.name].push(this.value);
+            } else {
+                serializeObj[this.name] = [serializeObj[this.name],
+                        this.value];
+            }
+        } else {
+            serializeObj[this.name] = this.value;
+        }
+    });
     return serializeObj;
 };
 
@@ -261,14 +260,12 @@ tableList = ["sim_simList",
 "data_aliasList",
 "vehicle_vehicleTypeList",
 "vehicle_modelList"];
-
-
 //TODO dictionaryJs 页面加载的js
 dictionaryJs = {
     sim_simList: ['js/pages/simList.js'],
     menu_menuList: ['js/pages/menuList.js'],
     terminal_terminalList: ['js/pages/terminalList.js'],
-    user_track: ["js/echart/echarts-all.js", "js/pages/dynamicDataChart.js",
+    user_track: ["js/pages/dynamicDataChart.js",
 			"js/pages/vehicleTrack.js", "js/pages/track/dataSet.js",
 			"resources-clear/vendor/select2/js/select2.full.js",
 			"resources-clear/vendor/bootstrap-multiselect/bootstrap-multiselect.js"],
@@ -300,7 +297,7 @@ dictionaryJs = {
 	                    'js/pages/vehicleAddress.js',
 	                    "js/pages/dynamicDataChart.js",
 	                    "js/pages/vehicleMonitoringLayout.js",
-	                    "jsplugin/select2/js/select2.full.js",
+	                    "jsplugin/select2/js/select2.js",
 						"jsplugin/bootstrap-multiselect/bootstrap-multiselect.js",
 						'//webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e'],
     vehicle_detail: ['js/pages/vehicleDetail.js'],
@@ -325,24 +322,24 @@ dictionaryJs = {
     vehicle_track: ["js/pages/track/dataSet.js",
                     'js/pages/vehicleAddress.js',
                     "js/pages/dynamicDataChart.js",
-                    'jsplugin/slider/bootstrap-slider.js',
+                    'jsplugin/slider/bootstrap-slider.min.js',
                     "js/pages/vehicleTrack.js",
-                    "jsplugin/select2/js/select2.full.js",
-                                "jsplugin/bootstrap-multiselect/bootstrap-multiselect.js",
+                    "jsplugin/select2/js/select2.js",
+                    "jsplugin/bootstrap-multiselect/bootstrap-multiselect.js",
                     'jsplugin/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js',
-                                 'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js',
-                                '//webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e'
+                    'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js',
+                    '//webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e'
     ],
     vehicle_faultHistory: [
-                            "js/pages/faultHistory.js",
-                      'js/dataView.js',
+                          "js/pages/faultHistory.js",
+                          'js/dataView.js',
                           'js/pages/vehicleAddress.js',
                           'jsplugin/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js',
-                                  'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js',
+                          'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js',
                           'jsplugin/bootstrap-table-master/src/bootstrap-table.js',
-                    'jsplugin/bootstrap-table-master/src/locale/bootstrap-table-zh-CN.js',
+                          'jsplugin/bootstrap-table-master/src/locale/bootstrap-table-zh-CN.js',
                           "js/pages/dynamicDataChart.js",
-                                            '//webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e'
+                           '//webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e'
     ],
     data_aliasList: ["js/pages/aliasList.js"
     ],//标准别名
@@ -542,7 +539,7 @@ ajaxObject.extend({
 });
 
 function setCookie(name, value, Days) {
-    
+
     $.cookie(name, value, { path: '/' });
 }
 
@@ -680,6 +677,7 @@ function strToDate(str) {
 function ajaxLoadJs(options) {
     var defaultOptions = {
         i: 0,
+        cache: true,
         jsArray: [],
         fun: function () {
 
@@ -699,7 +697,7 @@ ajaxLoadJs.extend({
             new ajaxObject({
                 Url: field,
                 dataType: 'script',
-                cache: true,
+                cache: that.options.cache,
                 complete: function (data) {
                     that.options.i++;
                     if (that.options.i === that.options.jsArray.length) {
@@ -710,3 +708,19 @@ ajaxLoadJs.extend({
         });
     }
 })
+
+
+
+
+function removejscssfile(filename, filetype) {
+    //判断文件类型
+    var targetelement = (filetype == "js") ? "script" : (filetype == "css") ? "link" : "none";
+    //判断文件名
+    var targetattr = (filetype == "js") ? "src" : (filetype == "css") ? "href" : "none";
+    var allsuspects = document.getElementsByTagName(targetelement);
+    //遍历元素， 并删除匹配的元素
+    for (var i = allsuspects.length; i >= 0; i--) {
+        if (allsuspects[i] && allsuspects[i].getAttribute(targetattr) != null && allsuspects[i].getAttribute(targetattr).indexOf(filename) != -1)
+            allsuspects[i].parentNode.removeChild(allsuspects[i]);
+    }
+}

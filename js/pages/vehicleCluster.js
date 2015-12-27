@@ -27,8 +27,9 @@ var cluster = {
 		var latSpan = Math.abs(ne.lat - sw.lat);
 
 		new ajaxObject({
-			Url : URLDICTIONARY.cluster + "?zoom=5",
-			fun : function(data) {
+			Url : URLDICTIONARY.cluster + "?zoom=12",
+			fun: function (data) {
+			    console.log("聚合");
 				console.log(data);
 			}
 		});
@@ -82,23 +83,22 @@ var cluster = {
 										'<span id="panelTitle"></span>&nbsp;&nbsp;<span onClick="event.preventDefault();cluster.openVehicleDetail(\''+vin+'\'); return false;" style="font-size:11px;color:#F00; cursor:pointer">'
 												+ vin + '</span>',
 										'</header>',
-										'<div  class="panel-body"  id="vehicleInfo" data-loading-overlay data-loading-overlay-options=\'{ "startShowing": true }\' style="min-height: 100px; min-width:350px;" >',
-
-										' <label class="col-sm-4 control-label">车速： </label> ',
-										' <label class="col-sm-2 id="SPEED" control-label"></label> ',
-										' <label class="col-sm-4 control-label">SOC： </label>',
+										'<div class="panel-body"  id="vehicleInfo" data-loading-overlay data-loading-overlay-options=\'{ "startShowing": true }\' style="min-height: 100px; min-width:350px;" >',
+										'<label class="col-sm-4 control-label">车速： </label> ',
+										'<label class="col-sm-2 id="SPEED" control-label"></label> ',
+										'<label class="col-sm-4 control-label">SOC： </label>',
 										'<label class="col-sm-2 control-label"> </label> ',
-										' <label class="col-sm-4 control-label">扭矩： </label>',
+										'<label class="col-sm-4 control-label">扭矩： </label>',
 										'<label class="col-sm-2 control-label"></label> ',
-										' <label class="col-sm-4 control-label">牵引踏板： </label> ',
-										' <label class="col-sm-2 control-label"> </label> ',
+										'<label class="col-sm-4 control-label">牵引踏板： </label> ',
+										'<label class="col-sm-2 control-label"> </label> ',
 										'<label class="col-sm-4 control-label">制动踏板： </label> ',
 										'<label class="col-sm-2 control-label"> </label> ',
-										' <label class="col-sm-4 control-label">转速：</label> ',
-										' <label class="col-sm-2 control-label"></label> ',
-										' <label class="col-sm-4 control-label">数据时间：</label> ',
-										' <label class="col-sm-8 control-label"></label> ',
-										' </div>',
+										'<label class="col-sm-4 control-label">转速：</label> ',
+										'<label class="col-sm-2 control-label"></label> ',
+										'<label class="col-sm-4 control-label">数据时间：</label> ',
+										'<label class="col-sm-8 control-label"></label> ',
+										'</div>',
 										'</section><div class="info-bottom" style="position:relative;top:0px;margin:0 auto;"><img src="//webapi.amap.com/images/sharp.png"></img><div></div>' ]
 										.join(" ");
 

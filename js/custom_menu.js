@@ -12,7 +12,10 @@ var menuJs = function(options) {
 		menuArray : [],
 		allmenu : [],
 		menuType : "1",
-		isCatch : true
+		isCatch: true,
+		fun: function ()
+		{
+		}
 	// true 从缓存中获取数据 默认为true
 	// 1默认为多车 2代表单车
 	};
@@ -64,6 +67,8 @@ menuJs.prototype.initMenu = function() {
 			that.createHtml("#");
 			that.bindMenuClick();
 			that.initP();
+
+			that.options.fun.call(that);
 			//that.selectedMenu();
 
 		});

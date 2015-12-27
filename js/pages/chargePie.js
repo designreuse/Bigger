@@ -9,8 +9,7 @@ var chargePie={
 		initPage:function()
 		{
 			var that=this;
-			var myChart = echarts.init(document.getElementById('chargPie'));
-			that.options.myChart=myChart;
+		
 			var labelTop = {
 				normal : {
 					label : {
@@ -113,9 +112,19 @@ var chargePie={
 				},
 
 				]
-			};
-			myChart.setOption(that.options.pieoption);
-			
+		 };
+
+
+		 require(
+             [
+                 'echarts',
+                'echarts/chart/pie' // 使用柱状图就加载bar模块，按需加载
+             ],
+             function (ec) {
+                 var myChart = ec.init(document.getElementById('chargPie'));
+                 that.options.myChart = myChart;
+                 myChart.setOption(that.options.pieoption);
+             });
 		}
 }
 

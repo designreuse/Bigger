@@ -151,81 +151,9 @@ var vehicleListDemo = {
 	idEvents : {
 		'click .like' : function(e, value, row, index) {
 			eModal.iframe({
-				url : "subMain/main.html?vin=" + value,
+				url : "subMain/main.html?vin=" + value+"&nt="+new Date().getTime(),
 			}, row.vin+"|"+row.licence+"|"+row.terminalId);
 		}
-	},
-	sim : function(value, row, index) {
-		return value;
-	/*	var sim = "数据加载中";
-
-		var tempf = $.grep(value.entry, function(f, i) {
-			return f.key == 'device_unid';
-		});
-		if (tempf.length > 0) {
-			var id = tempf[0].value;
-
-			if (id!='' || id!=undefined || id!=null) {
-				new ajaxObject({
-					Url : URLDICTIONARY.device + "/" + id,
-					fun : function(data) {
-						 var sim=data.cellphone;
-					}
-				});
-			}else{
-				return "-";
-			}
-		}
-
-
-		return sim; */
-	},
-	terminal : function(value, row, index,field) {
-		return value;
-		/*var terminal = "<span id='terminal'"+index+"></span>";
-		console.log(field);
-		var isCheck = $.inArray(field + "_" + index, vehicleListDemo.tempArray);
-		var tempf = $.grep(value.entry, function(f, i) {
-			return f.key == 'device_unid';
-		});
-		if (tempf.length > 0 && isCheck == -1) {
-			vehicleListDemo.tempArray.push(field+"_"+index);
-			var id = tempf[0].value;
-
-			if (id!='' || id!=undefined || id!=null) {
-				new ajaxObject({
-					Url : URLDICTIONARY.device + "/" + id,
-					content:{
-						field:field,
-						index:index
-					},
-					fun : function(data) {
-						console.log
-						var that=this;
-						 var terminal=data.device_id;
-						 var index=that.content.index;
-						 var field=that.content.field;
-
-						 var strRow = '{\"' + field+ '\":\"'
-								+ terminal + '\"}';
-						// console.log(thats);
-						var rows = JSON.parse(strRow);
-
-						$("#tableserver").bootstrapTable(
-								"updateRow", {
-									index : index,
-									refresh : true,
-									row : rows
-						});
-					}
-				});
-			}else{
-				return "-";
-			}
-		}
-
-
-		return terminal;*/
 	}
 
 };

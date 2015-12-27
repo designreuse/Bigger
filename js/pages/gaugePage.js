@@ -210,9 +210,18 @@
     gaugePage.extend({
     	initPage:function()
 		{
-			var that=this;
-			that.options.myChart = echarts.init(document.getElementById(that.options.elementId));	
-			that.options.myChart.setOption(that.options.chartOptions);
+    	    var that = this;
+
+    	    require(
+                  [
+                      'echarts',
+                      'echarts/chart/gauge' // 使用柱状图就加载bar模块，按需加载
+                  ],
+                  function (ec) {
+			            that.options.myChart = ec.init(document.getElementById(that.options.elementId));	
+			            that.options.myChart.setOption(that.options.chartOptions);
+                  }
+            );
 		},
 		setOption:function()
 		{
