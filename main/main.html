@@ -1,5 +1,4 @@
-﻿
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+﻿﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html class="fixed sidebar-left-collapsed">
 <head>
     <base href="../">
@@ -10,29 +9,38 @@
     <meta name="fenghai" content="feng_hai@aliyun.com">
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <script type="text/javascript" src="js/loadCSS.js"></script>
     <script>
-      
-      var tempArray = [
-       'css/custom/theme.css',
-       'css/skins/default.css',
-       'jsplugin/bootstrap/css/bootstrap.min.css',
-       'css/custom/theme-custom.css',
-       'jsplugin/bootstrap-table-master/dist/bootstrap-table.min.css',
-        'css/font-awesome/css/font-awesome.min.css',
-        'css/elusive-icons/css/elusive-icons.min.css',
-        'css/simple-line-icons/css/simple-line-icons.css'
-      ];
-       for(var i in tempArray)
-       {
-         loadCSS(tempArray[i]);
-       }
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            if (arr = document.cookie.match(reg))
+                return unescape(arr[2]);
+            else
+                return null;
+        }
+        function checkCookie() {
+            var access_token = (getCookie('access-token'));
+            // console.log(access_token);
+            if (access_token) {
 
-     
+            } else {
+                if (pageName() != "index") {
+                    window.location.replace("index.html");
+                }
+            }
+        }
+        checkCookie();
     </script>
     <!-- Head Libs -->
-   <script src="jsplugin/modernizr/modernizr.js"></script>
-</head>
+    <script src="jsplugin/modernizr/modernizr.js"></script>
+    <link rel="stylesheet" href="jsplugin/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/custom/theme.css" />
+    <link rel="stylesheet" href="css/custom/theme-custom.css" />
+    <link rel="stylesheet" href="css/skins/default.css" />
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/elusive-icons/css/elusive-icons.min.css" />
+    <link rel="stylesheet" href="css/simple-line-icons/css/simple-line-icons.css" />
+    <link rel="stylesheet" href= "jsplugin/bootstrap-table-master/dist/bootstrap-table.min.css" />
+ </head>
 <body>
     <section class="body" style="opacity : 0">
         <!-- start: header -->
@@ -279,7 +287,6 @@
             </section>
         </div>
 
-
     </section>
 </body>
 </html>
@@ -292,7 +299,6 @@
         checkCookie();
         $(".body").animate({ opacity: 1 }, 4000, function () { });
     })
-
 </script>
 
 <script type="text/javascript" src="js/custom_menu.js"></script>
@@ -307,115 +313,117 @@
 <script type="text/javascript" src="js/theme.js"></script> <!-- Theme Custom -->
 <script type="text/javascript" src="js/theme.custom.js"></script>
 <script type="text/javascript" src="js/theme.init.js"></script>
-
+<script type="text/javascript" src="js/loadCSS.js"></script>
 <!-- 实现文本框显示描述文字 -->
 <!--  <script type="text/javascript" src="jsplugin/jquery-placeholder/jquery-placeholder.js"></script>-->
 <!-- Theme Initialization Files -->
-
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
 <script type="text/javascript">
-            $("#mainBody").load("main/vehicle/cluster.html",function(){
+    $("#mainBody").load("main/vehicle/cluster.html", function () {
+    });
+    $(function () {
+        try {
+            var tempMenu = new menuJs({
+                menuType: "2"
             });
-            $(function() {
-                try {
-                    var tempMenu = new menuJs({
-                        menuType : "2"
-                    });
-                } catch (e) {
-                    console.log(e);
+        } catch (e) {
+            console.log(e);
 
-                } finally {
+        } finally {
 
-                }
-               /* */
-            });
-            $(function () {
-                $.getScript("http://webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e", function () {
-                    $.getScript("js/pages/vehicleCluster.js", function () {
-                        pageStart_Two();
-                    })
+        }
 
-                });
-               
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
 
+        /* */
+    });
+    $(function () {
+        $.getScript("//webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e", function () {
+            $.getScript("js/pages/vehicleCluster.js", function () {
+                pageStart_Two();
+            })
+
+        });
+
+        new ajaxLoadJs({
+            jsArray: ["js/pages/echartChina.js"],
+            fun: function () {
+                pageStart_Three();
+            }
+        });
+
+        new ajaxLoadJs({
+            jsArray: [
+                "js/pages/vehicleList.js",
+                "jsplugin/bootstrap-table-master/src/bootstrap-table.js",
+                "js/dataView.js"
+
+            ],
+            fun: function () {
                 new ajaxLoadJs({
-                    jsArray: ["jsplugin/echart/echarts-plain-map.js",
-                           "js/pages/echartChina.js"],
-                    fun: function () {
-                        pageStart_Three();
-                    }
-                });
-
-               
-
-                new ajaxLoadJs({
-                    jsArray: [
-                        "js/pages/vehicleList.js",
-                        "jsplugin/bootstrap-table-master/src/bootstrap-table.js",
-                        "js/dataView.js"
-                        
+                    jsArray: ["jsplugin/bootstrap-table-master/dist/extensions/export/bootstrap-table-export.js",
+                    "jsplugin/bootstrap-table-master/dist/extensions/pageOption/bootstrap-table-pageOption.js",
+                    "jsplugin/bootstrap-table-master/dist/locale/bootstrap-table-zh-CN.js"
                     ],
                     fun: function () {
-                        new ajaxLoadJs({
-                            jsArray:[ "jsplugin/bootstrap-table-master/dist/extensions/export/bootstrap-table-export.js",
-                            "jsplugin/bootstrap-table-master/dist/extensions/pageOption/bootstrap-table-pageOption.js",
-                            "jsplugin/bootstrap-table-master/dist/locale/bootstrap-table-zh-CN.js"
-                        ],
-                            fun: function () {
 
-                                new ajaxLoadJs({
-                                    jsArray: ["jsplugin/bootstrap-table-master/dist/extensions/toolbar/bootstrap-table-toolbar2.js"],
-                                    fun: function ()
-                                    {
-                                        pageStart_One();
-                                    }
-                                })
-                         
+                        new ajaxLoadJs({
+                            jsArray: ["jsplugin/bootstrap-table-master/dist/extensions/toolbar/bootstrap-table-toolbar2.js"],
+                            fun: function () {
+                                pageStart_One();
                             }
                         })
 
                     }
-                });
-                loadSinglejs();
-            });
+                })
 
-            function loadSinglejs()
-            {
-                $.loadjs([
-                        'jsplugin/bootstrapModal/eModal.js',
-                        'jsplugin/tableExport/jquery.base64.js',
-                        'jsplugin/tableExport/tableExport.js',
-                        'jsplugin/tableExport/html2canvas.js',
-                       // 'j_bak/tableExport/jspdf/jspdf.js',
-                        'jsplugin/tableExport/jspdf/libs/base64.js',
-                        'jsplugin/tableExport/jspdf/libs/sprintf.js',
-                        "jsplugin/pnotify/pnotify.custom.js",
-                      //  "jsplugin/x-editable-master/dist/bootstrap3-editable/js/bootstrap-editable.js",
-                      //  "jsplugin/bootstrap-table-master/dist/extensions/editable/bootstrap-table-editable.js",
-                        "jsplugin/FormValidation/js/formValidation.js",
-                        "jsplugin/FormValidation/js/framework/bootstrap.js",
-                        "js/pages/fiber/fiberData.js",
-                        "js/pages/fiber/vehicleData.js"
-                      //  'j_bak/bootstrap-table-master/src/extensions/resizable/bootstrap-table-resizable.js',
-                     //   'j_bak/bootstrap-table-master/dist/extensions/editable/bootstrap-table-editable.js',
-
-                ]);
-                var tempArray = [
-                 'jsplugin/magnific-popup/magnific-popup.css',
-              
-                 'jsplugin/jstree/themes/default/style.min.css',
-                 'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
-                 'jsplugin/select2/css/select2.css',
-                 'jsplugin/pnotify/pnotify.custom.css',
-                 "jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css"
-                ];
-                $.each(tempArray, function (i, field) {
-                    loadCSS(field);
-                });
-                $.loadjs(["jsplugin/echart/echarts-all.js",
-                          "js/pages/dynamicDataChart.js",
-                          "jsplugin/select2/js/select2.full.js",
-                          "js/pages/gaugePage.js",
-                          "js/pages/chargePie.js"
-                ]);
             }
+        });
+        loadSinglejs();
+    });
+
+    function loadSinglejs() {
+        $.loadjs([
+                'jsplugin/bootstrapModal/eModal.js',
+                'jsplugin/tableExport/jquery.base64.js',
+                'jsplugin/tableExport/tableExport.js',
+                'jsplugin/tableExport/html2canvas.js',
+               // 'j_bak/tableExport/jspdf/jspdf.js',
+                'jsplugin/tableExport/jspdf/libs/base64.js',
+                'jsplugin/tableExport/jspdf/libs/sprintf.js',
+                "jsplugin/pnotify/pnotify.custom.js",
+              //  "jsplugin/x-editable-master/dist/bootstrap3-editable/js/bootstrap-editable.js",
+              //  "jsplugin/bootstrap-table-master/dist/extensions/editable/bootstrap-table-editable.js",
+                "jsplugin/FormValidation/js/formValidation.js",
+                "jsplugin/FormValidation/js/framework/bootstrap.js",
+                "js/pages/fiber/fiberData.js",
+                "js/pages/fiber/vehicleData.js"
+              //  'j_bak/bootstrap-table-master/src/extensions/resizable/bootstrap-table-resizable.js',
+             //   'j_bak/bootstrap-table-master/dist/extensions/editable/bootstrap-table-editable.js',
+
+        ]);
+     /*   var tempArray = [
+         'jsplugin/magnific-popup/magnific-popup.css',
+
+         'jsplugin/jstree/themes/default/style.min.css',
+         'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
+         'jsplugin/select2/css/select2.css',
+         'jsplugin/pnotify/pnotify.custom.css',
+         "jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css"
+        ];
+        $.each(tempArray, function (i, field) {
+            loadCSS(field);
+        });
+        $.loadjs(["jsplugin/echart/echarts-all.js",
+                  "js/pages/dynamicDataChart.js",
+                  "jsplugin/select2/js/select2.full.js",
+                  "js/pages/gaugePage.js",
+                  "js/pages/chargePie.js"
+        ]);*/
+    }
 </script>
