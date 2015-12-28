@@ -272,7 +272,9 @@ dictionaryCss = {
     data_dictionary: [
            'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
            'jsplugin/pnotify/pnotify.custom.css',
-           'jsplugin/select2/css/select2.css']
+           'jsplugin/select2/css/select2.css'],
+    report_reportSet: ['jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css'],
+    report_secondReportSet: ['jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css']
 }
 //TODO dictionaryJs 页面加载的js
 dictionaryJs = {
@@ -377,7 +379,6 @@ dictionaryJs = {
                       "jsplugin/select2/js/select2.full.min.js",
                       "js/pages/reportPageList.js",
                       "js/pages/reportMenu.js",
-                      'jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css',
                       'jsplugin/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js',
                       'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js'],
     report_secondReportSet: [
@@ -388,7 +389,6 @@ dictionaryJs = {
 	                        "js/pages/reportPageList.js",
                             "jsplugin/pnotify/pnotify.custom.js",
 			                "jsplugin/bootstrap-confirmation/bootstrap-confirmation.js",
-	                        'jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css',
 	    		            'jsplugin/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js',
 	  		                'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js',
                             "js/pages/fiber/fiberData.js",
