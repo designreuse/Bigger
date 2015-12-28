@@ -1,8 +1,8 @@
 /*globals jQuery, define, exports, require, window, document, postMessage */
 (function (factory) {
 	"use strict";
-	if (typeof define === 'function' && define.amd) {
-		define(['jquery'], factory);
+	if (typeof defineTree === 'function' && defineTree.amd) {
+		defineTree(['jquery'], factory);
 	}
 	else if(typeof exports === 'object') {
 		factory(require('jquery'));

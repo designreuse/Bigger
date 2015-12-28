@@ -260,6 +260,17 @@ tableList = ["sim_simList",
 "data_aliasList",
 "vehicle_vehicleTypeList",
 "vehicle_modelList"];
+
+
+dictionaryCss = {
+    data_dataProtocol: [
+           'jsplugin/jstree/themes/default/style.min.css',
+           'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
+           'jsplugin/select2/css/select2.css',
+           "jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css"],
+    data_dictionary: ['jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
+           'jsplugin/select2/css/select2.css']
+}
 //TODO dictionaryJs 页面加载的js
 dictionaryJs = {
     sim_simList: ['js/pages/simList.js'],
@@ -343,18 +354,22 @@ dictionaryJs = {
     ],
     data_aliasList: ["js/pages/aliasList.js"
     ],//标准别名
-    data_dataProtocol: ["jsplugin/jstree/jstree.js",
+    data_dataProtocol: ["jsplugin/jstree/jstree.min.js",
                        "js/pages/dictionaryList.js",
-                       'js/pages/dictionaryTree.js'
+                       "jsplugin/FormValidation/js/formValidation.js",
+                       "jsplugin/FormValidation/js/framework/bootstrap.js",
+                       'js/pages/dictionaryTree.js',
+                       "jsplugin/select2/js/select2.full.min.js",
+                       "jsplugin/x-editable-master/dist/bootstrap3-editable/js/bootstrap-editable.js",
+                       "jsplugin/bootstrap-table-master/dist/extensions/editable/bootstrap-table-editable.js"
     ],
     data_dictionary: ["js/pages/dictionaryManager.js",
-                     "jsplugin/select2/js/select2.full.js"],
-    report_reportSet: ["jsplugin/echart/echarts-all.js",
-
+                     "jsplugin/select2/js/select2.full.min.js"],
+    report_reportSet: [
                       "js/pages/dynamicDataChart.js",
                       "js/pages/reportpageset.js",
                       "js/pages/reportSet.js",
-                      "jsplugin/select2/js/select2.full.js",
+                      "jsplugin/select2/js/select2.js",
                       "js/pages/reportPageList.js",
                       "js/pages/reportMenu.js",
                       'jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css',
@@ -364,7 +379,7 @@ dictionaryJs = {
 	                        "js/pages/dynamicDataChart.js",
 	                        "js/pages/reportpageset.js",
 	                        "js/pages/reportSet.js",
-	                        "jsplugin/select2/js/select2.full.js",
+	                        "jsplugin/select2/js/select2.js",
 	                        "js/pages/reportPageList.js",
                             "jsplugin/pnotify/pnotify.custom.js",
 			                "jsplugin/bootstrap-confirmation/bootstrap-confirmation.js",

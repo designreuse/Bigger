@@ -476,7 +476,7 @@
 <!--  <script type="text/javascript" src="jsplugin/jquery-placeholder/jquery-placeholder.js"></script>-->
 <!-- Theme Initialization Files -->
 <script src="jsplugin/echarts/js/echarts.js"></script>
- 
+<script src="js/loadCSS.js"></script> 
 
 <script type="text/javascript">
     // 路径配置
@@ -519,9 +519,7 @@
         new ajaxLoadJs({
             jsArray: [
                 "js/pages/vehicleList.js",
-             
                 "js/dataView.js"
-
             ],
             fun: function () {
                 new ajaxLoadJs({
@@ -530,7 +528,6 @@
                     "jsplugin/bootstrap-table-master/dist/locale/bootstrap-table-zh-CN.js"
                     ],
                     fun: function () {
-
                         new ajaxLoadJs({
                             jsArray: ["jsplugin/bootstrap-table-master/dist/extensions/toolbar/bootstrap-table-toolbar2.js"],
                             fun: function () {

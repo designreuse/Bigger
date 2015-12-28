@@ -363,7 +363,9 @@ menuJs.extend({
 										$(this).off("click").on("click",function(e) {
 
 
-												e.preventDefault();
+										       e.preventDefault();
+
+										       $('link[media="all"]').remove();
 
 												var $that = $(this);
 
@@ -421,6 +423,13 @@ menuJs.extend({
 																		  var that=this;
                                                                        $(that).load($(that).attr("include"));
 																	});
+																	if (dictionaryCss[hr])
+																	{
+																	    $.each(dictionaryCss[hr], function (i, field) {
+																	        loadCSS(field);
+																	    });
+																	}
+																	
 																	$.loadjs(dictionaryJs[hr],function() {
 																		 try{
 																			  if (typeof pageStart == "function") {
