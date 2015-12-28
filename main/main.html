@@ -39,8 +39,8 @@
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/elusive-icons/css/elusive-icons.min.css" />
     <link rel="stylesheet" href="css/simple-line-icons/css/simple-line-icons.css" />
-    <link rel="stylesheet" href= "jsplugin/bootstrap-table-master/dist/bootstrap-table.min.css" />
- </head>
+    <link rel="stylesheet" href="jsplugin/bootstrap-table-master/dist/bootstrap-table.min.css" />
+</head>
 <body>
     <section class="body" style="opacity : 0">
         <!-- start: header -->
@@ -281,7 +281,166 @@
                 </header>
                 <div id="mainBody">
                     <!-- start: page -->
-                    <div include="main/vehicle/cluster.html" type="body"></div>
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            <section class="panel">
+                                <div class="panel-body bg-primary">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon">
+                                                <i class="el el-car"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">入网车辆总数</h4>
+                                                <div class="info">
+                                                    <strong class="amount">—</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                                <a class="text-uppercase">(车辆管理)</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-3 ">
+                            <section class="panel">
+                                <div class="panel-body bg-secondary">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon">
+                                                <i class="el el-road"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">总里程数</h4>
+                                                <div class="info">
+                                                    <strong class="amount">—</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                                <a class="text-uppercase">(详情)</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-3 ">
+                            <section class="panel">
+                                <div class="panel-body bg-tertiary">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon">
+                                                <i class="el el-time"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">工作小时数</h4>
+                                                <div class="info">
+                                                    <strong class="amount">—</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                                <a class="text-uppercase">(明细)</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-3 ">
+                            <section class="panel">
+                                <div class="panel-body bg-quartenary">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon">
+                                                <i class="el el-warning-sign"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">故障车辆数</h4>
+                                                <div class="info">
+                                                    <strong class="amount">—</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                                <a class="text-uppercase">(明细)</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-8">
+                            <div id="header-base" class="row-fluid">
+
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <i class="el el-map-marker"></i> 地图分布
+                                        <div class="panel-actions">
+                                            <a href="#" class="panel-action panel-action-toggle"
+                                               data-panel-toggle=""></a> <a href="#"
+                                                                            class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+                                        </div>
+                                    </div>
+                                    <!-- /.panel-heading -->
+                                    <div id="mapC" class="panel-body col-md-12" style=" min-height:400px;">
+                                        <div id="mapContainer" style="min-height:370px; width:100%"></div>
+                                    </div>
+                                    <!-- /.panel-body -->
+                                </div>
+                                <!-- /.panel -->
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="el el-map-marker"></i> 全国分布
+                                    <div class="panel-actions">
+                                        <a href="#" class="panel-action panel-action-toggle"
+                                           data-panel-toggle=""></a> <a href="#"
+                                                                        class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+                                    </div>
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body" style="min-height:400px;">
+                                    <div id="mainMap"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <section class="panel panel-default">
+                                <header class="panel-heading">
+                                    <div class="panel-actions">
+                                        <a href="#" class="panel-action panel-action-toggle"
+                                           data-panel-toggle=""></a> <a href="#"
+                                                                        class="panel-action panel-action-dismiss" data-panel-dismiss=""></a>
+                                    </div>
+                                    <span id="panelTitle">车辆列表</span>
+                                </header>
+                                <div class="panel-body" id="panelBody" data-loading-overlay data-loading-overlay-options='{ "startShowing": true }' style="min-height: 400px;">
+                                    <table id="tableserver"></table>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
                     <!-- end: page -->
                 </div>
             </section>
@@ -313,15 +472,21 @@
 <script type="text/javascript" src="js/theme.js"></script> <!-- Theme Custom -->
 <script type="text/javascript" src="js/theme.custom.js"></script>
 <script type="text/javascript" src="js/theme.init.js"></script>
-<script type="text/javascript" src="js/loadCSS.js"></script>
 <!-- 实现文本框显示描述文字 -->
 <!--  <script type="text/javascript" src="jsplugin/jquery-placeholder/jquery-placeholder.js"></script>-->
 <!-- Theme Initialization Files -->
 <script src="jsplugin/echarts/js/echarts.js"></script>
+ 
+
 <script type="text/javascript">
-    $("#mainBody").load("main/vehicle/cluster.html", function () {
+    // 路径配置
+    require.config({
+        paths: {
+            echarts: 'jsplugin/echarts/js'
+        }
     });
     $(function () {
+       
         try {
             var tempMenu = new menuJs({
                 menuType: "2"
@@ -333,12 +498,6 @@
 
         }
 
-        // 路径配置
-        require.config({
-            paths: {
-                echarts: 'jsplugin/echarts/js'
-            }
-        });
 
         /* */
     });
@@ -360,13 +519,13 @@
         new ajaxLoadJs({
             jsArray: [
                 "js/pages/vehicleList.js",
-                "jsplugin/bootstrap-table-master/src/bootstrap-table.js",
+             
                 "js/dataView.js"
 
             ],
             fun: function () {
                 new ajaxLoadJs({
-                    jsArray: ["jsplugin/bootstrap-table-master/dist/extensions/export/bootstrap-table-export.js",
+                    jsArray: [
                     "jsplugin/bootstrap-table-master/dist/extensions/pageOption/bootstrap-table-pageOption.js",
                     "jsplugin/bootstrap-table-master/dist/locale/bootstrap-table-zh-CN.js"
                     ],
@@ -399,31 +558,33 @@
                 "jsplugin/pnotify/pnotify.custom.js",
               //  "jsplugin/x-editable-master/dist/bootstrap3-editable/js/bootstrap-editable.js",
               //  "jsplugin/bootstrap-table-master/dist/extensions/editable/bootstrap-table-editable.js",
-                "jsplugin/FormValidation/js/formValidation.js",
-                "jsplugin/FormValidation/js/framework/bootstrap.js",
+                "jsplugin/FormValidation/js/formValidation.min.js",
+                "jsplugin/FormValidation/js/framework/bootstrap.min.js",
                 "js/pages/fiber/fiberData.js",
                 "js/pages/fiber/vehicleData.js"
               //  'j_bak/bootstrap-table-master/src/extensions/resizable/bootstrap-table-resizable.js',
              //   'j_bak/bootstrap-table-master/dist/extensions/editable/bootstrap-table-editable.js',
 
         ]);
-     /*   var tempArray = [
-         'jsplugin/magnific-popup/magnific-popup.css',
+        /*   var tempArray = [
+            'jsplugin/magnific-popup/magnific-popup.css',
 
-         'jsplugin/jstree/themes/default/style.min.css',
-         'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
-         'jsplugin/select2/css/select2.css',
-         'jsplugin/pnotify/pnotify.custom.css',
-         "jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css"
-        ];
-        $.each(tempArray, function (i, field) {
-            loadCSS(field);
-        });
-        $.loadjs(["jsplugin/echart/echarts-all.js",
-                  "js/pages/dynamicDataChart.js",
-                  "jsplugin/select2/js/select2.full.js",
-                  "js/pages/gaugePage.js",
-                  "js/pages/chargePie.js"
-        ]);*/
+            'jsplugin/jstree/themes/default/style.min.css',
+            'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
+            'jsplugin/select2/css/select2.css',
+            'jsplugin/pnotify/pnotify.custom.css',
+            "jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css"
+           ];
+           $.each(tempArray, function (i, field) {
+               loadCSS(field);
+           });
+           $.loadjs(["jsplugin/echart/echarts-all.js",
+                     "js/pages/dynamicDataChart.js",
+                     "jsplugin/select2/js/select2.full.js",
+                     "js/pages/gaugePage.js",
+                     "js/pages/chargePie.js"
+           ]);*/
     }
 </script>
+<script src="jsplugin/bootstrap-table-master/src/bootstrap-table.js"></script>
+<script src="jsplugin/bootstrap-table-master/dist/extensions/export/bootstrap-table-export.js"></script>

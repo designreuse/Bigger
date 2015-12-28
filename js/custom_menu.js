@@ -23,50 +23,30 @@ var menuJs = function(options) {
 	this.initMenu();
 
 };
-menuJs.prototype.catchMenu = function() {
-	var obj = getCookie("menu");
-	//console.log("缓存");
-	//console.log(obj);
-	if (obj) {
-		obj = JSON.parse(obj);
-		if ($.isArray(obj)) {
-			that.options.menuArray = obj;
-			that.createHtml("#");
-			that.bindMenuClick();
-			that.initP();
-			that.selectedMenu();
-			//console.log("获取缓存中数据");
-			return true;
-		}
-	}
-	return false;
-}
 menuJs.prototype.initMenu = function() {
 	var that = this;
-	var isCatchData = that.catchMenu();
-	if (isCatchData) {
-		return false;
-	}
-
 	that.getMenuData(function(menus, menuArray) {
 		    that.options.allmenu = menuArray;
 			that.getButtonData(function(data) {
 				var temp=[];
-				$.each(data,function (i,field){
-
-					temp.push(field.menu_unid);
+				$.each(data, function (i, field) {
+				    var index = $.inArray(field.menu_unid, temp);
+				    if (index = -1)
+				    {
+				        temp.push(field.menu_unid);
+				    }					
 				})
-				$.each(menus,function (i,field){
-
-					temp.push(field.unid);
+				$.each(menus, function (i, field) {
+				    var index = $.inArray(field.unid, temp);
+				    if (index = -1)
+				    {
+				       temp.push(field.unid);
+				    }
 				})
-			that.formatMenuData(temp, menuArray);
-
-			////console.log(that.options.menuArray);
-			setCookie("menu", JSON.stringify(that.options.menuArray), 1);
-			that.createHtml("#");
-			that.bindMenuClick();
-			that.initP();
+				that.formatMenuData(temp, menuArray);
+			    that.createHtml("#");
+			    that.bindMenuClick();
+			    that.initP();
 
 			that.options.fun.call(that);
 			//that.selectedMenu();
@@ -215,7 +195,6 @@ menuJs.extend({
 				var that = this;
 				var tempInt = -1;
 				var menuTemp = $.grep(menuArray, function(menuField, i) {
-
 					try{
 						if (menuField.super_unid == "null"
 							|| menuField.super_unid == ""
@@ -226,15 +205,13 @@ menuJs.extend({
 							      return menu==menuField.unid ;
 						});
 						if (temp.length>0) {
-							return menuField;
+							return true;
 						}
 					}catch(e){
 
-						//console.log(e);
+						console.log(e);
 						//return false;
 					}
-
-
 				});
 
 				//console.log(menuTemp);
@@ -247,8 +224,20 @@ menuJs.extend({
 							 return f.unid==field.unid;
 						 });
 						 if(arr.length==0)
-							 {
-							 that.options.menuArray.push(field);
+						 {
+						     if (field.menu_type === that.options.menuType)
+						     {
+						         that.options.menuArray.push({
+						             unid: field.unid,
+						             redirect_uri: field.redirect_uri,
+						             icon_uri: field.icon_uri,
+						             name: field.name,
+						             menu_type: field.menu_type,
+						             super_unid: field.super_unid,
+                                     inx: field.inx
+						         });
+						     }
+						   
 							 if(field.super_unid!="#")
 								{
 						          temp.push(field.super_unid);
@@ -257,7 +246,7 @@ menuJs.extend({
 				});
 				if(temp.length>0)
 				{
-				that.formatMenuData(temp, menuArray);
+				      that.formatMenuData(temp, menuArray);
 				}
 
 			},
@@ -428,11 +417,9 @@ menuJs.extend({
 														//	$section.children().remove();
 															$section.load("main/"+href+".html",function() {
 
-
-
 																	$("div[include]").each(function(){
 																		  var that=this;
-                                      $(that).load($(that).attr("include"));
+                                                                       $(that).load($(that).attr("include"));
 																	});
 																	$.loadjs(dictionaryJs[hr],function() {
 																		 try{
@@ -532,5 +519,4 @@ menuJs.extend({
 									}
 						});
 			  }
-
 		});

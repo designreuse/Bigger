@@ -145,30 +145,15 @@
 <script type="text/javascript" src="js/theme.custom.js"></script>
 <!-- Theme Initialization Files -->
 <script type="text/javascript" src="js/theme.init.js"></script>
-<script type="text/javascript" src="jsplugin/bootstrap-multiselect/bootstrap-multiselect.js"></script>
-<script type="text/javascript" src="js/loadCSS.js"></script>
-<script src="jsplugin/echarts/js/echarts.js"></script>
-<script type="text/javascript">
-    $(function () {
-        parent.checkCookie();
-        vin = GetQueryString("vin");
-    });
-    // 路径配置
-    require.config({
-        paths: {
-            echarts: 'jsplugin/echarts/js'
-        }
-    });
-</script>
-<script type="text/javascript">
+<!-- <script type="text/javascript" src="jsplugin/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+<script type="text/javascript" src="js/loadCSS.js"></script>-->
 
+<script type="text/javascript">
     $(function () {
         try {
             var tempMenu = new menuJs({
                 menuType: "1"
             });
-
-
             new ajaxLoadJs({
                 jsArray: ["js/pages/vehicleSingleInfo.js",
                     "js/pages/dynamicDataChart.js",
@@ -178,9 +163,6 @@
                     pageStart();
                 }
             });
-
-
-
         } catch (e) {
 
         } finally {
@@ -200,5 +182,18 @@
          $.each(tempArray, function (i, field) {
              loadCSS(field);
          });*/
+    });
+</script>
+<script src="jsplugin/echarts/js/echarts.js"></script>
+<script type="text/javascript">
+    // 路径配置
+    require.config({
+        paths: {
+            echarts: 'jsplugin/echarts/js'
+        }
+    });
+    $(function () {
+        parent.checkCookie();
+        vin = GetQueryString("vin");
     });
 </script>
