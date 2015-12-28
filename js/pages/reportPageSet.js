@@ -47,6 +47,7 @@ reportPageSet.extend({
 		    },
 		    getDataFields: function () {//TODO  获取数据字典的列定义（有别名的）
 		        var that = this;
+		        debugger;
 		        var fiberObject = new fiberDataField({
 		            fiberId: '098E11E36A024692A257DB72306137FF',
 		            type: 2,
@@ -59,6 +60,10 @@ reportPageSet.extend({
 		            {
 		                console.log("数据");
 		                console.log(data);
+		            },
+		            errorFun: function ()
+		            {
+		                console.log("没有数据");
 		            }
 		        });
 		    },

@@ -108,7 +108,7 @@ function  dynamicChartData(options){
     	    require(
                 [
                     'echarts',
-                     'echarts/chart/line',
+                    'echarts/chart/line',
                     'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
                 ],
                 function (ec) {

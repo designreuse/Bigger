@@ -267,8 +267,11 @@ dictionaryCss = {
            'jsplugin/jstree/themes/default/style.min.css',
            'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
            'jsplugin/select2/css/select2.css',
-           "jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css"],
-    data_dictionary: ['jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
+           'jsplugin/pnotify/pnotify.custom.css',
+           'jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css'],
+    data_dictionary: [
+           'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
+           'jsplugin/pnotify/pnotify.custom.css',
            'jsplugin/select2/css/select2.css']
 }
 //TODO dictionaryJs 页面加载的js
@@ -360,32 +363,36 @@ dictionaryJs = {
                        "jsplugin/FormValidation/js/framework/bootstrap.js",
                        'js/pages/dictionaryTree.js',
                        "jsplugin/select2/js/select2.full.min.js",
+                       "jsplugin/pnotify/pnotify.custom.js",
                        "jsplugin/x-editable-master/dist/bootstrap3-editable/js/bootstrap-editable.js",
                        "jsplugin/bootstrap-table-master/dist/extensions/editable/bootstrap-table-editable.js"
     ],
     data_dictionary: ["js/pages/dictionaryManager.js",
+                    "jsplugin/pnotify/pnotify.custom.js",
                      "jsplugin/select2/js/select2.full.min.js"],
     report_reportSet: [
                       "js/pages/dynamicDataChart.js",
                       "js/pages/reportpageset.js",
                       "js/pages/reportSet.js",
-                      "jsplugin/select2/js/select2.js",
+                      "jsplugin/select2/js/select2.full.min.js",
                       "js/pages/reportPageList.js",
                       "js/pages/reportMenu.js",
                       'jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css',
                       'jsplugin/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js',
                       'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js'],
-    report_secondReportSet: ["jsplugin/echart/echarts-all.js",
+    report_secondReportSet: [
 	                        "js/pages/dynamicDataChart.js",
 	                        "js/pages/reportpageset.js",
 	                        "js/pages/reportSet.js",
-	                        "jsplugin/select2/js/select2.js",
+	                        "jsplugin/select2/js/select2.full.min.js",
 	                        "js/pages/reportPageList.js",
                             "jsplugin/pnotify/pnotify.custom.js",
 			                "jsplugin/bootstrap-confirmation/bootstrap-confirmation.js",
 	                        'jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css',
 	    		            'jsplugin/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js',
-	  		                'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js'
+	  		                'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js',
+                            "js/pages/fiber/fiberData.js",
+                            "js/pages/fiber/vehicleData.js"
     ]
 }
 //TODO viewkey  列表id定义
