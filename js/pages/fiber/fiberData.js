@@ -16,13 +16,17 @@ function fiberDataField(options) {
         type: 1, //1 全部， 2有别名的，3数据协议部分
         fun: function (data) { },//仅放回符合条件
         funGroup: function (data)//返回带group的数据
-        { }
+        { },
+        errorFun: function ()
+        {
+        }
     };
     this.options = $.extend(defaultOption, options || {});
     this.init();
 }
-fiberData.extend({
+fiberDataField.extend({
     init: function () {
+        debugger;
         var that = this;
         if (that.options.fiberId === "") {
             that.getFiberId();
@@ -34,6 +38,7 @@ fiberData.extend({
         var that = this;
         new ajaxObject({
             Url: URLDICTIONARY.vehicleList + "/" + that.options.vin,
+            dataType:'json',
             fun: function (data) {// 获取车辆数据字典id
                 var fiberId = data.fiber_unid;
                 that.options.fiberId = fiberId;
@@ -45,6 +50,7 @@ fiberData.extend({
         var that = this;
         new ajaxObject({
             Url: URLDICTIONARY.fiber + "/" + that.options.fiberId,
+            dataType: 'json',
             fun: function (data) {
                 var column_group = data.column_group;
                 console.log(column_group);
@@ -62,6 +68,10 @@ fiberData.extend({
                 }
                 that.options.fun.call(that, that.options.fields);
                 that.options.funGroup.call(that, that.options.groupFields);
+            },
+            errorFun: function ()
+            {
+                that.options.errorFun.call(that);
             }
         });
     },
