@@ -502,10 +502,8 @@
         /* */
     });
     $(function () {
-        $.getScript("//webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e", function () {
-            $.getScript("js/pages/vehicleCluster.js", function () {
-                pageStart_Two();
-            });
+        $.getScript("//webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e&callback=initMap", function () {
+           
         });
 
         new ajaxLoadJs({
@@ -578,6 +576,14 @@
                      "js/pages/gaugePage.js",
                      "js/pages/chargePie.js"
            ]);*/
+    }
+
+
+    function initMap()
+    {
+        $.getScript("js/pages/vehicleCluster.js", function () {
+            pageStart_Two();
+        });
     }
 </script>
 <script src="jsplugin/bootstrap-table-master/src/bootstrap-table.js"></script>
