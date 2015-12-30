@@ -297,52 +297,45 @@ reportPageSet.extend({
             xArray.push(field.start + "-" + field.end);
         });
         $.each(data,// 遍历数据
-                        function (j, fieldData) {
-                            if (j > 0) {
-                                $.each(
-                                                that.reportOptions.yObject.dataKey,// 遍历y轴数据，找到数据在第几行
-                                                function (y, fieldKey) {
-                                                    var index = $
-                                                            .inArray(
-                                                                    fieldKey,
-                                                                    data[0].column);// 数据中包含y轴key
-                                                    if (index > 0) {// 判断是否包含在指定的数组中
+        function (j, fieldData) {
+            if (j > 0) {
+                $.each(
+                that.reportOptions.yObject.dataKey,// 遍历y轴数据，找到数据在第几行
+                function (y, fieldKey) {
+                    var index = $.inArray(fieldKey, data[0].column);// 数据中包含y轴key
+                    if (index > 0) {// 判断是否包含在指定的数组中
+                        $.each(
+                        that.reportOptions.xObject.data, // 根据x轴分析数据，便利x轴数据
+                        function ( i,field) {
 
-                                                        $
-                                                                .each(
-                                                                        that.reportOptions.xObject.data, // 根据x轴分析数据，便利x轴数据
-                                                                        function (
-                                                                                i,
-                                                                                field) {
+                            var temp1 = fieldData.column[index];
+                            if (temp1 == "") {
+                                temp1 = "0";
+                            }
 
-                                                                            var temp1 = fieldData.column[index];
-                                                                            if (temp1 == "") {
-                                                                                temp1 = "0";
-                                                                            }
+                            var key = fieldKey;
+                            if (key in that.options.fieldCount) {
+                                // that.options.fieldCount[key]=
+                                // that.options.fieldCount[key]+1;
+                                if (that.options.fieldCount[key].length - 1 < i) {
+                                    that.options.fieldCount[key]
+                                            .push(0);
+                                }
+                            } else {
 
-                                                                            var key = fieldKey;
-                                                                            if (key in that.options.fieldCount) {
-                                                                                // that.options.fieldCount[key]=
-                                                                                // that.options.fieldCount[key]+1;
-                                                                                if (that.options.fieldCount[key].length - 1 < i) {
-                                                                                    that.options.fieldCount[key]
-                                                                                            .push(0);
-                                                                                }
-                                                                            } else {
-
-                                                                                that.options.fieldCount[key] = [0];
-                                                                            }
-                                                                            if (temp1 * 1 >= field.start * 1
-                                                                                    && temp1 * 1 <= field.end * 1) {
-                                                                                that.options.fieldCount[key][i] = that.options.fieldCount[key][i] + 1;
-
-                                                                            }
-                                                                        });
-                                                    }
-                                                });
+                                that.options.fieldCount[key] = [0];
+                            }
+                            if (temp1 * 1 >= field.start * 1
+                                    && temp1 * 1 <= field.end * 1) {
+                                that.options.fieldCount[key][i] = that.options.fieldCount[key][i] + 1;
 
                             }
                         });
+                    }
+                });
+
+            }
+        });
 
         that.options.map[vin] = {
             xArray: xArray,
@@ -546,7 +539,7 @@ reportPageSet.extend({
         $.each(that.reportOptions.yObject.dataKey,// 遍历y轴数据，找到数据在第几行
             function (y, fieldKey) {
                 var index = $.inArray(fieldKey, data[0].column);
-              //  console.log(fieldKey);
+                //  console.log(fieldKey);
                 //  console.log(index);
 
                 if (that.options.fieldCount[fieldKey]) {
@@ -555,21 +548,20 @@ reportPageSet.extend({
                     that.options.fieldCount[fieldKey] = [];
                     $.each(that.reportOptions.xObject.data, // 根据x轴分析数据，便利x轴数据
                            function (i, field) {
-                               that.options.fieldCount[fieldKey][i]=0;
-                    });
+                               that.options.fieldCount[fieldKey][i] = 0;
+                           });
                 }
                 $.each(data,// 遍历数据
                     function (j, fieldData) {
                         if (j > 0) {
-                           // console.log(data[j].column);
-                           // console.log(index);
+                            // console.log(data[j].column);
+                            // console.log(index);
                             var temp1 = data[j].column[index];
-                           
-                            if (temp1=="")
-                            {
+
+                            if (temp1 == "") {
                                 temp1 = 0;
                             }
-                           // console.log("数据：" + temp1);
+                            // console.log("数据：" + temp1);
                             $.each(that.reportOptions.xObject.data, // 根据x轴分析数据，便利x轴数据
                             function (i, field) {
 
@@ -579,14 +571,13 @@ reportPageSet.extend({
                                 } else {
                                     that.options.fieldCount[fieldKey][i] = 0;
                                 }*/
-                              
+
                                 if (temp1 * 1 >= field.start * 1 && temp1 * 1 <= field.end * 1) {
 
                                     that.options.fieldCount[fieldKey][i]++;
                                     return false;
                                 }
-                                if (temp1*1 > max*1)
-                                {
+                                if (temp1 * 1 > max * 1) {
                                     that.options.fieldCount[fieldKey][xdata.length - 1]++;
                                     return false;
                                 }
@@ -596,49 +587,48 @@ reportPageSet.extend({
                 var dd = 0;
                 console.log(that.options.fieldCount[fieldKey]);
                 $.each(that.options.fieldCount[fieldKey], function (i, field) {
-                    if (field)
-                    {
+                    if (field) {
                         dd += field;
                     }
-                   
+
                 })
                 console.log(dd);
             });
-       
-/*
-        $.each(data,// 遍历数据
-            function (j, fieldData) {
-                if (j > 0) {
-                    $.each(that.reportOptions.yObject.dataKey,// 遍历y轴数据，找到数据在第几行
-                        function (y, fieldKey) {
-                            var index = $.inArray(fieldKey, data[0].column);// 数据中包含y轴key
-                            if (index > 0) {// 判断是否包含在指定的数组中
-                                $.each(that.reportOptions.xObject.data, // 根据x轴分析数据，便利x轴数据
-                                   function (i, field) {
-                                       var temp1 = fieldData.column[index];
-                                       if (temp1 == "") {
-                                           temp1 = "0";
-                                       }
-                                       var key = fieldKey;
-                                       if (key in that.options.fieldCount) {
-                                           // that.options.fieldCount[key]=
-                                           // that.options.fieldCount[key]+1;
-                                           if (that.options.fieldCount[key].length - 1 < i) {
-                                               that.options.fieldCount[key].push(0);
-                                           }
-                                       } else {
-                                           that.options.fieldCount[key] = [0];
-                                       }
-                                       if (temp1 * 1 >= field.start * 1 && temp1 * 1 <= field.end * 1) {
-                                           that.options.fieldCount[key][i] = that.options.fieldCount[key][i] + 1;
 
-                                       }
-                                   });
-                            }
-                        });
-                }
-            });
-            */
+        /*
+                $.each(data,// 遍历数据
+                    function (j, fieldData) {
+                        if (j > 0) {
+                            $.each(that.reportOptions.yObject.dataKey,// 遍历y轴数据，找到数据在第几行
+                                function (y, fieldKey) {
+                                    var index = $.inArray(fieldKey, data[0].column);// 数据中包含y轴key
+                                    if (index > 0) {// 判断是否包含在指定的数组中
+                                        $.each(that.reportOptions.xObject.data, // 根据x轴分析数据，便利x轴数据
+                                           function (i, field) {
+                                               var temp1 = fieldData.column[index];
+                                               if (temp1 == "") {
+                                                   temp1 = "0";
+                                               }
+                                               var key = fieldKey;
+                                               if (key in that.options.fieldCount) {
+                                                   // that.options.fieldCount[key]=
+                                                   // that.options.fieldCount[key]+1;
+                                                   if (that.options.fieldCount[key].length - 1 < i) {
+                                                       that.options.fieldCount[key].push(0);
+                                                   }
+                                               } else {
+                                                   that.options.fieldCount[key] = [0];
+                                               }
+                                               if (temp1 * 1 >= field.start * 1 && temp1 * 1 <= field.end * 1) {
+                                                   that.options.fieldCount[key][i] = that.options.fieldCount[key][i] + 1;
+        
+                                               }
+                                           });
+                                    }
+                                });
+                        }
+                    });
+                    */
         that.options.map[vin] = {
             xArray: xArray,
             yArray: that.options.fieldCount
