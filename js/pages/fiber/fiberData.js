@@ -18,15 +18,14 @@ function fiberDataField(options) {
         funGroup: function (data)//返回带group的数据
         { },
         errorFun: function ()
-        {
-        }
+        { }
     };
     this.options = $.extend(defaultOption, options || {});
     this.init();
 }
 fiberDataField.extend({
     init: function () {
-        debugger;
+       // debugger;
         var that = this;
         if (that.options.fiberId === "") {
             that.getFiberId();
@@ -36,9 +35,9 @@ fiberDataField.extend({
     },
     getFiberId: function () {
         var that = this;
-        new ajaxObject({
-            Url: URLDICTIONARY.vehicleList + "/" + that.options.vin,
-            dataType:'json',
+       // debugger;
+       new ajaxObject({
+            Url: URLDICTIONARY.vehicleList + "/" + that.options.vin, 
             fun: function (data) {// 获取车辆数据字典id
                 var fiberId = data.fiber_unid;
                 that.options.fiberId = fiberId;

@@ -313,7 +313,7 @@ dictionaryJs = {
 	                    'js/pages/vehicleAddress.js',
 	                    "js/pages/dynamicDataChart.js",
 	                    "js/pages/vehicleMonitoringLayout.js",
-	                    "jsplugin/select2/js/select2.js",
+	                    "jsplugin/select2/js/select2.full.min.js",
 						"jsplugin/bootstrap-multiselect/bootstrap-multiselect.js",
 						'//webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e'],
     vehicle_detail: ['js/pages/vehicleDetail.js'],
@@ -340,7 +340,7 @@ dictionaryJs = {
                     "js/pages/dynamicDataChart.js",
                     'jsplugin/slider/bootstrap-slider.min.js',
                     "js/pages/vehicleTrack.js",
-                    "jsplugin/select2/js/select2.js",
+                    "jsplugin/select2/js/select2.full.min.js",
                     "jsplugin/bootstrap-multiselect/bootstrap-multiselect.js",
                     'jsplugin/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js',
                     'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js',
@@ -378,9 +378,8 @@ dictionaryJs = {
                       "js/pages/reportSet.js",
                       "jsplugin/select2/js/select2.full.min.js",
                       "js/pages/reportPageList.js",
-                      "js/pages/reportMenu.js",
-                      'jsplugin/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js',
-                      'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js'],
+                      "js/pages/reportMenu.js"
+                  ],
     report_secondReportSet: [
 	                        "js/pages/dynamicDataChart.js",
 	                        "js/pages/reportpageset.js",
@@ -389,8 +388,6 @@ dictionaryJs = {
 	                        "js/pages/reportPageList.js",
                             "jsplugin/pnotify/pnotify.custom.js",
 			                "jsplugin/bootstrap-confirmation/bootstrap-confirmation.js",
-	    		            'jsplugin/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js',
-	  		                'jsplugin/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js',
                             "js/pages/fiber/fiberData.js",
                             "js/pages/fiber/vehicleData.js"
     ]
