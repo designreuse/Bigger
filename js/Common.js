@@ -386,7 +386,7 @@ dictionaryJs = {
                      "jsplugin/select2/js/select2.full.min.js"],
     report_reportSet: [
                       "js/pages/dynamicDataChart.js",
-                      "js/pages/reportpageset.js",
+                      "js/pages/reportPageSet.js",
                       "js/pages/reportSet.js",
                       "jsplugin/select2/js/select2.full.min.js",
                       "jsplugin/bootstrap-multiselect/bootstrap-multiselect.js",
@@ -401,7 +401,7 @@ dictionaryJs = {
                   ],
     report_secondReportSet: [
 	                        "js/pages/dynamicDataChart.js",
-	                        "js/pages/reportpageset.js",
+	                        "js/pages/reportPageSet.js",
 	                        "js/pages/reportSet.js",
 	                        "jsplugin/select2/js/select2.full.min.js",
 	                        "js/pages/reportPageList.js",
