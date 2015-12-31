@@ -14,9 +14,6 @@ function vehicleData(options) {
     var date = new Date();
     var end = "2015-12-28 15:20:10";//date.format("yyyy-MM-dd HH:mm:ss");
     var start = "2015-12-29 15:20:10";//new Date(date.setDate(date.getDate() - 1)).format("yyyy-MM-dd HH:mm:ss");
-  
-    console.log(start);
-    console.log(end);
     var defaultOptions = {
         fields: [],
         alias: [],

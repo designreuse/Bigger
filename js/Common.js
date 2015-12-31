@@ -264,13 +264,16 @@ tableList = ["sim_simList",
 
 dictionaryCss = {
     data_dataProtocol: [
-           'jsplugin/jstree/themes/default/style.min.css',
-           'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
-           'jsplugin/select2/css/select2.css',
-           'jsplugin/pnotify/pnotify.custom.css',
-           'jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css'],
-    datamodel_dataModelList: ["jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css",
-     'jsplugin/pnotify/pnotify.custom.css'],
+            'jsplugin/jstree/themes/default/style.min.css',
+            'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
+            'jsplugin/select2/css/select2.css',
+            'jsplugin/pnotify/pnotify.custom.css',
+            'jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css'],
+    datamodel_dataModelList: [
+            "jsplugin/x-editable-master/dist/bootstrap3-editable/css/bootstrap-editable.css",
+            'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
+            'jsplugin/select2/css/select2.css',
+            'jsplugin/pnotify/pnotify.custom.css'],
     data_dictionary: [
            'jsplugin/select2-bootstrap-theme/select2-bootstrap.min.css',
            'jsplugin/pnotify/pnotify.custom.css',
@@ -281,7 +284,8 @@ dictionaryCss = {
            'jsplugin/select2/css/select2.css',
            'jsplugin/pnotify/pnotify.custom.css'
     ],
-    report_secondReportSet: ['jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css']
+    report_secondReportSet: ['jsplugin/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css',
+      'jsplugin/pnotify/pnotify.custom.css']
 }
 //TODO dictionaryJs 页面加载的js
 dictionaryJs = {
@@ -296,6 +300,7 @@ dictionaryJs = {
 			"js/pages/dataModelJs.js",
 			"jsplugin/pnotify/pnotify.custom.js",
 			"jsplugin/bootstrap-confirmation/bootstrap-confirmation.js",
+            "jsplugin/select2/js/select2.full.min.js",
 			"jsplugin/x-editable-master/dist/bootstrap3-editable/js/bootstrap-editable.min.js",
 			'jsplugin/bootstrap-table-master/dist/extensions/editable/bootstrap-table-editable.js'],//数据视图
     button_buttonList: ['js/pages/buttonList.js'],

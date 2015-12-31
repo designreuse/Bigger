@@ -604,7 +604,7 @@ function pageStart()
 								'<li><a href="javascript:void(0);" id="'
 										+ field.unid + '" class="menu-item">'
 										+ field.name,
-								'<spanclass="ball pink"></span></a></li>' ]
+								'<span class="ball pink"></span></a></li>' ]
 								.join(" "));
 			} else if (field.chart_type == "pinciValue1"
 					|| field.chart_type == "pinciTime1") {
@@ -613,7 +613,7 @@ function pageStart()
 								'<li><a href="javascript:void(0);" id="'
 										+ field.unid + '" class="menu-item">'
 										+ field.name,
-								'<spanclass="ball pink"></span></a></li>' ]
+								'<span class="ball pink"></span></a></li>' ]
 								.join(" "));
 			} else if (field.chart_type == "recent") {
 				$("#shixu").append(
@@ -621,7 +621,7 @@ function pageStart()
 								'<li><a href="javascript:void(0);" id="'
 										+ field.unid + '" class="menu-item">'
 										+ field.name,
-								'<spanclass="ball pink"></span></a></li>' ]
+								'<span class="ball pink"></span></a></li>' ]
 								.join(" "));
 			} else if (field.chart_type == "recent1") {
 				$("#sandian").append(
@@ -629,7 +629,7 @@ function pageStart()
 								'<li><a href="javascript:void(0);" id="'
 										+ field.unid + '" class="menu-item">'
 										+ field.name,
-								'<spanclass="ball pink"></span></a></li>' ]
+								'<span class="ball pink"></span></a></li>' ]
 								.join(" "));
 			}
 
@@ -637,7 +637,8 @@ function pageStart()
 
 		$("#reportMenu ul li a").on('click', function() {
 
-			var id = $(this).attr("id");
+		    var id = $(this).attr("id");
+		    var name = $(this).text();
 			console.log(id);
 			reportListDemo.options.id = id;
 			reportListDemo.options.complete = function(data) {
@@ -646,7 +647,8 @@ function pageStart()
 			 options=$.extend(JSON.parse(data.grid_column),{
 				 vehicles : [ 'B10002' ],
 				 date_from : '2015-11-16 03:00:00',
-				 date_to : '2015-11-17 11:41:00'
+				 date_to: '2015-11-17 11:41:00',
+                 title:name
 			 })
 				
 			 var reportSets = new reportSet(options);

@@ -2,15 +2,10 @@
 function reportPageSet(options) {
     //TODO  报表设置
     var defaultOptions = {
+        title:'',
         xObject: {
             reportType: 'pinciTime',//TODO pinciValue 频次图参数配置
-            data: [{
-                start: 0,
-                end: 10
-            }, {
-                start: 11,
-                end: 20
-            }],
+            data: [],
             xTimeKey: 'datime_sys',// 表示用那个时间基准值
             xTimeType: 'hour',
             dataKey: '' //TODO 时序图分析参数配置
@@ -159,6 +154,11 @@ reportPageSet.extend({
         var vins = that.reportOptions.vehicles;
         for (var i = 0; i < vins.length; i++) {
             var vin = vins[i];
+
+            that.options.map[vin] = {
+                xArray: [],
+                yArray:[]
+            };
             /* var options = {
                  viewId: VIEWKEY.pinci,
                  vin: vin,
@@ -237,24 +237,31 @@ reportPageSet.extend({
             xArray = tempObject.xArray;
             yarray = tempObject.yArray;
         }
-        var indexX = $.inArray(that.reportOptions.xObject.dataKey[0],
-                data[0].column);
-        var indexY = $.inArray(that.reportOptions.yObject.dataKey[0],
-                data[0].column);
+        var indexX = $.inArray(that.reportOptions.xObject.dataKey[0],data[0].column);
+        var indexY = $.inArray(that.reportOptions.yObject.dataKey[0], data[0].column);
         $.each(data,// 遍历数据
         function (j, fieldData) {
             if (j > 0) {
-                xArray.push(fieldData.column[indexX]);
-                yArray.push(fieldData.column[indexY]);
-
+                //console.log(fieldData.column[indexX]);
+                var d = new Date();
+                d.setTime(fieldData.column[indexX]);
+                xArray.push(d.format("yyyy-MM-dd HH:mm:ss"));
+                var value = fieldData.column[indexY];
+                if (value == "")
+                {
+                    value = 0;
+                }
+                yArray.push(value);
             }
         });
         that.options.map[vin] = {
             xArray: xArray,
             yArray: yArray
         };
-        that.reportOptions.analysisDataEnd.call(that, that.options.map,
-                search);
+        that.reportOptions.analysisDataEnd.call(that, that.options.map, {
+            type: 'recent',
+            title: that.reportOptions.title
+        });
 
     },
     sandianHandle: function (vin, data, search) {
@@ -266,13 +273,26 @@ reportPageSet.extend({
             xArray = tempObject.xArray;
             yarray = tempObject.yArray;
         }
-        var indexX = $.inArray(that.xObject.dataKey[0], data[0].column);
-        var indexY = $.inArray(that.yObject.dataKey[0], data[0].column);
+        console.log(that.reportOptions.xObject.dataKey[0]);
+        var indexX = $.inArray(that.reportOptions.xObject.dataKey[0], data[0].column);
+        var indexY = $.inArray(that.reportOptions.yObject.dataKey[0], data[0].column);
         $.each(data,// 遍历数据
         function (j, fieldData) {
             if (j > 0) {
-                xArray.push(fieldData.column[indexX]);
-                yArray.push(fieldData.column[indexY]);
+                console.log(indexX);
+
+               
+                var valuex = fieldData.column[indexX];
+                if (valuex == "")
+                {
+                    valuex = 0;
+                }
+                xArray.push(valuex);
+                var value = fieldData.column[indexY];
+                if (value == "") {
+                    value = 0;
+                }
+                yArray.push(value);
 
             }
         });
@@ -280,8 +300,10 @@ reportPageSet.extend({
             xArray: xArray,
             yArray: yArray
         };
-        that.reportOptions.analysisDataEnd.call(that, that.options.map,
-                search);
+        that.reportOptions.analysisDataEnd.call(that, that.options.map, {
+            type: "recent1",
+            title: that.reportOptions.title
+        });
     },
     leijiValueHandle: function (vin, data, search) {
         var that = this;
@@ -341,8 +363,7 @@ reportPageSet.extend({
             xArray: xArray,
             yArray: that.options.fieldCount
         };
-        that.reportOptions.analysisDataEnd.call(that, that.options.map,
-                search);
+        that.reportOptions.analysisDataEnd.call(that, that.options.map,search);
     },
     leijiTimeHandle: function (vin, data, search) {
         var that = this;
@@ -362,9 +383,9 @@ reportPageSet.extend({
             if (!that.options.fieldCount["key"]) {
                 that.options.fieldCount["key"] = [];
             }
-            if (that.options.fieldCount["key"].length - 1 <= i) {
-                that.options.fieldCount["key"].push(0);
-            }
+           // if (that.options.fieldCount["key"].length - 1 <= i) {
+                that.options.fieldCount["key"][i]=0;
+           // }
         }
 
         $.each(
@@ -526,11 +547,15 @@ reportPageSet.extend({
         var yArray = [];
         if (tempObject) {
             // xArray = tempObject.xArray;
-            yarray = tempObject.yArray;
+            yArray = tempObject.yArray;
         }
         $.each(that.reportOptions.xObject.data, // 根据x轴分析数据，便利x轴数据
         function (i, field) {
             xArray.push(field.start + "-" + field.end);
+            if (!yArray[i])
+            {
+                yArray[i] = 0;
+            }
         });
 
         var xdata = that.reportOptions.xObject.data;
@@ -539,10 +564,11 @@ reportPageSet.extend({
         $.each(that.reportOptions.yObject.dataKey,// 遍历y轴数据，找到数据在第几行
             function (y, fieldKey) {
                 var index = $.inArray(fieldKey, data[0].column);
+               
                 //  console.log(fieldKey);
                 //  console.log(index);
 
-                if (that.options.fieldCount[fieldKey]) {
+                /*if (that.options.fieldCount[fieldKey]) {
 
                 } else {
                     that.options.fieldCount[fieldKey] = [];
@@ -550,7 +576,7 @@ reportPageSet.extend({
                            function (i, field) {
                                that.options.fieldCount[fieldKey][i] = 0;
                            });
-                }
+                }*/
                 $.each(data,// 遍历数据
                     function (j, fieldData) {
                         if (j > 0) {
@@ -565,7 +591,7 @@ reportPageSet.extend({
                             $.each(that.reportOptions.xObject.data, // 根据x轴分析数据，便利x轴数据
                             function (i, field) {
 
-                                console.log(that.options.fieldCount[fieldKey][i]);
+                                //console.log(that.options.fieldCount[fieldKey][i]);
 
                                 /*if (that.options.fieldCount[fieldKey][i]) {
                                 } else {
@@ -574,25 +600,16 @@ reportPageSet.extend({
 
                                 if (temp1 * 1 >= field.start * 1 && temp1 * 1 <= field.end * 1) {
 
-                                    that.options.fieldCount[fieldKey][i]++;
+                                   yArray[i]++;
                                     return false;
                                 }
                                 if (temp1 * 1 > max * 1) {
-                                    that.options.fieldCount[fieldKey][xdata.length - 1]++;
+                                    yArray[i]++;
                                     return false;
                                 }
                             });
                         }
                     });
-                var dd = 0;
-                console.log(that.options.fieldCount[fieldKey]);
-                $.each(that.options.fieldCount[fieldKey], function (i, field) {
-                    if (field) {
-                        dd += field;
-                    }
-
-                })
-                console.log(dd);
             });
 
         /*
@@ -629,9 +646,10 @@ reportPageSet.extend({
                         }
                     });
                     */
+      
         that.options.map[vin] = {
             xArray: xArray,
-            yArray: that.options.fieldCount
+            yArray: yArray
         };
         that.reportOptions.analysisDataEnd.call(that, that.options.map, search);
     }

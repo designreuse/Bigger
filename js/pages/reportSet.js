@@ -57,7 +57,7 @@ function pageStart_Two() {
         }
     });
     $('#createView').confirmation({
-        title: '你 确定要根据报表模板预览报表吗?',
+        title: '你确定要根据报表模板预览报表吗?',
         btnOkClass: 'btn btn-sm btn-danger',
         btnOkLabel: '确定预览报表',
         btnOkIcon: 'glyphicon glyphicon-ok',
@@ -65,9 +65,8 @@ function pageStart_Two() {
         btnCancelLabel: '取消',
         btnCancelIcon: 'glyphicon glyphicon-remove',
         onConfirm: function () {
-
+           
             reportSets.getChartSet();
-
             reportSets.setPinciData();
             return false;
         },
@@ -100,7 +99,8 @@ function reportSet(options) {
         chartOptions: {
             
 
-        }
+        },
+        title:''
     };
     this.options = $.extend(defaultOptions, options || {});
     this.initPage();
@@ -116,6 +116,7 @@ reportSet.extend({
             [
                 'echarts',
                 'echarts/chart/line',
+                'echarts/chart/scatter',
                 'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
             ],
             function (ec) {
@@ -136,10 +137,11 @@ reportSet.extend({
     },
     getChartSet: function () {
         var that = this;
+        that.options.title = $("input[name='reportName']").val();
         that.options.YKey = [];
         var id = $("#chartType >ul>.active>a").attr("href");
         console.log(id);
-        if (id == "#popular") {
+        if (id == "#popular") {//频次
             that.options.YKey.push($(id + ' #popularY input:checked').attr("id"));
             var xtype = $(id + " ul>.active>a").attr("href");
             // console.log(xtype);
@@ -152,23 +154,26 @@ reportSet.extend({
                 that.options.chartType = 'pinciTime';
                 that.options.pinciTime.value = $(xtype + ' input[name="pinci_time"]:checked').val();
             }
-        } else if (id == "#recent") {
+        } else if (id == "#recent") {//时序图
             that.options.chartType = 'recent';
             // 获取y轴数据关键字
             that.options.YKey.push($(id + ' #recentY input:checked').attr("id"));
             that.options.XKey.push('datime_sys');
 
-        } else if (id == "recent1") {
+        } else if (id == "#recent1") {//散点图
             that.options.chartType = 'recent1';
             // 获取y轴数据关键字
-            that.options.YKey.push($(id + ' #recentY input:checked').attr("id"));
-            that.options.XKey.push('datime_sys');
+            that.options.YKey.push($(id + ' #recent1Y input:checked').attr("id"));
+            that.options.XKey.push($(id + ' #recent1X input:checked').attr("id"));
+
+            console.log(that.options.XKey);
+            console.log(that.options.YKey);
 
         } else if (id == "#popular1") {
             that.options.YKey.push($(id + ' #popularY input:checked').attr("id"));
             var xtype = $(id + " ul>.active>a").attr("href");
             console.log(xtype);
-            if (xtype == "#popular21") {
+            if (xtype == "#popular21") {//累计图
                 that.options.chartType = 'pinciValue1';
                 that.options.pinci.min = $(id).find("[name='min']").val();
                 that.options.pinci.max = $(id).find("[name='max']").val();
@@ -250,8 +255,7 @@ reportSet.extend({
             pinci: {
                 min: that.options.pinci.min,
                 max: that.options.pinci.max,
-                split: that.options.pinci.split,
-
+                split: that.options.pinci.split
             },
             pinciTime: {
                 value: that.options.pinciTime.value,//
@@ -464,18 +468,30 @@ reportSet.extend({
             }
 
         }
-
-
-
+       
         if (that.options.xData.length > 0 || that.options.XKey.length > 0) {
             that.createReport();
         }
     },
-    createReport: function () {
-
+    setShixuHtml: function () {
         var that = this;
-
+        var data = [];
+        that.options.xData = [];
+        that.options.yData = [];
+        //
+        console.log(that.options.chartType);
+    },
+    createReport: function () {
+        
+        var that = this;
+        console.log(that.options.XKey);
+        var search = {
+            type: that.options.chartType,
+            title:that.options.title
+        }
+        
         var report = new reportPageSet({
+            title:that.options.title,
             xObject: {
                 reportType: that.options.chartType,
                 data: that.options.xData,
@@ -500,91 +516,255 @@ reportSet.extend({
                 var ydata = [];
                 var name = '';
                 legend = [];
-                console.log("数据");
-                console.log(map);
                 var tempArray = [];
-                for (var obj in map) {
-                    legend.push(obj);
-                    name = obj;
-                    var xdata = map[obj].xArray;
-                    console.log(xdata);
-                    for (var prop in map[obj].yArray) {
 
-                        ydata = map[obj].yArray[prop];
+                console.log(search);
+                if (search &&search.type&&search.type=="recent1")
+                {
+                    for (var obj in map) {
+                        legend.push(obj);
+                        name = obj;
+                        var xdata = map[obj].xArray;
+                        var ydata = map[obj].yArray;
+                        var temp = [];
+                        $.each(ydata, function (i, field) {
+                            temp.push([xdata[i]*1, field*1]);
+                        });
+                        tempArray.push({
+                                 name:name,
+                                 type:'scatter',
+                                 data:temp,
+                                 markPoint : {
+                                     data : [
+                                         {type : 'max', name: '最大值'},
+                                         {type : 'min', name: '最小值'}
+                                     ]
+                                 },
+                                 markLine : {
+                                     data : [
+                                         {type : 'average', name: '平均值'}
+                                     ]
+                                 }
+                        });
+                    }
+                    option = {
+                        title: {
+                            text: search.title
+                        },
+                        tooltip: {
+                            trigger: 'axis',
+                            showDelay: 0,
+                            formatter: function (params) {
+                                if (params.value.length > 1) {
+                                    return params.seriesName + ' :<br/>'
+                                       + params.value[0] + ' , '
+                                       + params.value[1];
+                                }
+                                else {
+                                    return params.seriesName + ' :<br/>'
+                                       + params.name + ' : '
+                                       + params.value ;
+                                }
+                            },
+                            axisPointer: {
+                                show: true,
+                                type: 'cross',
+                                lineStyle: {
+                                    type: 'dashed',
+                                    width: 1
+                                }
+                            }
+                        },
+                        legend: {
+                            data: legend
+                        },
+                        toolbox: {
+                            show: true,
+                            feature: {
+                                mark: { show: true },
+                                dataZoom: { show: true },
+                                dataView: { show: true, readOnly: false },
+                                restore: { show: true },
+                                saveAsImage: { show: true }
+                            }
+                        },
+                        xAxis: [
+                            {
+                                type: 'value',
+                                scale: true,
+                                axisLabel: {
+                                    formatter: '{value} '
+                                }
+                            }
+                        ],
+                        yAxis: [
+                            {
+                                type: 'value',
+                                scale: true,
+                                axisLabel: {
+                                    formatter: '{value}'
+                                }
+                            }
+                        ],
+                        series: tempArray
+                    };
+                } else if (search && search.type && search.type == "recent") {
+                    for (var obj in map) {
+                        legend.push(obj);
+                        name = obj;
+                        var xdata = map[obj].xArray;
+                        var ydata = map[obj].yArray;
+                        tempArray.push({
+                            name: name,
+                            type: 'line',
+                            data: ydata,
+                            markPoint: {
+                                data: [{
+                                    type: 'max',
+                                    name: '最大值'
+                                }, {
+                                    type: 'min',
+                                    name: '最小值'
+                                }]
+                            },
+                            markLine: {
+                                data: [{
+                                    type: 'average',
+                                    name: '平均值'
+                                }]
+                            }
+                        });
+
+                    }
+                    var option = {
+                        title: {
+                            text: search.title
+                        },
+                        tooltip: {
+                            trigger: 'axis'
+                        },
+                        legend: {
+                            data: legend
+                        },
+                        toolbox: {
+                            show: true,
+                            feature: {
+                                mark: {
+                                    show: true
+                                },
+                                dataView: {
+                                    show: true,
+                                    readOnly: false
+                                },
+                                magicType: {
+                                    show: true,
+                                    type: ['line']
+                                },
+                                restore: {
+                                    show: true
+                                },
+                                saveAsImage: {
+                                    show: true
+                                }
+                            }
+                        },
+                        calculable: true,
+                        xAxis: [{
+                            type: 'category',
+                            data: xdata
+                        }],
+                        yAxis: [{
+                            type: 'value'
+                        }],
+                        series: tempArray
+
                     }
 
-                    tempArray.push({
-                        name: name,
-                        type: 'bar',
-                        data: ydata,
-                        markPoint: {
-                            data: [{
-                                type: 'max',
-                                name: '最大值'
-                            }, {
-                                type: 'min',
-                                name: '最小值'
-                            }]
-                        },
-                        markLine: {
-                            data: [{
-                                type: 'average',
-                                name: '平均值'
-                            }]
+                } else {
+
+                   
+                        for (var obj in map) {
+                            legend.push(obj);
+                            name = obj;
+                            var xdata = map[obj].xArray;
+                            var ydata = map[obj].yArray;
+
+
+                            tempArray.push({
+                                name: name,
+                                type: 'bar',
+                                data: ydata,
+                                markPoint: {
+                                    data: [{
+                                        type: 'max',
+                                        name: '最大值'
+                                    }, {
+                                        type: 'min',
+                                        name: '最小值'
+                                    }]
+                                },
+                                markLine: {
+                                    data: [{
+                                        type: 'average',
+                                        name: '平均值'
+                                    }]
+                                }
+                            });
+
                         }
-                    });
+                        var option = {
+                            title: {
+                                text: '速度'
+                            },
+                            tooltip: {
+                                trigger: 'axis'
+                            },
+                            legend: {
+                                data: legend
+                            },
+                            toolbox: {
+                                show: true,
+                                feature: {
+                                    mark: {
+                                        show: true
+                                    },
+                                    dataView: {
+                                        show: true,
+                                        readOnly: false
+                                    },
+                                    magicType: {
+                                        show: true,
+                                        type: ['line', 'bar']
+                                    },
+                                    restore: {
+                                        show: true
+                                    },
+                                    saveAsImage: {
+                                        show: true
+                                    }
+                                }
+                            },
+                            calculable: true,
+                            xAxis: [{
+                                type: 'category',
+                                data: xdata
+                            }],
+                            yAxis: [{
+                                type: 'value'
+                            }],
+                            series: tempArray
+
+                        }
+
+                   
 
                 }
 
-                console.log(name);
-                console.log(xdata);
-                console.log(ydata);
+
+
 
                 that.options.myChart.clear();
-                that.options.myChart.setOption({
-                    title: {
-                        text: '速度',
-                        subtext: '纯属虚构'
-                    },
-                    tooltip: {
-                        trigger: 'axis'
-                    },
-                    legend: {
-                        data: legend
-                    },
-                    toolbox: {
-                        show: true,
-                        feature: {
-                            mark: {
-                                show: true
-                            },
-                            dataView: {
-                                show: true,
-                                readOnly: false
-                            },
-                            magicType: {
-                                show: true,
-                                type: ['line', 'bar']
-                            },
-                            restore: {
-                                show: true
-                            },
-                            saveAsImage: {
-                                show: true
-                            }
-                        }
-                    },
-                    calculable: true,
-                    xAxis: [{
-                        type: 'category',
-                        data: xdata
-                    }],
-                    yAxis: [{
-                        type: 'value'
-                    }],
-                    series: tempArray
-
-                });
+                that.options.myChart.setOption(option);
 
             }
         });

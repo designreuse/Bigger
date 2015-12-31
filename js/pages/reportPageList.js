@@ -57,10 +57,11 @@ var reportListDemo = {
             tableId: "#tableserver",
             onDblClickRow: function (item, $element, index) {
                 var type = item.chart_type;
-
                 if (item.unid) {
                     that.options.id = item.unid;
                     $("#viewid").html(item.unid);
+                    $("input[name='reportName']").val(item.name);
+
                     that.options.complete = function (data) {
                         console.log(data);
                         var column = JSON.parse(data.grid_column);
@@ -72,7 +73,7 @@ var reportListDemo = {
                         } else if (type == "recent") {
                             that.setShixuHtml(column);
                         } else if (type == "recent1") {
-
+                            debugger;
                             that.setSanDianHtml(column);
                         }
 
@@ -135,12 +136,13 @@ var reportListDemo = {
         });
     },
     setSanDianHtml: function (data) {
+        debugger;
         $("a[href='#recent1']").click();
         $.each(data.YKey, function (i, field) {
-            $("#recent1 #recentY #" + field).prop("checked", true);
+            $("#recent1 #recent1Y #" + field).prop("checked", true);
         });
         $.each(data.XKey, function (i, field) {
-            $("#recent1 #recentX #" + field).prop("checked", true);
+            $("#recent1 #recent1X #" + field).prop("checked", true);
         });
     },
     getReport: function (fun) {
