@@ -1,12 +1,17 @@
 $(document).ready(function() {
-	$("#panelTitle").text("车辆类型列表");
-		$(window).resize(function () {
-			console.log("resize");
-	        $("#tableserver").bootstrapTable('resetView');
-	    });
-		vehicleListDemo.createTable();
+	
 		
 });
+
+function pageStart_One()
+{
+    $("#panelTitle").text("车辆类型列表");
+    $(window).resize(function () {
+        console.log("resize");
+        $("#tableserver").bootstrapTable('resetView');
+    });
+    vehicleListDemo.createTable();
+}
 
 function AddObject_tableserver() {
 	eModal.iframe({

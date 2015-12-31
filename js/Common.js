@@ -382,8 +382,8 @@ dictionaryJs = {
                        "jsplugin/bootstrap-table-master/dist/extensions/editable/bootstrap-table-editable.js"
     ],
     data_dictionary: ["js/pages/dictionaryManager.js",
-                    "jsplugin/pnotify/pnotify.custom.js",
-                     "jsplugin/select2/js/select2.full.min.js"],
+                      "jsplugin/pnotify/pnotify.custom.js",
+                      "jsplugin/select2/js/select2.full.min.js"],
     report_reportSet: [
                       "js/pages/dynamicDataChart.js",
                       "js/pages/reportPageSet.js",
