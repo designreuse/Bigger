@@ -9,6 +9,7 @@ function pageStart()
         $("#tableserver").bootstrapTable('resetView');
     });
 	vehicleAlarmNum.createTable();
+
 }
 function AddObject_tableserver() {
 	eModal.iframe({

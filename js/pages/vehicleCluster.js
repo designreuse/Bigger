@@ -10,7 +10,8 @@ var cluster = {
         cluster: null,
         markers: [],
         polygons: [],
-        infoWindow: null
+        infoWindow: null,
+        fields: 'ACTIVE_STATUS,SOC'//车辆动态获取车辆信息
     },
     getData: function () {
         var that = this;
@@ -32,11 +33,8 @@ var cluster = {
                 console.log(data);
 
                 var vehicles = data[0].vehicles;
-                console.log(vehicles);
 
                 for (var i = 0; i < vehicles.length; i++) {
-
-
 
                     var markerPosition = [vehicles[i].lond,
                             vehicles[i].latd];
@@ -49,11 +47,9 @@ var cluster = {
                                     y: -32.5
                                 },
                                 content: '<div class="info  " style="color: white;"><i class="el el-car info markerActive" aria-hidden="true"></i><div>'
-
                             });
                     // marker.content = '<i class="el el-car" aria-hidden="true"></i>';
-
-                    marker.extData = vehicles[i].vin;
+                    marker.extData = "B10018";//vehicles[i].vin;
 
                     // that
                     // .createInfoWindow(
@@ -66,8 +62,7 @@ var cluster = {
                     // onClick='event.preventDefault();cluster.openVehicleDetail(3);
                     // return false;' href='#'>详细信 息</a>");
                     // 鼠标点击marker弹出自定义的信息窗体
-                    AMap.event
-                            .addListener(
+                    AMap.event.addListener(
                                     marker,
                                     'click',
                                     function (e) {
@@ -111,7 +106,11 @@ var cluster = {
                                                 e.target.getPosition());
                                         new ajaxObject({
                                             Url: URLDICTIONARY.sensor + "/" + vin,
+                                            data: {
+                                                field: that.options.fields
+                                            },
                                             fun: function (data) {
+                                                console.log(data);
                                                 if (data.length > 1) {
                                                     var fields = data[0];
                                                     var values = data[1];
@@ -170,9 +169,7 @@ var cluster = {
                 that.closeInfoWindow();
                 that.addCluster(0)
             }
-
         });
-
     },
     searchProvince: function (provinceName) {
         var that = cluster;
@@ -301,7 +298,7 @@ var cluster = {
     },
     openVehicleDetail: function (vin) {
         eModal.iframe({
-            url: "vehicle/vehicleInfo?vin=" + vin,
+            url: "subMain/main.html?vin=" + vin,
         }, vin);
         return false;
     }

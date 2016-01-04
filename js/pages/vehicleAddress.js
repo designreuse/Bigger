@@ -17,8 +17,7 @@ function vehicleAddress(options) {
 	this.createMap();
 }
 
-vehicleAddress
-		.extend({
+vehicleAddress.extend({
 			createMap : function() {
 				var that = this;
 				that.options.map = new AMap.Map(
