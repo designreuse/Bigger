@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="jsplugin/bootstrap-table-master/dist/bootstrap-table.min.css" />
 </head>
 <body>
-    <section class="body" style="opacity : 0">
+    <section class="body" >
         <!-- start: header -->
         <header class="header">
             <div class="logo-container">
@@ -445,7 +445,6 @@
                 </div>
             </section>
         </div>
-
     </section>
 </body>
 </html>
@@ -453,13 +452,6 @@
 
 <script type='text/javascript' src="js/jquery-2.1.4.min.js"></script>
 <script type='text/javascript' src="js/Common.js"></script>
-<script>
-    $(function () {
-        checkCookie();
-        $(".body").animate({ opacity: 1 }, 4000, function () { });
-    })
-</script>
-
 <script type="text/javascript" src="js/custom_menu.js"></script>
 <script type="text/javascript" src="jsplugin/jquery-cookie/jquery-cookie.js"></script>
 <script type="text/javascript" src="jsplugin/jquery-browser-mobile/jquery.browser.mobile.js"></script>
@@ -474,19 +466,33 @@
 <script type="text/javascript" src="js/theme.init.js"></script>
 <!-- 实现文本框显示描述文字 -->
 <!--  <script type="text/javascript" src="jsplugin/jquery-placeholder/jquery-placeholder.js"></script>-->
-<!-- Theme Initialization Files -->
-<script src="jsplugin/echarts/js/echarts.js"></script>
+<!-- Theme Initialization Files 
+<script src="jsplugin/echarts/js/echarts.js"></script>-->
 <script src="js/loadCSS.js"></script> 
-
 <script type="text/javascript">
-    // 路径配置
-    require.config({
-        paths: {
-            echarts: 'jsplugin/echarts/js'
-        }
-    });
     $(function () {
+        checkCookie();
+        //$(".body").animate({ opacity: 1 }, 4000, function () { });
+    })
+    $(function () {
+        $.getScript("jsplugin/echarts/js/echarts.js", function () {
+            // 路径配置
+            require.config({
+                paths: {
+                    echarts: 'jsplugin/echarts/js'
+                }
+            });
+
+            new ajaxLoadJs({
+                jsArray: ["js/pages/echartChina.js"],
+                fun: function () {
+                    pageStart_Three();
+                }
+            });
+        })
        
+
+
         try {
             var tempMenu = new menuJs({
                 menuType: "2"
@@ -505,14 +511,6 @@
         $.getScript("//webapi.amap.com/maps?v=1.3&key=ebe4a785f7422ca423062ac0a5ad840e&callback=initMap", function () {
            
         });
-
-        new ajaxLoadJs({
-            jsArray: ["js/pages/echartChina.js"],
-            fun: function () {
-                pageStart_Three();
-            }
-        });
-
         new ajaxLoadJs({
             jsArray: [
                 "js/pages/vehicleList.js",
